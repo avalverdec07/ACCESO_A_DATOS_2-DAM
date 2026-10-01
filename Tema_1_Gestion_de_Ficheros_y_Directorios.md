@@ -1,7 +1,7 @@
 # Tema 1: Manejo de Ficheros — Acceso a Datos
 ## Versión actualizada (java.nio.file, try-with-resources, JSON/XML, excepciones modernas)
 
-> Documento base: apuntes originales de IES Augustóbriga, revisados e integrados con contenidos actuales de Java (paquetes `java.io`, `java.nio.file`) y con soporte de JSON además de XML.
+> Apuntes del tema 1, revisados e integrados con contenidos actuales de Java (paquetes `java.io`, `java.nio.file`) y con soporte de JSON además de XML.
 
 ---
 

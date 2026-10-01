@@ -4,7 +4,7 @@
 
 ### UNIDADES DIDÁCTICAS:
 
-1. [UD1_Gestion_de_Ficheros_y_Directorios_Desarrollo](Tema_1_Gestion_de_Ficheros_y_Directorios.md)
-2. [UD2_Acceso_BD_Relacionales_Conectores_Desarrollo](UD2_Acceso_BD_Relacionales_Conectores_Desarrollo.md)
+1. [UD1_Gestion_de_Ficheros_y_Directorios](Tema_1_Gestion_de_Ficheros_y_Directorios.md)
+2. [UD2_Acceso_BD_Relacionales_Conectores_Desarrollo](Tema_2_Acceso_BD_Relacionales_Conectores.md)
 3. [UD3_Persistencia_ORM_Desarrollo](UD3_Persistencia_ORM_Desarrollo.md)
 
