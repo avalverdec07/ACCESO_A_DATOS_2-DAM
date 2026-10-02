@@ -1,7 +1,7 @@
 # Tema 3: Herramientas de Mapeo Objeto-Relacional — Acceso a Datos
 ## Versión actualizada (Jakarta Persistence, *dirty checking*, LAZY/EAGER y problema N+1, comparación con JDBC)
 
-> Documento base: apuntes originales de IES Augustóbriga, revisados e integrados con contenidos actuales de JPA/Hibernate. **Corrección importante**: los ejemplos originales usaban el paquete `javax.persistence`, incompatible con la versión de Hibernate (6.x) indicada en el propio documento; en esta versión se usa `jakarta.persistence` en todo el contenido, que es el paquete correcto desde Hibernate 6.
+> Apuntes revisados e integrados con contenidos actuales de JPA/Hibernate. **Corrección importante**: los ejemplos originales usaban el paquete `javax.persistence`, incompatible con la versión de Hibernate (6.x) indicada en el propio documento; en esta versión se usa `jakarta.persistence` en todo el contenido, que es el paquete correcto desde Hibernate 6.
 
 ---
 
