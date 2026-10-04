@@ -1,6 +1,12 @@
-## Tabla de Contenidos
+---
+layout: default
+title: Tema 1 - Gestión de ficheros y directorios.
+---
+
+## Índice de Contenidos
+
 * TOC
-  {:toc}
+{:toc}
 
 # Tema 1: Manejo de Ficheros — Acceso a Datos
 ## Versión actualizada (java.nio.file, try-with-resources, JSON/XML, excepciones modernas)
