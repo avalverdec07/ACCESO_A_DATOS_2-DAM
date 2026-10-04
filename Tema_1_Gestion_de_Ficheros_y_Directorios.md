@@ -1,7 +1,3 @@
-## Contenidos
-* TOC
-  {:toc}
-
 # Tema 1: Manejo de Ficheros — Acceso a Datos
 ## Versión actualizada (java.nio.file, try-with-resources, JSON/XML, excepciones modernas)
 
