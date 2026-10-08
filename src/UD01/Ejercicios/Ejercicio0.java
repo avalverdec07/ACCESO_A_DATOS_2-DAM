@@ -32,7 +32,7 @@ public class Ejercicio0 {
                 System.out.print("Error. Introduce un número válido: ");
                 teclado.next();
             }
-            opcion = sc.nextInt();
+            opcion = teclado.nextInt();
             teclado.nextLine(); // Limpiar buffer del scanner
 
             switch (opcion) {
@@ -85,7 +85,8 @@ public class Ejercicio0 {
             // Fecha de modificación formateada
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss")
                     .withZone(ZoneId.systemDefault());
-            String fechaMod = formatter.format(atributos.lastModifiedTime());
+            // Obtener instante del FileTime
+            String fechaMod = formatter.format(atributos.lastModifiedTime().toInstant());
             System.out.println("Fecha de modificación: " + fechaMod);
 
             // Tamaño (si es carpeta, el tamaño suele ser 0 o el metadata, no el contenido)
@@ -140,7 +141,7 @@ public class Ejercicio0 {
     // 4. CREAR UNA CARPETA
     private static void crearCarpeta() {
         System.out.print("Nombre de la nueva carpeta: ");
-        String nombre = sc.nextLine();
+        String nombre = teclado.nextLine();
         Path nuevaCarpeta = Paths.get(nombre);
 
         try {
