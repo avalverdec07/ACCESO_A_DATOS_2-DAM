@@ -33,6 +33,24 @@
     <a href="Tema_3_Herramientas_ORM.html" class="btn">Ver Unidad Didáctica →</a>
   </div>
 
+  <div class="card">
+    <div class="card-header">
+      <span class="badge">UD 4</span>
+    </div>
+    <h4>Bases de Datos Objeto-Relacionales y Orientadas a Objetos.</h4>
+    <p>Instalación de PostgreSLQ, JDBC, JSON/JSONB, DB40</p>
+    <a href="Tema_4_BD_OR_y_OO.md" class="btn">Ver Unidad Didáctica →</a>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="badge">UD 5</span>
+    </div>
+    <h4>Bases de Datos Documentales Nativas (MongoDB)</h4>
+    <p>Bases de datos NOSQL, MongoDB, CRUD, POJO, Modelado de datos.</p>
+    <a href="Tema_5_Bases_de_Datos_Documentales_Nativas.md" class="btn">Ver Unidad Didáctica →</a>
+  </div>
+
 </div>
 
 <!-- Estilos para crear las tarjetas visuales -->
