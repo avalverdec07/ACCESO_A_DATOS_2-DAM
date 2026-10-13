@@ -17,18 +17,18 @@ title: Tema 1 - Gestión de ficheros y directorios.
 
 ## Índice
 
-1. Introducción
-2. Ficheros: tipos y formas de acceso
-3. Gestión de ficheros y directorios
-   - 3.1 La clase clásica `File`
-   - 3.2 La API moderna `java.nio.file` (`Path` y `Files`)
-   - 3.3 Ejercicios
-4. Flujos o Streams
-   - 4.1 Tipos de Stream
-   - 4.2 Codificación de caracteres (Charset)
-   - 4.3 Clases de Streams de Caracteres
-   - 4.4 Clases de Streams de Bytes
-   - 4.5 Ejercicios
+1. [Introducción](#1-introducción)
+2. [Ficheros: tipos y formas de acceso](#2-ficheros-tipos-y-formas-de-acceso)
+3. [Gestión de ficheros y directorios](#3-gestión-de-ficheros-y-directorios)
+   [- 3.1 La clase clásica `File`](#31-la-clase-clásica-file)
+   [- 3.2 La API moderna `java.nio.file` (`Path` y `Files`)](#32-la-api-moderna-javaniofile-path-y-files)
+   [- 3.3 Ejercicios](#33-ejercicios)
+4. [Flujos o Streams](#4-flujos-o-streams)
+   [- 4.1 Tipos de Stream](#41-tipos-de-stream)
+   [- 4.2 Codificación de caracteres (Charset)](#42-codificación-de-caracteres-charset)
+   [- 4.3 Clases de Streams de Caracteres](#43-clases-de-streams-de-caracteres)
+   [- 4.4 Clases de Streams de Bytes](#44-clases-de-streams-de-bytes)
+   [- 4.5 Ejercicios](#45-ejercicios)
 5. Gestión de excepciones de E/S
    - 5.1 Jerarquía de excepciones
    - 5.2 `try-catch-finally` vs. `try-with-resources`
