@@ -7,26 +7,26 @@
 
 ## Índice
 
-1. El desfase objeto-relacional
-2. Gestores embebidos e independientes
-3. Protocolos de acceso a BD SQL
-4. Conector JDBC
-   - 4.1 Clases del paquete `java.sql`
-   - 4.2 Pasos para acceder a una BD
-   - 4.3 Acceso a BD MySQL
-   - 4.4 *Connection pooling*
-5. Metadatos
-6. Ejecución de sentencias DML/DDL
-7. Sentencias preparadas y seguridad (inyección SQL)
-8. Consultas y tratamiento del `ResultSet`
-9. Ejecución de scripts
-10. Rutinas almacenadas en el servidor
-11. Transacciones
-12. SQLite
-13. Acceso a BD Access
-14. Cierre de recursos y patrón DAO
-15. Ejercicio integrador: gestión de un gimnasio
-16. Glosario
+1. [El desfase objeto-relacional](#1-el-desfase-objeto-relacional)
+2. [Gestores embebidos e independientes](#2-gestores-embebidos-e-independientes)
+3. [Protocolos de acceso a BD SQL](#3-protocolos-de-acceso-a-bd-sql)
+4. [Conector JDBC](#4-conector-jdbc)
+   1. [Clases del paquete `java.sql`](#41-clases-del-paquete-javasql)
+   2. [Pasos para acceder a una BD](#42-pasos-para-acceder-a-una-bd)
+   3. [Acceso a BD MySQL](#43-acceso-a-bd-mysql)
+   4. [*Connection pooling*](#44-connection-pooling)
+5. [Metadatos](#5-metadatos)
+6. [Ejecución de sentencias DML/DDL](#6-ejecución-de-sentencias-dmlddl)
+7. [Sentencias preparadas y seguridad (inyección SQL)](#7-sentencias-preparadas-y-seguridad-inyección-sql)
+8. [Consultas y tratamiento del `ResultSet`](#8-consultas-y-tratamiento-del-resultset)
+9. [Ejecución de scripts](#9-ejecución-de-scripts)
+10. [Rutinas almacenadas en el servidor](#10-rutinas-almacenadas-en-el-servidor)
+11. [Transacciones](#11-transacciones)
+12. [SQLite](#12-sqlite)
+13. [Acceso a BD Access](#13-acceso-a-bd-access)
+14. [Cierre de recursos y patrón DAO](#14-cierre-de-recursos-y-patrón-dao)
+15. [Ejercicio integrador: gestión de un gimnasio](#15-ejercicio-integrador-gestión-de-un-gimnasio)
+16. [Glosario](#16-glosario)
 
 ---
 
