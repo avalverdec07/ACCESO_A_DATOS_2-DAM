@@ -7,32 +7,32 @@
 
 ## Índice
 
-1. ORM (Object Relational Mapping)
-2. JPA y Hibernate: especificación e implementación
-3. Instalación y configuración
-   - 3.1 Dependencias Maven
-   - 3.2 Fichero de configuración `persistence.xml`
-   - 3.3 Establecimiento de conexión a la BD
-4. BD alumnos
-5. Mapeo de entidades mediante anotaciones
-6. Estados de un objeto en una sesión JPA
-7. Operaciones CRUD
-8. Relaciones entre entidades
-   - 8.1 Claves primarias compuestas
-   - 8.2 Uno a muchos bidireccional
-   - 8.3 Uno a uno
-   - 8.4 Muchos a muchos
-   - 8.5 Estrategias de carga (LAZY/EAGER) y el problema N+1
-9. Consultas: JPQL/HQL y SQL nativo
-   - 9.1 Join y `JOIN FETCH`
-   - 9.2 Consultas estáticas (`@NamedQuery`)
-   - 9.3 Consultas dinámicas
-   - 9.4 Consultas nativas SQL
-10. Transacciones con JPA
-11. JDBC vs. ORM: valoración comparada
-12. Proyecto: Biblioteca
-13. Proyecto: Liga de baloncesto
-14. Glosario
+1. [ORM (Object Relational Mapping)](#1-orm-object-relational-mapping)
+2. [JPA y Hibernate: especificación e implementación](#2-jpa-y-hibernate-especificación-e-implementación)
+3. [Instalación y configuración](#3-instalación-y-configuración)
+   - [3.1 Dependencias Maven](#31-dependencias-maven)
+   - [3.2 Fichero de configuración `persistence.xml`](#32-fichero-de-configuración-persistencexml)
+   - [3.3 Establecimiento de conexión a la BD](#33-establecimiento-de-conexión-a-la-bd)
+4. [BD alumnos](#4-bd-alumnos)
+5. [Mapeo de entidades mediante anotaciones](#5-mapeo-de-entidades-mediante-anotaciones)
+6. [Estados de un objeto en una sesión JPA](#6-estados-de-un-objeto-en-una-sesión-jpa)
+7. [Operaciones CRUD](#7-operaciones-crud)
+8. [Relaciones entre entidades](#8-relaciones-entre-entidades)
+   - [8.1 Claves primarias compuestas](#81-claves-primarias-compuestas)
+   - [8.2 Uno a muchos bidireccional](#82-uno-a-muchos-bidireccional)
+   - [8.3 Uno a uno](#83-uno-a-uno)
+   - [8.4 Muchos a muchos](#84-muchos-a-muchos)
+   - [8.5 Estrategias de carga (LAZY/EAGER) y el problema N+1](#85-estrategias-de-carga-lazyeager-y-el-problema-n1)
+9. [Consultas: JPQL/HQL y SQL nativo](#9-consultas-jpqlhql-y-sql-nativo)
+   - [9.1 Join y `JOIN FETCH`](#91-join-y-join-fetch)
+   - [9.2 Consultas estáticas (`@NamedQuery`)](#92-consultas-estáticas-namedquery)
+   - [9.3 Consultas dinámicas](#93-consultas-dinámicas)
+   - [9.4 Consultas nativas SQL](#94-consultas-nativas-sql)
+10. [Transacciones con JPA](#10-transacciones-con-jpa)
+11. [JDBC vs. ORM: valoración comparada](#11-jdbc-vs-orm-valoración-comparada)
+12. [Proyecto: Biblioteca](#12-proyecto-biblioteca)
+13. [Proyecto: Liga de baloncesto](#13-proyecto-liga-de-baloncesto)
+14. [Glosario](#14-glosario)
 
 ---
 
