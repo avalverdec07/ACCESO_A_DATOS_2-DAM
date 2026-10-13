@@ -1,13 +1,3 @@
----
-layout: default
-title: Tema 1 - Gestión de ficheros y directorios.
----
-
-## Índice de Contenidos
-
-* TOC
-{:toc}
-
 # Tema 1: Manejo de Ficheros — Acceso a Datos
 ## Versión actualizada (java.nio.file, try-with-resources, JSON/XML, excepciones modernas)
 
@@ -20,32 +10,32 @@ title: Tema 1 - Gestión de ficheros y directorios.
 1. [Introducción](#1-introducción)
 2. [Ficheros: tipos y formas de acceso](#2-ficheros-tipos-y-formas-de-acceso)
 3. [Gestión de ficheros y directorios](#3-gestión-de-ficheros-y-directorios)
-   [- 3.1 La clase clásica `File`](#31-la-clase-clásica-file)
-   [- 3.2 La API moderna `java.nio.file` (`Path` y `Files`)](#32-la-api-moderna-javaniofile-path-y-files)
-   [- 3.3 Ejercicios](#33-ejercicios)
+   1. [La clase clásica `File`](#31-la-clase-clásica-file)
+   2. [La API moderna `java.nio.file` (`Path` y `Files`)](#32-la-api-moderna-javaniofile-path-y-files)
+   3. [Ejercicios](#33-ejercicios)
 4. [Flujos o Streams](#4-flujos-o-streams)
-   [- 4.1 Tipos de Stream](#41-tipos-de-stream)
-   [- 4.2 Codificación de caracteres (Charset)](#42-codificación-de-caracteres-charset)
-   [- 4.3 Clases de Streams de Caracteres](#43-clases-de-streams-de-caracteres)
-   [- 4.4 Clases de Streams de Bytes](#44-clases-de-streams-de-bytes)
-   [- 4.5 Ejercicios](#45-ejercicios)
-5. Gestión de excepciones de E/S
-   - 5.1 Jerarquía de excepciones
-   - 5.2 `try-catch-finally` vs. `try-with-resources`
-   - 5.3 Buenas prácticas
-6. Ficheros de Acceso Aleatorio
-   - 6.1 Tamaño de los tipos de datos
-   - 6.2 Ejercicios
-7. Serialización y deserialización de objetos
-   - 7.1 La interfaz `Serializable`
-   - 7.2 `serialVersionUID` y `transient`
-   - 7.3 Ejercicios
-8. Ficheros de intercambio: XML y JSON
-   - 8.1 XML con DOM
-   - 8.2 XML con JAXB
-   - 8.3 JSON con Jackson
-   - 8.4 Ejercicios
-9. Glosario
+   1. [Tipos de Stream](#41-tipos-de-stream)
+   2. [Codificación de caracteres (Charset)](#42-codificación-de-caracteres-charset)
+   3. [Clases de Streams de Caracteres](#43-clases-de-streams-de-caracteres)
+   4. [Clases de Streams de Bytes](#44-clases-de-streams-de-bytes)
+   5. [Ejercicios](#45-ejercicios)
+5. [Gestión de excepciones de E/S](#5-gestión-de-excepciones-de-es)
+   1. [Jerarquía de excepciones](#51-jerarquía-de-excepciones)
+   2. [`try-catch-finally` vs. `try-with-resources`](#52-try-catch-finally-vs-try-with-resources)
+   3. [Buenas prácticas](#53-buenas-prácticas)
+6. [Ficheros de Acceso Aleatorio](#6-ficheros-de-acceso-aleatorio)
+   1. [Tamaño de los tipos de datos](#61-tamaño-de-los-tipos-de-datos)
+   2. [Ejercicios](#62-ejercicios)
+7. [Serialización y deserialización de objetos](#7-serialización-y-deserialización-de-objetos)
+   1. [La interfaz `Serializable`](#7-serialización-y-deserialización-de-objetos)
+   2. [`serialVersionUID` y `transient`](#72-serialversionuid-y-transient)
+   3. [Ejercicios](#73-ejercicios)
+8. [Ficheros de intercambio: XML y JSON](#8-ficheros-de-intercambio-xml-y-json)
+   1. [XML con DOM](#81-xml-con-dom)
+   2. [XML con JAXB](#82-xml-con-jaxb)
+   3. [JSON con Jackson](#83-json-con-jackson)
+   4. [Ejercicios](#84-ejercicios)
+9. [Glosario](#9-glosario)
 
 ---
 
