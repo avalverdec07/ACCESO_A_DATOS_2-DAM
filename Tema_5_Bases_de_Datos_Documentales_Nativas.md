@@ -7,36 +7,36 @@
 
 ## Índice
 
-1. Bases de datos NoSQL
-2. Clave-valor
-3. Documental
-4. Columnar
-5. Grafo
-6. Las bases de datos NoSQL y el teorema de CAP
-7. Transacciones en MongoDB
-8. Base de datos MongoDB
-   - 8.1 Instalación local y MongoDB Atlas
-   - 8.2 CRUD en Mongo (mongosh)
-   - 8.3 Driver Java (Maven)
-   - 8.4 Establecer conexión a Mongo
-   - 8.5 Seleccionar la base de datos
-   - 8.6 Operaciones con colecciones
-   - 8.7 Tipos de datos BSON
-   - 8.8 Insertar
-   - 8.9 Nº de documentos de una colección
-   - 8.10 Filtros en consultas
-   - 8.11 Modificar/Reemplazar documentos
-   - 8.12 Borrar documentos
-   - 8.13 Recuperación
-   - 8.14 CRUD en arrays de documentos embebidos
-   - 8.15 Operaciones de agregación
-   - 8.16 Operaciones de JOIN (`$lookup`)
-   - 8.17 Trabajar con POJOs
-9. Modelado de datos: embeber vs. referenciar
-10. Índices
-11. Seguridad y autenticación
-12. Ejercicios
-13. Glosario
+1. [Bases de datos NoSQL](#1-bases-de-datos-nosql)
+2. [Clave-valor](#2-clave-valor)
+3. [Documental](#3-documental)
+4. [Columnar](#4-columnar)
+5. [Grafo](#5-grafo)
+6. [Las bases de datos NoSQL y el teorema de CAP](#6-las-bases-de-datos-nosql-y-el-teorema-de-cap)
+7. [Transacciones en MongoDB](#7-transacciones-en-mongodb)
+8. [Base de datos MongoDB](#8-base-de-datos-mongodb)
+   - [8.1 Instalación local y MongoDB Atlas](#81-instalación-local-y-mongodb-atlas)
+   - [8.2 CRUD en Mongo (mongosh)](#82-crud-en-mongo-mongosh)
+   - [8.3 Driver Java (Maven)](#83-driver-java-maven)
+   - [8.4 Establecer conexión a Mongo](#84-establecer-conexión-a-mongo)
+   - [8.5 Seleccionar la base de datos](#85-seleccionar-la-base-de-datos)
+   - [8.6 Operaciones con colecciones](#86-operaciones-con-colecciones)
+   - [8.7 Tipos de datos BSON](#87-tipos-de-datos-bson)
+   - [8.8 Insertar](#88-insertar)
+   - [8.9 Nº de documentos de una colección](#89-nº-de-documentos-de-una-colección)
+   - [8.10 Filtros en consultas](#810-filtros-en-consultas)
+   - [8.11 Modificar/Reemplazar documentos](#811-modificarreemplazar-documentos)
+   - [8.12 Borrar documentos](#812-borrar-documentos)
+   - [8.13 Recuperación](#813-recuperación)
+   - [8.14 CRUD en arrays de documentos embebidos](#814-crud-en-arrays-de-documentos-embebidos)
+   - [8.15 Operaciones de agregación](#815-operaciones-de-agregación)
+   - [8.16 Operaciones de JOIN (`$lookup`)](#815-operaciones-de-agregación)
+   - [8.17 Trabajar con POJOs](#817-trabajar-con-pojos)
+9. [Modelado de datos: embeber vs. referenciar](#9-modelado-de-datos-embeber-vs-referenciar)
+10. [Índices](#10-índices)
+11. [Seguridad y autenticación](#11-seguridad-y-autenticación)
+12. [Ejercicios](#12-ejercicios)
+13. [Glosario](#13-glosario)
 
 ---
 
