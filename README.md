@@ -51,6 +51,15 @@
     <a href="Tema_5_Bases_de_Datos_Documentales_Nativas.html" class="btn">Ver Unidad Didáctica →</a>
   </div>
 
+<div class="card">
+    <div class="card-header">
+      <span class="badge">UD 6</span>
+    </div>
+    <h4>Creación de componentes de acceso a datos.</h4>
+    <p>Tecnologías de desarrollo de componentes, JavaBeans, empaquetado de componentes, desarrollo con JakartaEE.</p>
+    <a href="Tema_6_Creacion_de_Componentes_de_AD.html" class="btn">Ver Unidad Didáctica →</a>
+  </div>
+
 </div>
 
 <!-- Estilos para crear las tarjetas visuales -->
