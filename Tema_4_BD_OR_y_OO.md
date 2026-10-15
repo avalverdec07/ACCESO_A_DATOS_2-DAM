@@ -2,7 +2,7 @@
 
 *Acceso a Datos — IES Augustóbriga*
 
-> **Nota de actualización**: este documento es una revisión del material original. Se han corregido erratas, eliminado prácticas obsoletas (carga manual de drivers, `Class.forName`, credenciales embebidas, falta de gestión automática de recursos), señalado con claridad que **DB4O y NeoDatis son tecnologías descontinuadas**, y añadido una sección sobre tipos `JSON`/`JSONB` como alternativa moderna dentro de PostgreSQL. Todos los ejercicios originales se mantienen íntegros.
+> **Apuntes revisados y actualizados**: este documento es una revisión del material original. Se han corregido erratas, eliminado prácticas obsoletas (carga manual de drivers, `Class.forName`, credenciales embebidas, falta de gestión automática de recursos), señalado con claridad que **DB4O y NeoDatis son tecnologías descontinuadas**, y añadido una sección sobre tipos `JSON`/`JSONB` como alternativa moderna dentro de PostgreSQL. Todos los ejercicios originales se mantienen íntegros.
 
 ## Índice
 
