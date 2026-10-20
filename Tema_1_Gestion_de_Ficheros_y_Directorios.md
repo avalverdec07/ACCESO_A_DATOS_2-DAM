@@ -407,6 +407,8 @@ public class CopiadorImagen {
 
 **Ejercicio 5**: Añade un texto al final de un fichero pasado por parámetro, creándolo si no existe (usa el modo `append` de `FileWriter`).
 
+Ejercicio 5 ALTERNATIVO (Clase NIO): Añade un texto al final de un fichero pasado por parámetro, creándolo si no existe. Para ello, utiliza el método Files.writeString() de la librería NIO.2 y añade los enumerados StandardOpenOption.CREATE y StandardOpenOption.APPEND
+
 **Ejercicio 6**: Crea un fichero de personas (nombre, apellidos, teléfono) pidiendo los datos por teclado; si el fichero existe, añade registros.
 
 **Ejercicio 7**: Modifica una línea concreta de un fichero de texto (pide el número de línea y los nuevos datos), reescribiendo el fichero con la técnica de fichero temporal.
