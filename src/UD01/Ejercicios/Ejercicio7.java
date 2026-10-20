@@ -46,7 +46,7 @@ public class Ejercicio7 {
                  * Le decimos que lo cree en el mismo directorio que el original para
                  * evitar problemas de permisos al moverlo después.
                  */
-                rutaTemporal = Files.createTempFile(rutaOriginal.getParent(), "temp_", ".txt");
+                rutaTemporal = Files.createTempFile(rutaOriginal.toAbsolutePath().getParent(), "temp_", ".txt");
 
                 // Abrimos BufferedReader (para leer el original) y BufferedWriter (para escribir en el temp)
                 try (BufferedReader reader = Files.newBufferedReader(rutaOriginal);
@@ -73,9 +73,9 @@ public class Ejercicio7 {
                     }
 
                     if (!lineaEncontrada) {
-                        System.out.println("⚠️ Aviso: El fichero tiene menos de " + numLineaModificar + " líneas. No se modificó nada.");
+                        System.out.println("Aviso: El fichero tiene menos de " + numLineaModificar + " líneas. No se modificó nada.");
                     } else {
-                        System.out.println("✅ Línea " + numLineaModificar + " modificada correctamente en el fichero temporal.");
+                        System.out.println("Línea " + numLineaModificar + " modificada correctamente en el fichero temporal.");
                     }
                 }
 
