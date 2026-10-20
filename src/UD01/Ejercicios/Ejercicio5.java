@@ -6,9 +6,6 @@ import java.nio.file.StandardOpenOption;
 import java.io.IOException;
 public class Ejercicio5 {
 
-
-    public class AnadirTexto {
-
         public static void main(String[] args) {
             // 1. Comprobamos que el usuario ha pasado los dos parámetros necesarios
             if (args.length < 2) {
@@ -46,4 +43,3 @@ public class Ejercicio5 {
             }
         }
     }
-}
