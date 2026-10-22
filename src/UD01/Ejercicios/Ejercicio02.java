@@ -6,7 +6,7 @@ import java.nio.file.attribute.BasicFileAttributes;
 import java.util.Scanner;
 import java.util.stream.Stream;
 
-public class Ejercicio2 {
+public class Ejercicio02 {
 
     private static final Scanner sc = new Scanner(System.in);
 

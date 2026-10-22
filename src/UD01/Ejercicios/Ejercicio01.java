@@ -7,7 +7,7 @@ import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.time.ZonedDateTime;
 
-        public class Ejercicio1 {
+        public class Ejercicio01 {
 
             public static void main(String[] args) {
                 // 1. Comprobación inicial: ¿El usuario pasó argumentos?

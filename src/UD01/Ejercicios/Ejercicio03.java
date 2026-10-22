@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.nio.file.*;
 import java.util.Scanner;
 
-public class Ejercicio3 {
+public class Ejercicio03 {
 
     public static void main(String[] args) {
         // 1. Comprobar que se ha pasado el parámetro

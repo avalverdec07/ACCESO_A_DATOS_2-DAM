@@ -66,9 +66,9 @@ public class Ejercicio8 {
                     }
 
                     if (!lineaBorrableEncontrada) {
-                        System.out.println("⚠️ Aviso: El fichero tiene menos de " + numLineaBorrar + " líneas. No se borró nada.");
+                        System.out.println("Aviso: El fichero tiene menos de " + numLineaBorrar + " líneas. No se borró nada.");
                     } else {
-                        System.out.println("✅ Línea " + numLineaBorrar + " eliminada correctamente en el fichero temporal.");
+                        System.out.println("Línea " + numLineaBorrar + " eliminada correctamente en el fichero temporal.");
                     }
                 }
 
