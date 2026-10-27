@@ -1,4 +1,4 @@
-# Tema 1: Manejo de Ficheros — Acceso a Datos
+# Tema 1: Gestión de Ficheros y Directorios.
 ## Versión actualizada (java.nio.file, try-with-resources, JSON/XML, excepciones modernas)
 
 > Apuntes del tema 1, revisados e integrados con contenidos actuales de Java (paquetes `java.io`, `java.nio.file`) y con soporte de JSON además de XML.

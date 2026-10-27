@@ -1,4 +1,4 @@
-# Tema 2: Manejo de Conectores — Acceso a Datos
+# Tema 2: Acceso a BD Relacionales (Conectores).
 ## Versión actualizada (JDBC moderno, *connection pooling*, seguridad, transacciones, DAO)
 
 > Apuntes del Tema 2, revisados e integrados con contenidos actuales de JDBC (registro automático de drivers, *pools* de conexión, prevención de inyección SQL, patrón DAO y fundamentos de transacciones).

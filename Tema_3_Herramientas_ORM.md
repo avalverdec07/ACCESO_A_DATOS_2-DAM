@@ -1,4 +1,4 @@
-# Tema 3: Herramientas de Mapeo Objeto-Relacional — Acceso a Datos
+# Tema 3: Herramientas de mapeo Objeto-Relacional (ORM)
 ## Versión actualizada (Jakarta Persistence, *dirty checking*, LAZY/EAGER y problema N+1, comparación con JDBC)
 
 > Apuntes revisados e integrados con contenidos actuales de JPA/Hibernate. **Corrección importante**: los ejemplos originales usaban el paquete `javax.persistence`, incompatible con la versión de Hibernate (6.x) indicada en el propio documento; en esta versión se usa `jakarta.persistence` en todo el contenido, que es el paquete correcto desde Hibernate 6.
