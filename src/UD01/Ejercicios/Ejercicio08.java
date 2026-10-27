@@ -9,7 +9,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.Scanner;
 
-public class Ejercicio8 {
+public class Ejercicio08 {
 
         public static void main(String[] args) {
             Scanner scanner = new Scanner(System.in);
