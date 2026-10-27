@@ -1,9 +1,3 @@
----
-layout: default
-title: UD1 - Gestión de Ficheros
-nav_order: 2
-has_toc: true
----
 # Tema 1: Manejo de Ficheros — Acceso a Datos
 ## Versión actualizada (java.nio.file, try-with-resources, JSON/XML, excepciones modernas)
 

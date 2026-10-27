@@ -9,10 +9,3 @@ plugins:
 
 # Habilitar buscador interno en el menú lateral (opcional pero muy útil)
 search_enabled: true
-
-# Habilita el plegado/desplegable interactivo con flechas en la barra lateral
-back_to_top: true
-back_to_top_text: "Volver arriba"
-
-# Permite que los títulos tengan enlaces directos
-heading_anchors: true
