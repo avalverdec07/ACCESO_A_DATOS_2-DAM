@@ -1,3 +1,9 @@
+---
+layout: default
+title: Inicio
+nav_order: 1
+---
+
 # ACCESO A DATOS 2ºDAM
 ## Repositorio con apuntes y ejercicios del módulo de Acceso a Datos de 2º de DAM
 ### Profesor: Andrés Valverde Consentino.

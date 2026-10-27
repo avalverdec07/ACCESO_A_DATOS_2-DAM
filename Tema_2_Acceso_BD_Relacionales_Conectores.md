@@ -1,3 +1,9 @@
+---
+layout: default
+title: UD2 - BD Relacionales (JDBC)
+nav_order: 3
+---
+
 # Tema 2: Manejo de Conectores — Acceso a Datos
 ## Versión actualizada (JDBC moderno, *connection pooling*, seguridad, transacciones, DAO)
 

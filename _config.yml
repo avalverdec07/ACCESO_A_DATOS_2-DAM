@@ -1,1 +1,11 @@
-theme: just-the-docs
+title: ACCESO A DATOS 2ºDAM
+description: Apuntes y ejercicios del módulo de Acceso a Datos (2º DAM)
+
+remote_theme: just-the-docs/just-the-docs
+
+# Activamos el plugin para descargar temas remotos
+plugins:
+  - jekyll-remote-theme
+
+# Habilitar buscador interno en el menú lateral (opcional pero muy útil)
+search_enabled: true
