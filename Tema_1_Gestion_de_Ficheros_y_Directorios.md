@@ -13,7 +13,7 @@
    1. [La clase clásica `File`](#31-la-clase-clásica-file)
    2. [La API moderna `java.nio.file` (`Path` y `Files`)](#32-la-api-moderna-javaniofile-path-y-files)
    3. [Ejercicios](#33-ejercicios)
-4. [Flujos o Streams](#4-flujos-o-streams)
+4. [Flujos o Streams](?id=4-flujos-o-streams)
    1. [Tipos de Stream](#41-tipos-de-stream)
    2. [Codificación de caracteres (Charset)](#42-codificación-de-caracteres-charset)
    3. [Clases de Streams de Caracteres](#43-clases-de-streams-de-caracteres)
