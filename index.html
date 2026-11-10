@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Acceso a Datos - 2º DAM</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+
+    <!-- Tema visual (Vue style) -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+</head>
+<body>
+<div id="app">Cargando apuntes...</div>
+
+<script>
+    window.$docsify = {
+        name: 'ACCESO A DATOS 2º DAM',
+        repo: 'avalverdec07/ACCESO_A_DATOS_2-DAM',
+        loadSidebar: true,         // Carga el menú desde _sidebar.md
+        subMaxLevel: 3,            // ¡CLAVE!: Desglosa H2 y H3 dentro de la barra lateral
+        auto2top: true,            // Desplaza la página hacia arriba al cambiar de tema
+        relativePath: true,        // Permite enlaces relativos limpios
+
+        // Configuración del buscador integrado
+        search: {
+            maxAge: 86400000,
+            paths: 'auto',
+            placeholder: 'Buscar término, clase o SQL...',
+            noData: 'No se encontraron resultados',
+            depth: 4
+        }
+    }
+</script>
+
+<!-- Librería principal de Docsify -->
+<script src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+
+<!-- Plugin de Búsqueda -->
+<script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
+
+<!-- Resaltado de Sintaxis (PrismJS) para Java y SQL -->
+<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-java.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-sql.min.js"></script>
+</body>
+</html>
