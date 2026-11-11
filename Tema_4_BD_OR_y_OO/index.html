@@ -1,0 +1,1480 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://avalverdec07.github.io/ACCESO_A_DATOS_2-DAM/Tema_4_BD_OR_y_OO/">
+      
+      
+        <link rel="prev" href="../Tema_3_Herramientas_ORM/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
+    
+    
+      
+        <title>UD4 - Bases de Datos objeto-relacionales y orientadas a objetos - Acceso a Datos 2º DAM</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tema-4-bd-objeto-relacionales-y-orientadas-a-objetos" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="Acceso a Datos 2º DAM" class="md-header__button md-logo" aria-label="Acceso a Datos 2º DAM" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Acceso a Datos 2º DAM
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              UD4 - Bases de Datos objeto-relacionales y orientadas a objetos
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/avalverdec07/ACCESO_A_DATOS_2-DAM" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    avalverdec07/ACCESO_A_DATOS_2-DAM
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Acceso a Datos 2º DAM" class="md-nav__button md-logo" aria-label="Acceso a Datos 2º DAM" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Acceso a Datos 2º DAM
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/avalverdec07/ACCESO_A_DATOS_2-DAM" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    avalverdec07/ACCESO_A_DATOS_2-DAM
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidades Didácticas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unidades Didácticas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tema_1_Gestion_de_Ficheros_y_Directorios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD1 - Gestión de Ficheros
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tema_2_Acceso_BD_Relacionales_Conectores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD2 - Conectores BD (JDBC)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tema_3_Herramientas_ORM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD3 - Herramientas ORM (Hibernate)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD4 - Bases de Datos objeto-relacionales y orientadas a objetos
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD4 - Bases de Datos objeto-relacionales y orientadas a objetos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Índice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-bases-de-datos-objeto-relacionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Bases de Datos Objeto-Relacionales
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Bases de Datos Objeto-Relacionales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-instalacion-de-postgresql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Instalación de PostgreSQL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-tipos-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Tipos de datos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-herencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Herencia
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-jdbc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 JDBC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-tipos-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5 Tipos Array
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-funciones-almacenadas-en-el-sgbd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6 Funciones almacenadas en el SGBD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-json-jsonb-la-alternativa-moderna-nuevo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.7 JSON / JSONB: la alternativa moderna (Nuevo)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-bases-de-datos-orientadas-a-objetos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Bases de Datos Orientadas a Objetos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Bases de Datos Orientadas a Objetos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-db4o-database-for-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 DB4O (Database for Objects)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-instalacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Instalación
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-acceso-a-la-bd-desde-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Acceso a la BD desde Java
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-operaciones-crud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Operaciones CRUD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-consultas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Consultas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5 Consultas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qbe-query-by-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QBE (Query By Example)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#queries-nativas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Queries Nativas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-relaciones-entre-objetos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6 Relaciones entre Objetos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-practica-final-tema-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Práctica final: Tema 5
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-glosario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Glosario
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tema5_Bases_de_Datos_Documentales_Nativas.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD5 - Bases de Datos Documentales Nativas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tema6_Creacion_de_Componentes_de_AD.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD6 - Creación de Componentes_de_AD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="tema-4-bd-objeto-relacionales-y-orientadas-a-objetos">Tema 4: BD Objeto-Relacionales y Orientadas a Objetos</h1>
+<p><em>Acceso a Datos — IES Augustóbriga</em></p>
+<blockquote>
+<p><strong>Apuntes revisados y actualizados</strong>: este documento es una revisión del material original. Se han corregido erratas, eliminado prácticas obsoletas (carga manual de drivers, <code>Class.forName</code>, credenciales embebidas, falta de gestión automática de recursos), señalado con claridad que <strong>DB4O y NeoDatis son tecnologías descontinuadas</strong>, y añadido una sección sobre tipos <code>JSON</code>/<code>JSONB</code> como alternativa moderna dentro de PostgreSQL. Todos los ejercicios originales se mantienen íntegros.</p>
+</blockquote>
+<h2 id="indice">Índice</h2>
+<ol>
+<li><a href="#1-bases-de-datos-objeto-relacionales">Bases de Datos Objeto-Relacionales</a></li>
+<li><a href="#11-instalación-de-postgresql">Instalación de PostgreSQL</a></li>
+<li><a href="#12-tipos-de-datos">Tipos de datos</a></li>
+<li><a href="#13-herencia">Herencia</a></li>
+<li><a href="#14-jdbc">JDBC</a></li>
+<li><a href="#15-tipos-array">Tipos Array</a></li>
+<li><a href="#16-funciones-almacenadas-en-el-sgbd">Funciones almacenadas en el SGBD</a></li>
+<li><a href="#17-json--jsonb-la-alternativa-moderna-nuevo">JSON / JSONB: la alternativa moderna</a></li>
+<li><a href="#2-bases-de-datos-orientadas-a-objetos">Bases de Datos Orientadas a Objetos</a></li>
+<li><a href="#21-db4o-database-for-objects">DB4O (Database for Objects)</a></li>
+<li><a href="#22-instalación">Instalación</a></li>
+<li><a href="#23-acceso-a-la-bd-desde-java">Acceso a la BD desde Java</a></li>
+<li><a href="#24-operaciones-crud">Operaciones CRUD</a></li>
+<li><a href="#25-consultas">Consultas</a></li>
+<li><a href="#26-relaciones-entre-objetos">Relaciones entre Objetos</a></li>
+<li><a href="#3-práctica-final-tema-5">Práctica final: Tema 5</a></li>
+<li><a href="#4-glosario">Glosario</a></li>
+</ol>
+<hr />
+<h2 id="1-bases-de-datos-objeto-relacionales">1. Bases de Datos Objeto-Relacionales</h2>
+<p>Las bases de datos objeto-relacionales (BDOR) son una extensión de las bases de datos relacionales a las que se han añadido conceptos del modelo orientado a objetos (OO), con el objetivo de simplificar el acceso a datos desde aplicaciones OO.</p>
+<p>Un <strong>SGBDOR</strong> (Sistema Gestor de Bases de Datos Objeto-Relacional) es un sistema relacional que almacena objetos en tablas.</p>
+<p>Las características del modelo objeto-relacional se definieron en el estándar <strong>SQL:1999</strong>:</p>
+<ul>
+<li>Soporte para tipos de datos básicos y complejos.</li>
+<li>Soporte para crear métodos sobre los tipos de datos complejos <em>(no soportado en PostgreSQL)</em>.</li>
+<li>Herencia.</li>
+<li>Relaciones anidadas (tablas dentro de tablas).</li>
+<li>Compatibilidad con el modelo relacional.</li>
+</ul>
+<p>Algunos ejemplos de SGBDOR son:</p>
+<ul>
+<li>Informix</li>
+<li>Oracle</li>
+<li>PostgreSQL</li>
+</ul>
+<h3 id="11-instalacion-de-postgresql">1.1 Instalación de PostgreSQL</h3>
+<p>PostgreSQL es un SGBDOR que sigue el modelo cliente/servidor.</p>
+<p>Se puede descargar desde <a href="https://www.postgresql.org/download/">https://www.postgresql.org/download/</a>. La versión instalable para Windows incluye:</p>
+<ul>
+<li><strong>PostgreSQL server</strong></li>
+<li><strong>pgAdmin</strong>: herramienta gráfica para administrar la BD.</li>
+<li><strong>Stack Builder</strong>: paquete que permite descargar e instalar herramientas adicionales de PostgreSQL y drivers.</li>
+</ul>
+<p><img alt="Instalación con Stack Builder" src="../out/Tema_4_imagenes/img-instalacion-stackbuilder.png" /></p>
+<blockquote>
+<p><strong>Nota</strong>: las capturas de este documento corresponden a PostgreSQL 10. A día de hoy conviene instalar la versión más reciente disponible (PostgreSQL 16/17), ya que las versiones antiguas dejan de recibir actualizaciones de seguridad. Los pasos de instalación y el uso de pgAdmin 4 siguen siendo los mismos.</p>
+<p>Como alternativa moderna y muy usada en entornos de desarrollo, también se puede levantar PostgreSQL con <strong>Docker</strong> (<code>docker run -e POSTGRES_PASSWORD=mipass -p 5432:5432 postgres</code>), sin necesidad de instalador.</p>
+</blockquote>
+<p>Una vez instalado, se ejecuta Stack Builder para descargar e instalar el driver JDBC de PostgreSQL.</p>
+<p>Para un proyecto Java moderno, <strong>no es necesario descargar el <code>.jar</code> manualmente</strong>: basta con añadir la dependencia Maven (o su equivalente en Gradle), que descargará el driver automáticamente:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cm">&lt;!-- https://mvnrepository.com/artifact/org.postgresql/postgresql --&gt;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">&lt;dependency&gt;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&lt;groupId&gt;</span>org.postgresql<span class="nt">&lt;/groupId&gt;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>postgresql<span class="nt">&lt;/artifactId&gt;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">&lt;version&gt;</span>42.7.4<span class="nt">&lt;/version&gt;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>
+<blockquote>
+<p>Se ha actualizado la versión del driver (<code>42.2.18</code> → <code>42.7.4</code>), que es la recomendada actualmente. Las versiones 42.2.x son de 2020 y ya no reciben parches de seguridad.</p>
+</blockquote>
+<p>Abre pgAdmin y crea una nueva base de datos llamada <strong>Alumnos</strong>:</p>
+<p><img alt="Crear base de datos en pgAdmin" src="../out/Tema_4_imagenes/img-pgadmin-crear-bd.png" /></p>
+<h3 id="12-tipos-de-datos">1.2 Tipos de datos</h3>
+<p>En PostgreSQL existen los siguientes tipos de datos:</p>
+<p><strong>Tipos básicos</strong>:</p>
+<ul>
+<li>Tipos numéricos: valores enteros, números en coma flotante y de precisión arbitraria. El tipo <code>serial</code> es un entero autoincremental.</li>
+<li>Tipos de fecha y hora: <code>date</code>, <code>time</code>, <code>timestamp</code>, y el tipo <code>interval</code> para representar intervalos de tiempo.</li>
+<li>Tipos de cadena de caracteres: prácticamente los mismos que en cualquier BD relacional.</li>
+<li>Tipos largos: por ejemplo, el tipo <code>bytea</code>/BLOB para representar objetos binarios.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Tipo en Postgres</th>
+<th>Correspondiente en SQL estándar</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bool</code></td>
+<td><code>boolean</code></td>
+<td>Valor lógico o booleano (<code>true</code>/<code>false</code>)</td>
+</tr>
+<tr>
+<td><code>char(n)</code></td>
+<td><code>character(n)</code></td>
+<td>Cadena de caracteres de tamaño fijo</td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td><code>date</code></td>
+<td>Fecha (sin hora)</td>
+</tr>
+<tr>
+<td><code>float4</code>/<code>float8</code></td>
+<td><code>float(p)</code></td>
+<td>Número en coma flotante con precisión <em>p</em></td>
+</tr>
+<tr>
+<td><code>float8</code></td>
+<td><code>real</code>, <code>double precision</code></td>
+<td>Número en coma flotante de doble precisión</td>
+</tr>
+<tr>
+<td><code>int2</code></td>
+<td><code>smallint</code></td>
+<td>Entero de dos bytes con signo</td>
+</tr>
+<tr>
+<td><code>int4</code></td>
+<td><code>int</code>, <code>integer</code></td>
+<td>Entero de cuatro bytes con signo</td>
+</tr>
+<tr>
+<td><code>int4</code></td>
+<td><code>decimal(p,s)</code></td>
+<td>Número exacto con precisión <em>p</em> y escala <em>s</em></td>
+</tr>
+<tr>
+<td><code>int4</code></td>
+<td><code>numeric(p,s)</code></td>
+<td>Número exacto con precisión <em>p</em> y escala <em>s</em></td>
+</tr>
+<tr>
+<td><code>money</code></td>
+<td><code>decimal(9,2)</code></td>
+<td>Cantidad monetaria</td>
+</tr>
+<tr>
+<td><code>time</code></td>
+<td><code>time</code></td>
+<td>Hora en horas, minutos, segundos y centésimas</td>
+</tr>
+<tr>
+<td><code>timespan</code></td>
+<td><code>interval</code></td>
+<td>Intervalo de tiempo</td>
+</tr>
+<tr>
+<td><code>timestamp</code></td>
+<td><code>timestamp with time zone</code></td>
+<td>Fecha y hora con zona horaria</td>
+</tr>
+<tr>
+<td><code>varchar(n)</code></td>
+<td><code>character varying(n)</code></td>
+<td>Cadena de caracteres de tamaño variable</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Tipos compuestos (o estructurados)</strong>: un conjunto de valores definidos por el usuario con estructura de fila de tabla, que puede estar formado por tipos de datos distintos.</p>
+<p><strong>Tipos array</strong>: un conjunto de valores distribuidos en un vector multidimensional, con la condición de que todos sean del mismo tipo de dato (básico o compuesto). Permiten crear tablas anidadas.</p>
+<p>Declaración:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">columna</span><span class="w"> </span><span class="n">tipo</span><span class="p">[]</span><span class="w">      </span><span class="c1">-- array unidimensional</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">columna</span><span class="w"> </span><span class="n">tipo</span><span class="p">[][]</span><span class="w">    </span><span class="c1">-- array bidimensional</span>
+</code></pre></div>
+<h3 id="13-herencia">1.3 Herencia</h3>
+<p>PostgreSQL permite definir tablas que heredan de otras tablas. Las tablas derivadas heredan todos los atributos de la tabla padre, pero <strong>la herencia no es completa</strong>: no se heredan las claves primarias ni las claves externas.</p>
+<p><strong>Ejercicio 2</strong>: Realiza las siguientes actividades en pgAdmin sobre la BD Alumnos.</p>
+<ul>
+<li>Sobre la BD Alumnos, abre una pestaña Query Tool para escribir las sentencias SQL de las tareas siguientes.</li>
+<li>Crea el tipo de datos <code>direccion</code> con los siguientes campos: tipo de vía, nombre de vía, número y CP.</li>
+<li>Crea la tabla <code>personas</code> con los campos: código (autonumérico), nombre y dirección.</li>
+<li>Crea las tablas <code>alumnos</code> y <code>profesores</code> que heredan de <code>personas</code>. <code>alumnos</code> tendrá además el campo <code>fechaM</code> (fecha de matrícula) y <code>profesores</code> el campo <code>especialidad</code>.</li>
+<li>Inserta un par de alumnos en la tabla <code>alumnos</code> y un par de profesores en la tabla <code>profesores</code>.</li>
+<li>Crea la tabla <code>asignaturas</code> con los campos <code>nombreC</code> (clave primaria) y <code>nombreL</code>. Inserta tres asignaturas.</li>
+</ul>
+<p>Solución de referencia (transcrita de las capturas del material original):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">-- Crear tipo de datos dirección</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">create</span><span class="w"> </span><span class="k">type</span><span class="w"> </span><span class="n">direccion</span><span class="w"> </span><span class="k">as</span><span class="p">(</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="n">tipoV</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="n">nombreV</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="n">numero</span><span class="w"> </span><span class="nb">int</span><span class="p">,</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="n">cp</span><span class="w"> </span><span class="nb">int</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">);</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="c1">-- Crear tabla personas</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">personas</span><span class="p">(</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="n">codigo</span><span class="w"> </span><span class="nb">serial</span><span class="w"> </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="p">,</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="n">nombre</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="n">direccion</span><span class="w"> </span><span class="n">direccion</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="p">);</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="c1">-- Crear tabla alumnos, hereda de personas</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">alumnos</span><span class="p">(</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">    </span><span class="n">fechaM</span><span class="w"> </span><span class="nb">date</span><span class="p">,</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">    </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="p">(</span><span class="n">codigo</span><span class="p">)</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="p">)</span><span class="k">inherits</span><span class="w"> </span><span class="p">(</span><span class="n">personas</span><span class="p">);</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="c1">-- Crear tabla profesores, hereda de personas</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">profesores</span><span class="p">(</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">    </span><span class="n">especialidad</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">    </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="p">(</span><span class="n">codigo</span><span class="p">)</span>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="p">)</span><span class="k">inherits</span><span class="w"> </span><span class="p">(</span><span class="n">personas</span><span class="p">);</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="c1">-- Insertar dos alumnos</span>
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">alumnos</span><span class="w"> </span><span class="k">values</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">    </span><span class="p">(</span><span class="k">default</span><span class="p">,</span><span class="s1">'Pepe'</span><span class="p">,(</span><span class="s1">'C/'</span><span class="p">,</span><span class="s1">'Antonio Concha'</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">10300</span><span class="p">),</span><span class="s1">'2000-02-25'</span><span class="p">),</span>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="w">    </span><span class="p">(</span><span class="k">default</span><span class="p">,</span><span class="s1">'Luisa'</span><span class="p">,(</span><span class="s1">'Avda'</span><span class="p">,</span><span class="s1">'de Cáceres'</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">10300</span><span class="p">),</span><span class="s1">'1989-06-12'</span><span class="p">);</span>
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="c1">-- Insertar dos profesores</span>
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">profesores</span><span class="w"> </span><span class="k">values</span>
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="w">    </span><span class="p">(</span><span class="k">default</span><span class="p">,</span><span class="s1">'Jorge'</span><span class="p">,(</span><span class="s1">'C/'</span><span class="p">,</span><span class="s1">'Extremadura'</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">10300</span><span class="p">),</span><span class="s1">'Bases de datos'</span><span class="p">),</span>
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a><span class="w">    </span><span class="p">(</span><span class="k">default</span><span class="p">,</span><span class="s1">'Maria'</span><span class="p">,(</span><span class="s1">'Avda'</span><span class="p">,</span><span class="s1">'Ronda Sur'</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">10300</span><span class="p">),</span><span class="s1">'Programación'</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="14-jdbc">1.4 JDBC</h3>
+<p>El acceso desde Java a PostgreSQL se realiza a través de JDBC, usando el driver añadido vía Maven en el apartado 1.1.</p>
+<p>Desde JDBC 4.0, <strong>no es necesario cargar el driver manualmente con <code>Class.forName(...)</code></strong>: el driver se registra automáticamente (mediante <code>ServiceLoader</code>) siempre que esté en el classpath. Basta con abrir la conexión directamente:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">Connection</span><span class="w"> </span><span class="n">conexion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DriverManager</span><span class="p">.</span><span class="na">getConnection</span><span class="p">(</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">        </span><span class="s">"jdbc:postgresql://localhost:5432/Alumnos"</span><span class="p">,</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">        </span><span class="n">usuario</span><span class="p">,</span><span class="w"> </span><span class="n">contrasenya</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="c1">// ... trabajar con la conexión ...</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">SQLException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Importante</strong>: no escribas el usuario y la contraseña directamente en el código fuente (como <code>"postgres"</code> / <code>"root"</code> en el material original). En un proyecto real deben venir de un fichero de configuración externo o de variables de entorno, para no exponer credenciales en el repositorio. Además, usa siempre <code>try-with-resources</code> para que la conexión se cierre automáticamente aunque se produzca una excepción.</p>
+</blockquote>
+<p>El resto del manejo de <code>Statement</code>/<code>PreparedStatement</code>/<code>ResultSet</code> es el mismo que se estudió en el Tema 2. Lo específico de PostgreSQL es cómo se recuperan, insertan y modifican los <strong>tipos de datos compuestos</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">// Recuperar los campos de un tipo compuesto</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">ResultSet</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sentencia</span><span class="p">.</span><span class="na">executeQuery</span><span class="p">(</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="s">"select codigo, nombre, (direccion).tipov, (direccion).nombrev, "</span><span class="w"> </span><span class="o">+</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="s">"(direccion).numero, (direccion).cp from personas order by codigo"</span><span class="p">);</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="c1">// Insertar un tipo compuesto</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="n">PreparedStatement</span><span class="w"> </span><span class="n">sentencia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conexion</span><span class="p">.</span><span class="na">prepareStatement</span><span class="p">(</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="s">"insert into alumnos values(default,?,(?,?,?,?),?)"</span><span class="p">);</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="c1">// Modificar un tipo compuesto</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="n">PreparedStatement</span><span class="w"> </span><span class="n">sentencia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conexion</span><span class="p">.</span><span class="na">prepareStatement</span><span class="p">(</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">    </span><span class="s">"update alumnos set direccion = (?,?,?,?) where codigo = ?"</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>Ejercicio 3</strong>:</p>
+<ul>
+<li>Realiza un proyecto Java en el que haya una clase para cada tabla de la BD, otra para el tipo de datos compuesto y otra para realizar el acceso a los datos. Crea métodos para mostrar los objetos.</li>
+<li>Realiza en el paquete por defecto un programa que permita: mostrar alumnos, mostrar profesores, insertar alumno, mostrar personas, modificar la dirección de un alumno y borrar un alumno.</li>
+</ul>
+<h3 id="15-tipos-array">1.5 Tipos Array</h3>
+<p>PostgreSQL permite utilizar estructuras de array como campos de tablas, incluyendo arrays multidimensionales.</p>
+<p>Para acceder desde Java a este tipo de datos se utiliza el tipo <code>java.sql.Array</code>. Ejemplo para recuperar un array bidimensional de un <code>ResultSet</code> llamado <code>resultado</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">Array</span><span class="w"> </span><span class="n">resul</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">resultado</span><span class="p">.</span><span class="na">getArray</span><span class="p">(</span><span class="n">posicion</span><span class="p">);</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">String</span><span class="o">[][]</span><span class="w"> </span><span class="n">fila</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="o">[][]</span><span class="p">)</span><span class="w"> </span><span class="n">resul</span><span class="p">.</span><span class="na">getArray</span><span class="p">();</span>
+</code></pre></div>
+<p>Insertar y actualizar un campo de este tipo:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1">// Insertar una nota (array bidimensional)</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">PreparedStatement</span><span class="w"> </span><span class="n">sentencia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conexion</span><span class="p">.</span><span class="na">prepareStatement</span><span class="p">(</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="s">"insert into notas values (?,?,array[array[?,?]])"</span><span class="p">);</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="c1">// Añadir una nota al array de notas</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="n">PreparedStatement</span><span class="w"> </span><span class="n">sentencia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conexion</span><span class="p">.</span><span class="na">prepareStatement</span><span class="p">(</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="s">"update notas set notas = array_cat(notas, array[?,?]::text[][]) "</span><span class="w"> </span><span class="o">+</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="s">"where alumno = ? and asig = ?"</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>Ejercicio 4</strong>: Desde pgAdmin, crea la tabla <code>notas</code> (alumno, asignatura, notas) con las claves externas correspondientes a alumno y asignatura. El campo notas será un array bidimensional de <code>String</code>, donde cada fila del array almacena la fecha del examen y la nota. Inserta dos notas en dos alumnos distintos.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1">-- Creamos la tabla notas</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">notas</span><span class="p">(</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="n">alumno</span><span class="w"> </span><span class="nb">int</span><span class="p">,</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="n">asig</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="n">notas</span><span class="w"> </span><span class="nb">text</span><span class="p">[][],</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="p">(</span><span class="n">alumno</span><span class="p">,</span><span class="w"> </span><span class="n">asig</span><span class="p">),</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">    </span><span class="k">foreign</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="p">(</span><span class="n">alumno</span><span class="p">)</span><span class="w"> </span><span class="k">references</span><span class="w"> </span><span class="n">alumnos</span><span class="p">(</span><span class="n">codigo</span><span class="p">),</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">    </span><span class="k">foreign</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="p">(</span><span class="n">asig</span><span class="p">)</span><span class="w"> </span><span class="k">references</span><span class="w"> </span><span class="n">asignaturas</span><span class="p">(</span><span class="n">nombreC</span><span class="p">)</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="p">);</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="c1">-- Insertamos datos en notas</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">notas</span><span class="w"> </span><span class="k">values</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">    </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">'BD'</span><span class="p">,</span><span class="nb">array</span><span class="p">[</span><span class="nb">array</span><span class="p">[</span><span class="s1">'2017-01-01'</span><span class="p">,</span><span class="s1">'8'</span><span class="p">],</span><span class="nb">array</span><span class="p">[</span><span class="s1">'2017-02-01'</span><span class="p">,</span><span class="s1">'9'</span><span class="p">]]),</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="w">    </span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">'BD'</span><span class="p">,</span><span class="nb">array</span><span class="p">[</span><span class="nb">array</span><span class="p">[</span><span class="s1">'2017-01-01'</span><span class="p">,</span><span class="s1">'5'</span><span class="p">],</span><span class="nb">array</span><span class="p">[</span><span class="s1">'2017-02-01'</span><span class="p">,</span><span class="s1">'6'</span><span class="p">]]);</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Corrección</strong>: en el material original, la clave externa de <code>asig</code> referenciaba una tabla llamada <code>asig</code>, que no existe (la tabla se llama <code>asignaturas</code>, con clave primaria <code>nombreC</code>, según el propio enunciado del Ejercicio 2). Se ha corregido a <code>references asignaturas(nombreC)</code>.</p>
+</blockquote>
+<p><strong>Ejercicio 5</strong>: Crea las clases necesarias para trabajar con la tabla <code>notas</code>. Realiza un programa que permita:</p>
+<ul>
+<li>Mostrar las notas de todos los alumnos.</li>
+<li>Mostrar las notas de un alumno.</li>
+<li>Poner nota a un alumno en un examen. Hay que controlar si ya hay alguna nota para el alumno en esa asignatura: si existe, hay que hacer un <code>update</code>; si no, un <code>insert</code>.</li>
+</ul>
+<h3 id="16-funciones-almacenadas-en-el-sgbd">1.6 Funciones almacenadas en el SGBD</h3>
+<p>Existen 4 tipos de funciones en el gestor de BD:</p>
+<ul>
+<li>Escritas en SQL.</li>
+<li>Escritas en PL/pgSQL.</li>
+<li>Funciones internas del sistema.</li>
+<li>Funciones escritas en C.</li>
+</ul>
+<p>Sintaxis para crear una función en SQL:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">FUNCTION</span><span class="w"> </span><span class="n">nombreF</span><span class="p">(</span><span class="n">tipo_param1</span><span class="p">,</span><span class="w"> </span><span class="n">tipo_param2</span><span class="p">)</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">RETURNS</span><span class="w"> </span><span class="n">tipo</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="k">AS</span><span class="w"> </span><span class="err">$$</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="n">sentenciasSQL</span><span class="p">;</span><span class="w"> </span><span class="p">...;</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="err">$$</span><span class="w"> </span><span class="k">LANGUAGE</span><span class="w"> </span><span class="k">SQL</span><span class="p">;</span>
+</code></pre></div>
+<p>Los parámetros pueden ser de cualquier tipo admitido por el gestor (básico, compuesto, array o combinaciones). El tipo devuelto puede ser básico, array o compuesto.</p>
+<p>Para referenciar un parámetro se usa <code>$pos</code>, donde <em>pos</em> es la posición del parámetro en la definición de la función, empezando en 1.</p>
+<p>Se devuelve el resultado de la última consulta de la función. La forma de llamarla desde Java es la misma vista en el Tema 2.</p>
+<h3 id="17-json-jsonb-la-alternativa-moderna-nuevo">1.7 JSON / JSONB: la alternativa moderna <em>(Nuevo)</em></h3>
+<p>Además de los tipos compuestos y array vistos anteriormente, PostgreSQL ofrece desde hace años los tipos <code>json</code> y, sobre todo, <strong><code>jsonb</code></strong> (JSON en formato binario, indexable), que hoy en día son la forma más habitual de almacenar datos semiestructurados dentro de una BD relacional/objeto-relacional, especialmente cuando la estructura puede variar entre registros.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">producto</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">serial</span><span class="w"> </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="p">,</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="n">nombre</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="n">atributos</span><span class="w"> </span><span class="n">jsonb</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="p">);</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">producto</span><span class="w"> </span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="n">atributos</span><span class="p">)</span><span class="w"> </span><span class="k">values</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">    </span><span class="p">(</span><span class="s1">'Portátil'</span><span class="p">,</span><span class="w"> </span><span class="s1">'{"marca": "Dell", "ram_gb": 16, "garantia_meses": 24}'</span><span class="p">);</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="c1">-- Consultar un campo del JSON</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="k">select</span><span class="w"> </span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="n">atributos</span><span class="o">-&gt;&gt;</span><span class="s1">'marca'</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">marca</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="k">from</span><span class="w"> </span><span class="n">producto</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="k">where</span><span class="w"> </span><span class="p">(</span><span class="n">atributos</span><span class="o">-&gt;&gt;</span><span class="s1">'ram_gb'</span><span class="p">)::</span><span class="nb">int</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">16</span><span class="p">;</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="c1">-- Comprobar si el JSON contiene una estructura</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">producto</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">atributos</span><span class="w"> </span><span class="o">@&gt;</span><span class="w"> </span><span class="s1">'{"marca": "Dell"}'</span><span class="p">;</span>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="c1">-- Indexar el campo jsonb para acelerar las consultas</span>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="k">create</span><span class="w"> </span><span class="k">index</span><span class="w"> </span><span class="n">idx_producto_atributos</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">producto</span><span class="w"> </span><span class="k">using</span><span class="w"> </span><span class="n">gin</span><span class="w"> </span><span class="p">(</span><span class="n">atributos</span><span class="p">);</span>
+</code></pre></div>
+<p>Frente a los tipos compuestos vistos en 1.2 (con estructura fija definida mediante <code>CREATE TYPE</code>), <code>jsonb</code> permite estructuras flexibles, es ideal para datos que varían de un registro a otro, y se puede indexar eficientemente con índices <code>GIN</code>. Es la vía recomendada hoy en día cuando se necesita ese tipo de flexibilidad dentro de PostgreSQL, en lugar de modelar tipos compuestos nuevos para cada caso.</p>
+<hr />
+<h2 id="2-bases-de-datos-orientadas-a-objetos">2. Bases de Datos Orientadas a Objetos</h2>
+<p>Las BDOO soportan el paradigma orientado a objetos almacenando métodos y datos. Los datos se almacenan como objetos. Cada objeto posee un identificador único, el <strong>OID</strong>, que no es modificable por el usuario.</p>
+<p>Cada objeto define atributos, métodos y la interfaz de acceso a él.</p>
+<p><strong>ODMG</strong> (Object Database Management Group) es un estándar de SGBDOO creado por un grupo de fabricantes de BD que propone:</p>
+<ul>
+<li>Un modelo de objetos.</li>
+<li>Un lenguaje de definición de objetos: ODL.</li>
+<li>Un lenguaje de consulta de objetos: OQL.</li>
+<li>Conexión con lenguajes de programación como C++ o Java.</li>
+</ul>
+<blockquote>
+<p><strong>Nota de actualización</strong>: el estándar ODMG dejó de evolucionar hace más de 20 años y, en la práctica, el hueco que pretendía cubrir (persistencia de objetos sin desfase objeto-relacional) lo ocupan hoy herramientas muy distintas: por un lado el <strong>mapeo objeto-relacional con JPA/Hibernate</strong> (Tema 3), y por otro las <strong>bases de datos de documentos</strong> como MongoDB (Tema 3), ambas con soporte y comunidad activos.</p>
+</blockquote>
+<p>Ejemplos de SGBDOO citados históricamente:</p>
+<ul>
+<li>DB4O</li>
+<li>NeoDatis</li>
+</ul>
+<blockquote>
+<p>⚠️ <strong>Importante</strong>: tanto <strong>DB4O</strong> como <strong>NeoDatis</strong> son proyectos <strong>descontinuados</strong> (DB4O dejó de mantenerse en 2014, tras ser adquirido por Versant/Actian; NeoDatis no tiene versiones desde alrededor de 2010). No tienen soporte, no reciben parches de seguridad y su compatibilidad con versiones recientes del JDK no está garantizada. El apartado siguiente se mantiene por su <strong>valor didáctico</strong>, para entender cómo funciona una BD orientada a objetos "pura" (sin desfase objeto-relacional, con OID y consultas sobre objetos en lugar de SQL), pero <strong>no se recomienda su uso en proyectos reales</strong>. Como alternativa activa y mantenida que resuelve una necesidad similar (persistencia embebida de objetos en Java/Kotlin), se puede consultar <strong>ObjectBox</strong>.</p>
+</blockquote>
+<h3 id="21-db4o-database-for-objects">2.1 DB4O (Database for Objects)</h3>
+<p>Es un motor de BD orientado a objetos para Java y .NET. No existe desfase objeto-relacional, ya que almacena objetos directamente.</p>
+<p>No utiliza SQL: en su lugar se trabaja con métodos sobre el propio objeto.</p>
+<p>La BD se almacena en un único fichero con extensión <code>.yap</code>.</p>
+<h3 id="22-instalacion">2.2 Instalación</h3>
+<p>Pasos de instalación de DB4O (contenido histórico; el enlace de descarga original, alojado en Dropbox, puede no estar ya disponible):</p>
+<ol>
+<li>Descargar la librería <code>db4o-8.0.276.16149-java.zip</code> (históricamente distribuida fuera de un repositorio oficial de paquetes, lo cual es en sí mismo otro indicio de que el proyecto está abandonado).</li>
+<li>Descomprimir la librería.</li>
+</ol>
+<p>Instalación del visor de BD, <strong>Object Manager Enterprise (OME)</strong>, como plugin de Eclipse:</p>
+<ol>
+<li>Descomprimir la carpeta <code>db4o/ome/ObjectManagerEnterprise-Java-8.0.0.zip</code>.</li>
+<li>Desde Eclipse: <em>Help → Install New Software → Add → Local →</em> (carpeta anterior).</li>
+<li>Para abrir el visor en Eclipse: <em>Window → Perspective → Open Perspective → Other → OME</em>.</li>
+</ol>
+<h3 id="23-acceso-a-la-bd-desde-java">2.3 Acceso a la BD desde Java</h3>
+<ul>
+<li>Añadir la librería <code>db4o-8.0.276.16149-all-java5.jar</code> al proyecto.</li>
+<li>El paquete usado es <code>com.db4o</code>.</li>
+<li>Crear un objeto <code>ObjectContainer</code>; si la BD no existe, se crea automáticamente:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">ObjectContainer</span><span class="w"> </span><span class="n">bd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Db4oEmbedded</span><span class="p">.</span><span class="na">openFile</span><span class="p">(</span><span class="s">"Supermercado.yap"</span><span class="p">);</span>
+</code></pre></div>
+<ul>
+<li>Para cerrar la BD se usa el método <code>close()</code> de <code>ObjectContainer</code>.</li>
+</ul>
+<h3 id="24-operaciones-crud">2.4 Operaciones CRUD</h3>
+<p>Para realizar operaciones CRUD se utilizan los siguientes métodos:</p>
+<p><strong>Consulta — todos los registros de una clase:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">Clase</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Clase</span><span class="p">();</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">ObjectSet</span><span class="o">&lt;</span><span class="n">Clase</span><span class="o">&gt;</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conexion</span><span class="p">.</span><span class="na">queryByExample</span><span class="p">(</span><span class="n">o</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>Consulta — por el valor concreto de uno o varios atributos:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">Clase</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Clase</span><span class="p">(</span><span class="n">param1</span><span class="p">,</span><span class="w"> </span><span class="n">param2</span><span class="p">,</span><span class="w"> </span><span class="p">...);</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">ObjectSet</span><span class="o">&lt;</span><span class="n">Clase</span><span class="o">&gt;</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conexion</span><span class="p">.</span><span class="na">queryByExample</span><span class="p">(</span><span class="n">o</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>Inserción:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">conexion</span><span class="p">.</span><span class="na">store</span><span class="p">(</span><span class="n">objeto</span><span class="p">);</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">conexion</span><span class="p">.</span><span class="na">commit</span><span class="p">();</span>
+</code></pre></div>
+<p><strong>Modificación:</strong> se recupera el objeto mediante una consulta, se modifica, y:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">conexion</span><span class="p">.</span><span class="na">store</span><span class="p">(</span><span class="n">objeto</span><span class="p">);</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="n">conexion</span><span class="p">.</span><span class="na">commit</span><span class="p">();</span>
+</code></pre></div>
+<p><strong>Borrado:</strong> se recupera el objeto mediante una consulta, y:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">bd</span><span class="p">.</span><span class="na">delete</span><span class="p">(</span><span class="n">objeto</span><span class="p">);</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="n">conexion</span><span class="p">.</span><span class="na">commit</span><span class="p">();</span>
+</code></pre></div>
+<p><strong>Ejercicio 6</strong>: Crea un nuevo proyecto llamado <code>Unidad5_bd4o</code>. Crea la clase <code>Producto</code> con constructor sin parámetros y otro solo con el código. Atributos: código (<code>p001</code>, <code>p002</code>, <code>a001</code>...), nombre, tipo (lácteo, perfumería, panadería...), precio y stock.</p>
+<p>Crea una clase <code>Modelo</code> para manejar la BD.</p>
+<p>Realiza un programa <code>Ejercicio6</code> que cree la BD DB4O llamada <code>supermercado</code> (si no existe) y permita insertar productos (tantos como quiera el usuario), comprobando antes de insertar que no exista ya un producto con el mismo código.</p>
+<p>Abre OME y visualiza los productos creados: conéctate a la BD, busca las clases que hay y usa el botón derecho → <em>View All Objects</em>.</p>
+<h3 id="25-consultas">2.5 Consultas</h3>
+<p>Existen tres tipos de consultas en DB4O:</p>
+<ul>
+<li><strong>QBE</strong>: Query By Example.</li>
+<li><strong>NQ</strong>: Native Queries.</li>
+<li><strong>SODA</strong>: Soda Query API (API de más bajo nivel, no se desarrolla en este tema).</li>
+</ul>
+<h4 id="qbe-query-by-example">QBE (Query By Example)</h4>
+<p>Se crea un prototipo del objeto que se desea recuperar. DB4O recupera todos los objetos que contengan el mismo valor en los atributos no nulos del prototipo.</p>
+<p>Si el objeto prototipo está vacío, se recuperan todos los objetos de esa clase.</p>
+<p>No se pueden utilizar operadores como <code>AND</code>, <code>OR</code> o <code>NOT</code>.</p>
+<p>El resultado se devuelve en un objeto <code>ObjectSet</code>, que se recorre así:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">resultado</span><span class="p">.</span><span class="na">hasNext</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">    </span><span class="n">Clase</span><span class="w"> </span><span class="n">objeto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Clase</span><span class="p">)</span><span class="w"> </span><span class="n">resultado</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="p">}</span>
+</code></pre></div>
+<p>El número de registros seleccionados está en <code>resultado.size()</code>.</p>
+<p><strong>Ejercicio 7</strong>: Realiza un programa que muestre los productos de un tipo que se pide por parámetro. Si el usuario introduce <code>*</code> como tipo de producto, se mostrarán todos los productos.</p>
+<p><strong>Ejercicio 8</strong>: Realiza un programa que muestre todos los productos y permita modificar el stock o borrar un producto cuyo código se pide por parámetro.</p>
+<h4 id="queries-nativas">Queries Nativas</h4>
+<p>Es el tipo de consulta más usado, ya que permite establecer condiciones con más tipos de operadores.</p>
+<p>Para establecer una o varias condiciones hay que redefinir el método <code>match</code> de la clase <code>Predicate</code>. Se seleccionan los objetos que pasen el chequeo del método (devuelvan <code>true</code>).</p>
+<p>Ejemplo: obtener los productos cuyo precio es mayor de 10 €:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">ObjectSet</span><span class="o">&lt;</span><span class="n">Producto</span><span class="o">&gt;</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conexion</span><span class="p">.</span><span class="na">query</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Predicate</span><span class="o">&lt;</span><span class="n">Producto</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">match</span><span class="p">(</span><span class="n">Producto</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="na">getPrecio</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="p">});</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">res</span><span class="p">.</span><span class="na">hasNext</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">    </span><span class="n">Producto</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">res</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">    </span><span class="n">p</span><span class="p">.</span><span class="na">mostrar</span><span class="p">();</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Nota</strong>: esta API con clases anónimas es anterior a las lambdas de Java 8; es parte de por qué resulta hoy "antigua" en estilo, además de en mantenimiento.</p>
+</blockquote>
+<p><strong>Ejercicio 9</strong>: Realiza un programa que permita mostrar los productos según los siguientes criterios:</p>
+<ul>
+<li>Que el stock esté dentro de un rango que se pide por parámetro.</li>
+<li>Que el nombre o el precio coincidan con lo que se pide por parámetro.</li>
+<li>Que el nombre contenga los caracteres de una cadena que se pide por parámetro.</li>
+</ul>
+<h3 id="26-relaciones-entre-objetos">2.6 Relaciones entre Objetos</h3>
+<p>DB4O permite crear relaciones entre objetos cuando un atributo de una clase es un objeto de otra clase, o cuando un atributo de una clase es un array/lista de objetos de otra clase. Se realiza con el tipo <code>java.util.List</code>.</p>
+<p>Cuando existen relaciones, es posible elegir qué ocurre con las modificaciones o borrados del objeto padre. Si se activa el comportamiento en <strong>cascada</strong>, los cambios se propagan también a los objetos hijos — <strong>esto es peligroso</strong>, ya que puede borrar en cadena todos los objetos referenciados sin previo aviso. La configuración se realiza al abrir la conexión:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kd">public</span><span class="w"> </span><span class="nf">Modelo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">        </span><span class="n">EmbeddedConfiguration</span><span class="w"> </span><span class="n">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Db4oEmbedded</span><span class="p">.</span><span class="na">newConfiguration</span><span class="p">();</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">        </span><span class="n">config</span><span class="p">.</span><span class="na">common</span><span class="p">().</span><span class="na">objectClass</span><span class="p">(</span><span class="n">Producto</span><span class="p">.</span><span class="na">class</span><span class="p">).</span><span class="na">cascadeOnUpdate</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">        </span><span class="n">config</span><span class="p">.</span><span class="na">common</span><span class="p">().</span><span class="na">objectClass</span><span class="p">(</span><span class="n">Producto</span><span class="p">.</span><span class="na">class</span><span class="p">).</span><span class="na">cascadeOnDelete</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">        </span><span class="n">conexion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Db4oEmbedded</span><span class="p">.</span><span class="na">openFile</span><span class="p">(</span><span class="n">config</span><span class="p">,</span><span class="w"> </span><span class="s">"supermercado.yap"</span><span class="p">);</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">        </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Error al conectar con la BD"</span><span class="p">);</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Corrección</strong>: el ejemplo original de este apartado (recuperado de una captura del documento) usaba <code>Habitacion.class</code> y el fichero <code>"hotel.yap"</code>, de un dominio distinto al resto del tema (hotel, en vez de producto/cliente/compra). Se ha sustituido por un ejemplo coherente con el dominio <code>Producto</code>/<code>Cliente</code>/<code>Compra</code> usado en el resto del tema. Se recomienda activar <code>cascadeOnDelete</code> solo cuando se tenga total seguridad de que es el comportamiento deseado, dado el riesgo de borrados en cadena no intencionados.</p>
+</blockquote>
+<p><strong>Ejercicio 10</strong>: Crea la clase <code>Cliente</code> (constructor con el NIF):</p>
+<ul>
+<li><code>nif</code>: no puede repetirse — comprobar antes de insertar.</li>
+<li><code>nombre</code>.</li>
+</ul>
+<p>Crea la clase <code>Compra</code> (constructor con el código):</p>
+<ul>
+<li><code>codigo</code>: entero que debe funcionar como autonumérico (ver más abajo cómo).</li>
+<li><code>fecha</code>.</li>
+<li><code>cliente</code>.</li>
+</ul>
+<p>Crea una clase <code>CodigoCompra</code> que permita generar el código de la compra de forma autonumérica: la idea es que haya un objeto que guarde el último valor de código de compra usado.</p>
+<p>Realiza un programa que permita:</p>
+<ul>
+<li>Crear un cliente.</li>
+<li>Crear una compra con la fecha del día para un cliente existente.</li>
+<li>Ver las compras realizadas.</li>
+<li>Ver las compras de un cliente cuyo NIF se pasa por parámetro.</li>
+<li>Cambiar el NIF de un cliente, con o sin compras.</li>
+<li>Borrar una compra.</li>
+</ul>
+<p><strong>Ejercicio 11</strong>: Crea la clase <code>Linea</code>, que representa las líneas de una compra (constructor con todos los atributos):</p>
+<ul>
+<li><code>compra</code>.</li>
+<li><code>producto</code>.</li>
+<li><code>cantidad</code>.</li>
+<li><code>importe</code> (cantidad × precio del producto).</li>
+</ul>
+<p>Modifica la clase <code>Compra</code> para que tenga un atributo con las líneas de cada compra.</p>
+<p>Realiza un programa en Java que permita:</p>
+<ul>
+<li>Crear una compra con tantos productos como desee el usuario.</li>
+<li>Mostrar compras (incluyendo sus líneas).</li>
+<li>Modificar una compra para añadir una línea.</li>
+<li>Modificar una compra para borrar una línea (pidiendo el código de compra y el código de producto; se borrarán todas las líneas con ese producto).</li>
+<li>Borrar una compra, borrando también sus líneas.</li>
+</ul>
+<hr />
+<h2 id="3-practica-final-tema-5">3. Práctica final: Tema 5</h2>
+<blockquote>
+<p>Se ha corregido el título original del apartado, que decía erróneamente "PRÁCTICA FINAL TEMA4".</p>
+</blockquote>
+<p>Se desea poner en funcionamiento una herramienta de comunicación para los empleados de una empresa, que permita enviar mensajes a un grupo de empleados que pertenecen a un departamento. Se encarga realizar la base de datos de esta aplicación.</p>
+<p><strong>De cada empleado se almacena:</strong></p>
+<ul>
+<li>Nº de empleado (autonumérico). No puede haber dos empleados con el mismo número de empleado.</li>
+<li>Apellidos.</li>
+<li>Nombre.</li>
+<li>Datos de nómina.</li>
+<li>Fecha de contratación.</li>
+<li>% de retención de IRPF.</li>
+</ul>
+<p><strong>De cada grupo se almacena:</strong></p>
+<ul>
+<li>Nombre del grupo: no puede haber dos grupos con el mismo nombre.</li>
+<li>Lista de números de empleado de ese grupo.</li>
+</ul>
+<p><strong>De cada mensaje se almacena:</strong></p>
+<ul>
+<li>Id (autonumérico, no se puede repetir).</li>
+<li>Empleado remitente.</li>
+<li>Grupo destinatario.</li>
+<li>Texto del mensaje.</li>
+</ul>
+<p><strong>Tareas:</strong></p>
+<ol>
+<li>Realiza en pgAdmin la base de datos descrita anteriormente.</li>
+<li>Crea un programa que permita:</li>
+<li>Crear empleados.</li>
+<li>Mostrar empleados.</li>
+<li>Crear grupo (inicialmente con la lista de empleados vacía).</li>
+<li>Añadir empleados al grupo.</li>
+<li>Mostrar grupo (información del grupo y de sus empleados).</li>
+<li>Crear mensaje.</li>
+<li>Mostrar todos los mensajes enviados.</li>
+<li>Mostrar los mensajes de un empleado que se pasa por parámetro, tanto los recibidos como los enviados.</li>
+<li>Mostrar el número de mensajes enviados por cada empleado.</li>
+<li>Borrar un grupo (se borrarán también los mensajes enviados a ese grupo).</li>
+<li>Realiza un programa que permita crear en DB4O una base de datos importando los datos de la BD de Postgres.</li>
+<li>Crea un programa que, utilizando la BD DB4O, permita realizar las mismas acciones descritas en el punto 2 de esta práctica.</li>
+</ol>
+<hr />
+<h2 id="4-glosario">4. Glosario</h2>
+<table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SGBDOR</td>
+<td>Sistema Gestor de BD Objeto-Relacional</td>
+</tr>
+<tr>
+<td>SGBDOO</td>
+<td>Sistema Gestor de BD Orientada a Objetos</td>
+</tr>
+<tr>
+<td>OID</td>
+<td>Object IDentifier: identificador único e inmutable de un objeto en una BDOO</td>
+</tr>
+<tr>
+<td>ODMG</td>
+<td>Object Database Management Group: estándar (hoy obsoleto) para SGBDOO</td>
+</tr>
+<tr>
+<td>ODL</td>
+<td>Object Definition Language, del estándar ODMG</td>
+</tr>
+<tr>
+<td>OQL</td>
+<td>Object Query Language, del estándar ODMG</td>
+</tr>
+<tr>
+<td>QBE</td>
+<td>Query By Example: consulta mediante un objeto-prototipo</td>
+</tr>
+<tr>
+<td><code>jsonb</code></td>
+<td>Tipo de dato de PostgreSQL para almacenar JSON en formato binario indexable</td>
+</tr>
+<tr>
+<td>Tipo compuesto</td>
+<td>Tipo de dato definido por el usuario, con estructura de fila (PostgreSQL)</td>
+</tr>
+<tr>
+<td>Herencia de tablas</td>
+<td>Mecanismo de PostgreSQL por el que una tabla hereda las columnas de otra (no las claves)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>IES Augustóbriga — Acceso a Datos</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "toc.integrate", "content.code.copy"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+    
+  </body>
+</html>

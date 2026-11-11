@@ -1,0 +1,1702 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://avalverdec07.github.io/ACCESO_A_DATOS_2-DAM/Tema_2_Acceso_BD_Relacionales_Conectores/">
+      
+      
+        <link rel="prev" href="../Tema_1_Gestion_de_Ficheros_y_Directorios/">
+      
+      
+        <link rel="next" href="../Tema_3_Herramientas_ORM/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
+    
+    
+      
+        <title>UD2 - Conectores BD (JDBC) - Acceso a Datos 2º DAM</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tema-2-acceso-a-bd-relacionales-conectores" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="Acceso a Datos 2º DAM" class="md-header__button md-logo" aria-label="Acceso a Datos 2º DAM" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Acceso a Datos 2º DAM
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              UD2 - Conectores BD (JDBC)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/avalverdec07/ACCESO_A_DATOS_2-DAM" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    avalverdec07/ACCESO_A_DATOS_2-DAM
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Acceso a Datos 2º DAM" class="md-nav__button md-logo" aria-label="Acceso a Datos 2º DAM" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Acceso a Datos 2º DAM
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/avalverdec07/ACCESO_A_DATOS_2-DAM" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    avalverdec07/ACCESO_A_DATOS_2-DAM
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidades Didácticas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unidades Didácticas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tema_1_Gestion_de_Ficheros_y_Directorios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD1 - Gestión de Ficheros
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD2 - Conectores BD (JDBC)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD2 - Conectores BD (JDBC)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#version-actualizada-jdbc-moderno-connection-pooling-seguridad-transacciones-dao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Versión actualizada (JDBC moderno, connection pooling, seguridad, transacciones, DAO)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Índice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-el-desfase-objeto-relacional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 El desfase objeto-relacional
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-gestores-embebidos-e-independientes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Gestores embebidos e independientes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-protocolos-de-acceso-a-bd-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Protocolos de acceso a BD SQL
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-conector-jdbc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 Conector JDBC
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 Conector JDBC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-clases-del-paquete-javasql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Clases del paquete java.sql
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-pasos-para-acceder-a-una-bd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Pasos para acceder a una BD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-acceso-a-bd-mysql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Acceso a BD MySQL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-connection-pooling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Connection pooling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-metadatos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 Metadatos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 Metadatos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-nivel-bd-tabla-campo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A nivel BD, tabla, campo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-nivel-de-resultado-de-consulta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A nivel de resultado de consulta
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-ejecucion-de-sentencias-dmlddl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 Ejecución de sentencias DML/DDL
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-sentencias-preparadas-y-seguridad-inyeccion-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7 Sentencias preparadas y seguridad (inyección SQL)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7 Sentencias preparadas y seguridad (inyección SQL)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-el-problema-inyeccion-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 El problema: inyección SQL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-la-solucion-preparedstatement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 La solución: PreparedStatement
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-consultas-y-tratamiento-del-resultset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8 Consultas y tratamiento del ResultSet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-ejecucion-de-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9 Ejecución de scripts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-rutinas-almacenadas-en-el-servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 Rutinas almacenadas en el servidor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-transacciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11 Transacciones
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11 Transacciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-que-es-una-transaccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 ¿Qué es una transacción?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-gestion-de-transacciones-en-jdbc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 Gestión de transacciones en JDBC
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-sqlite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12 SQLite
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-acceso-a-bd-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13 Acceso a BD Access
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-cierre-de-recursos-y-patron-dao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14 Cierre de recursos y patrón DAO
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14 Cierre de recursos y patrón DAO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#141-la-jerarquia-de-recursos-a-cerrar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.1 La jerarquía de recursos a cerrar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142-patron-dao-data-access-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.2 Patrón DAO (Data Access Object)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-ejercicio-integrador-gestion-de-un-gimnasio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15 Ejercicio integrador: gestión de un gimnasio
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-glosario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16 Glosario
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tema_3_Herramientas_ORM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD3 - Herramientas ORM (Hibernate)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tema_4_BD_OR_y_OO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD4 - Bases de Datos objeto-relacionales y orientadas a objetos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tema5_Bases_de_Datos_Documentales_Nativas.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD5 - Bases de Datos Documentales Nativas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tema6_Creacion_de_Componentes_de_AD.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD6 - Creación de Componentes_de_AD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="tema-2-acceso-a-bd-relacionales-conectores">Tema 2: Acceso a BD Relacionales (Conectores).</h1>
+<h2 id="version-actualizada-jdbc-moderno-connection-pooling-seguridad-transacciones-dao">Versión actualizada (JDBC moderno, <em>connection pooling</em>, seguridad, transacciones, DAO)</h2>
+<blockquote>
+<p>Apuntes del Tema 2, revisados e integrados con contenidos actuales de JDBC (registro automático de drivers, <em>pools</em> de conexión, prevención de inyección SQL, patrón DAO y fundamentos de transacciones).</p>
+</blockquote>
+<hr />
+<h2 id="indice">Índice</h2>
+<ol>
+<li><a href="#1-el-desfase-objeto-relacional">El desfase objeto-relacional</a></li>
+<li><a href="#2-gestores-embebidos-e-independientes">Gestores embebidos e independientes</a></li>
+<li><a href="#3-protocolos-de-acceso-a-bd-sql">Protocolos de acceso a BD SQL</a></li>
+<li><a href="#4-conector-jdbc">Conector JDBC</a></li>
+<li><a href="#41-clases-del-paquete-javasql">Clases del paquete <code>java.sql</code></a></li>
+<li><a href="#42-pasos-para-acceder-a-una-bd">Pasos para acceder a una BD</a></li>
+<li><a href="#43-acceso-a-bd-mysql">Acceso a BD MySQL</a></li>
+<li><a href="#44-connection-pooling"><em>Connection pooling</em></a></li>
+<li><a href="#5-metadatos">Metadatos</a></li>
+<li><a href="#6-ejecución-de-sentencias-dmlddl">Ejecución de sentencias DML/DDL</a></li>
+<li><a href="#7-sentencias-preparadas-y-seguridad-inyección-sql">Sentencias preparadas y seguridad (inyección SQL)</a></li>
+<li><a href="#8-consultas-y-tratamiento-del-resultset">Consultas y tratamiento del <code>ResultSet</code></a></li>
+<li><a href="#9-ejecución-de-scripts">Ejecución de scripts</a></li>
+<li><a href="#10-rutinas-almacenadas-en-el-servidor">Rutinas almacenadas en el servidor</a></li>
+<li><a href="#11-transacciones">Transacciones</a></li>
+<li><a href="#12-sqlite">SQLite</a></li>
+<li><a href="#13-acceso-a-bd-access">Acceso a BD Access</a></li>
+<li><a href="#14-cierre-de-recursos-y-patrón-dao">Cierre de recursos y patrón DAO</a></li>
+<li><a href="#15-ejercicio-integrador-gestión-de-un-gimnasio">Ejercicio integrador: gestión de un gimnasio</a></li>
+<li><a href="#16-glosario">Glosario</a></li>
+</ol>
+<hr />
+<h2 id="1-el-desfase-objeto-relacional">1 El desfase objeto-relacional</h2>
+<p>El término <strong>desfase o impedancia objeto-relacional</strong> se refiere a las dificultades técnicas que surgen cuando una base de datos relacional se usa en conjunto con un programa escrito en programación orientada a objetos (POO). Se manifiesta en varios frentes:</p>
+<table>
+<thead>
+<tr>
+<th>Problema</th>
+<th>En objetos (Java)</th>
+<th>En relacional (SQL)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lenguaje</strong></td>
+<td>El programador debe dominar POO y el lenguaje de acceso a datos a la vez</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Identidad</strong></td>
+<td>Cada objeto tiene una identidad de memoria (referencia)</td>
+<td>Cada fila se identifica por su clave primaria (un valor, no una referencia)</td>
+</tr>
+<tr>
+<td><strong>Tipos de datos</strong></td>
+<td>Tipos complejos, sin restricciones fuertes</td>
+<td>Tipos con restricciones estrictas (longitud, dominio...)</td>
+</tr>
+<tr>
+<td><strong>Herencia</strong></td>
+<td>Una clase puede heredar de otra</td>
+<td>No existe herencia nativa entre tablas</td>
+</tr>
+<tr>
+<td><strong>Relaciones/colecciones</strong></td>
+<td>Un objeto puede tener una <code>List</code> como atributo</td>
+<td>Las relaciones se representan con claves foráneas entre tablas separadas</td>
+</tr>
+<tr>
+<td><strong>Paradigma</strong></td>
+<td>Modelo de clases</td>
+<td>Modelo Entidad-Relación (tablas y tuplas)</td>
+</tr>
+</tbody>
+</table>
+<p>En el proceso de diseño y construcción del software hay que traducir el modelo orientado a objetos al modelo E/R, lo que obliga a diseñar dos representaciones distintas para la misma aplicación.</p>
+<blockquote>
+<p><strong>Analogía</strong>: es como traducir un poema entre dos idiomas con estructuras gramaticales muy distintas. Puedes traducir el significado, pero la forma nunca encaja perfectamente "palabra a palabra". En esta unidad ese "traductor" lo escribimos nosotros mismos, sentencia SQL a sentencia SQL; con un ORM (tema posterior), buena parte de esa traducción se automatiza.</p>
+<p><strong>Error común</strong>: diseñar las clases Java "calcando" mentalmente la tabla (una clase por tabla, un atributo por columna, sin más) y pensar solo en el modelo relacional al programar. Es más productivo diseñar primero el modelo de objetos que tiene sentido para la aplicación y resolver conscientemente el mapeo hacia las tablas.</p>
+</blockquote>
+<h2 id="2-gestores-embebidos-e-independientes">2 Gestores embebidos e independientes</h2>
+<p>Antes de hablar del conector, conviene distinguir dos formas de desplegar un SGBD:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Gestor embebido</th>
+<th>Gestor independiente</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Dónde se ejecuta</strong></td>
+<td>Dentro del mismo proceso que la aplicación</td>
+<td>En un servidor aparte (misma máquina u otra)</td>
+</tr>
+<tr>
+<td><strong>Ejemplos</strong></td>
+<td>SQLite, H2, Apache Derby</td>
+<td>MySQL, MariaDB, PostgreSQL, Oracle, SQL Server, Access*</td>
+</tr>
+<tr>
+<td><strong>Instalación</strong></td>
+<td>Ninguna, el fichero de BD viaja con la app</td>
+<td>Requiere instalar y administrar un servidor</td>
+</tr>
+<tr>
+<td><strong>Concurrencia multiusuario en red</strong></td>
+<td>Muy limitada o inexistente</td>
+<td>Diseñado para ello</td>
+</tr>
+<tr>
+<td><strong>Casos de uso típicos</strong></td>
+<td>Apps de escritorio/móviles, pruebas, prototipos</td>
+<td>Aplicaciones cliente-servidor, web, empresariales</td>
+</tr>
+</tbody>
+</table>
+<p>*Access no es un servidor en sentido estricto, pero funciona como fichero local igual que SQLite, por lo que se comporta como embebido a efectos prácticos.</p>
+<p><strong>Ventajas e inconvenientes</strong></p>
+<ul>
+<li><strong>Embebido</strong>: cero configuración de servidor y arranque instantáneo (✅); escalabilidad y concurrencia muy limitadas (❌).</li>
+<li><strong>Independiente</strong>: alta concurrencia, administración avanzada, replicación, copias de seguridad centralizadas (✅); requiere instalación y mantenimiento, añade latencia de red (❌).</li>
+</ul>
+<h2 id="3-protocolos-de-acceso-a-bd-sql">3 Protocolos de acceso a BD SQL</h2>
+<p>Las aplicaciones usan APIs para abrir una conexión a una BD, enviar consultas, actualizaciones y recibir resultados. Las más usadas son:</p>
+<ul>
+<li><strong>ODBC</strong> (Open Database Connectivity): conector de Microsoft, estándar para acceder a cualquier BD desde aplicaciones Windows. Complejo de usar desde Java, con problemas de seguridad, robustez y portabilidad al estar escrito en C.</li>
+<li><strong>JDBC</strong> (Java Database Connectivity): API estándar de Java (un conjunto de interfaces: <code>Connection</code>, <code>Statement</code>, <code>ResultSet</code>...) que define <em>cómo</em> debe comunicarse un programa Java con cualquier BD relacional, sin importar el fabricante. Cada SGBD proporciona su propia implementación en forma de <strong>driver</strong> (una librería <code>.jar</code>).</li>
+</ul>
+<p><img alt="Esquema JDBC: un programa Java accede mediante JDBC a Oracle, SQL Server, Sybase y MySQL" src="../out/Tema_2_imagenes/img-000.png" /></p>
+<blockquote>
+<p><strong>Analogía</strong>: JDBC es como un enchufe universal de viaje. El enchufe (la API JDBC) es siempre igual desde el punto de vista del aparato (tu programa Java), pero necesitas el adaptador correcto (el driver) según el país (el SGBD): uno para MySQL, otro para PostgreSQL, otro para SQLite... El programa apenas cambia entre un SGBD y otro; solo cambian la URL de conexión y el driver.</p>
+</blockquote>
+<h2 id="4-conector-jdbc">4 Conector JDBC</h2>
+<p>Para poder conectarse a una base de datos y lanzar consultas, una aplicación necesita un driver adecuado: un conjunto de clases que implementan los interfaces de la API JDBC y acceden a la base de datos. El conector lo proporciona el fabricante de la base de datos o bien un tercero.</p>
+<h3 id="41-clases-del-paquete-javasql">4.1 Clases del paquete <code>java.sql</code></h3>
+<p>Las clases para operar con BD a través de JDBC se encuentran en el paquete <strong>java.sql</strong>:</p>
+<ul>
+<li><strong>DriverManager</strong>: gestiona todos los drivers instalados.</li>
+<li><strong>Connection</strong>: representa una conexión a una BD.</li>
+<li><strong>DatabaseMetaData</strong>: proporciona información (metadatos) acerca de una BD.</li>
+<li><strong>Statement</strong>: ejecuta sentencias SQL sin parámetros.</li>
+<li><strong>PreparedStatement</strong>: ejecuta sentencias SQL con parámetros.</li>
+<li><strong>CallableStatement</strong>: ejecuta sentencias SQL con parámetros de e/s como procedimientos almacenados.</li>
+<li><strong>ResultSet</strong>: contiene las filas resultantes de una consulta.</li>
+<li><strong>ResultSetMetaData</strong>: obtiene información (metadatos) sobre un ResultSet.</li>
+</ul>
+<p><img alt="Diagrama de clases JDBC: DriverManager devuelve Connection, que devuelve PreparedStatement, que devuelve ResultSet; aparece también SQLException" src="../out/Tema_2_imagenes/img-001.png" /></p>
+<h3 id="42-pasos-para-acceder-a-una-bd">4.2 Pasos para acceder a una BD</h3>
+<p><img alt="Pasos: Cargar el driver JDBC del motor de la BD → Crear Conexión (Connection) → Crear Sentencia (Statement) → Ejecutar Sentencia → Recuperar el resultado (ResultSet) → Liberar Objetos" src="../out/Tema_2_imagenes/img-007.png" /></p>
+<p><strong>Ejemplo completo y actualizado</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.sql.*</span><span class="p">;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ConexionBD</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">URL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"jdbc:mysql://localhost:3306/ies?serverTimezone=Europe/Madrid"</span><span class="p">;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">USUARIO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"root"</span><span class="p">;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">CLAVE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"root"</span><span class="p">;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">        </span><span class="c1">// 1. Cargar el driver: YA NO ES NECESARIO Class.forName() (ver aviso más abajo)</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">        </span><span class="c1">// 2-6. Conexión, sentencia, ejecución, resultado y cierre, con try-with-resources</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"select * from alumnos"</span><span class="p">;</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">Connection</span><span class="w"> </span><span class="n">conexion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DriverManager</span><span class="p">.</span><span class="na">getConnection</span><span class="p">(</span><span class="n">URL</span><span class="p">,</span><span class="w"> </span><span class="n">USUARIO</span><span class="p">,</span><span class="w"> </span><span class="n">CLAVE</span><span class="p">);</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">             </span><span class="n">Statement</span><span class="w"> </span><span class="n">sentencia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conexion</span><span class="p">.</span><span class="na">createStatement</span><span class="p">();</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">             </span><span class="n">ResultSet</span><span class="w"> </span><span class="n">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sentencia</span><span class="p">.</span><span class="na">executeQuery</span><span class="p">(</span><span class="n">query</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">            </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">resultado</span><span class="p">.</span><span class="na">next</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"ID:"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">resultado</span><span class="p">.</span><span class="na">getInt</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">                        </span><span class="o">+</span><span class="w"> </span><span class="s">"\tNOMBRE:"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">resultado</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">"nombre"</span><span class="p">)</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">                        </span><span class="o">+</span><span class="w"> </span><span class="s">"\tCURSO:"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">resultado</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">SQLException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Error de acceso a la base de datos: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">        </span><span class="c1">// Connection, Statement y ResultSet se cierran automáticamente, en orden inverso</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Aviso importante — <code>Class.forName()</code> ya no es obligatorio</strong>: en versiones antiguas de JDBC (anteriores a JDBC 4.0 / Java 6, año 2006) era obligatorio escribir <code>Class.forName("com.mysql.cj.jdbc.Driver")</code> al principio del programa para forzar la carga de la clase del driver. Hoy en día los drivers modernos se registran automáticamente mediante el mecanismo <code>ServiceLoader</code> de Java, así que ese paso puede omitirse. <strong>Sigue apareciendo en mucho código y tutoriales antiguos</strong>: si lo ves, no es un error, simplemente es una precaución que ya no hace falta.</p>
+</blockquote>
+<p><strong>Anatomía de la URL de conexión</strong>: <code>jdbc:&lt;subprotocolo&gt;://&lt;host&gt;:&lt;puerto&gt;/&lt;nombre_bd&gt;?&lt;parámetros_opcionales&gt;</code>. Por ejemplo, para PostgreSQL sería <code>jdbc:postgresql://localhost:5432/ies</code>, y para SQLite (embebido, sin host ni puerto, apunta a un fichero) <code>jdbc:sqlite:alumnos.db</code>.</p>
+<h3 id="43-acceso-a-bd-mysql">4.3 Acceso a BD MySQL</h3>
+<p>Vamos a preparar el entorno para poder acceder desde los programas Java a BD MySQL con JDBC:</p>
+<ul>
+<li>Instalar <strong>Servidor MySQL</strong> (XAMPP o directamente el servidor).</li>
+<li>Instalar <strong>MySQL Workbench</strong>.</li>
+<li>Obtener el driver del conector JDBC. La forma recomendada y más portable es <strong>Maven</strong> (evita depender de rutas concretas de un PC o de un IDE):</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cm">&lt;!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j --&gt;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">&lt;dependency&gt;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&lt;groupId&gt;</span>com.mysql<span class="nt">&lt;/groupId&gt;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>mysql-connector-j<span class="nt">&lt;/artifactId&gt;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nt">&lt;version&gt;</span>8.4.0<span class="nt">&lt;/version&gt;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>
+<p>Si no se usa Maven, se puede añadir el <code>.jar</code> manualmente al <em>Build Path</em> del proyecto (<code>Project/Properties/Java Build Path/Libraries/Classpath/Add External Jar</code>):</p>
+<p><img alt="Ventana Properties del proyecto en Eclipse: Java Build Path → Libraries → Classpath → Add External JARs, con el conector MySQL añadido" src="../out/Tema_2_imagenes/img-009.png" /></p>
+<blockquote>
+<p><strong>Ejercicio 1</strong>: Crea una clase Java que gestione el acceso a los datos de la BD alumnos. Realiza un programa en Java que muestre los datos de la tabla alumnos, usando <code>try-with-resources</code>.</p>
+</blockquote>
+<h3 id="44-connection-pooling">4.4 <em>Connection pooling</em></h3>
+<p>Abrir una conexión a un SGBD independiente es una operación <strong>relativamente costosa</strong> (negociación de red, autenticación...). Si una aplicación abre y cierra una conexión nueva por cada operación, el rendimiento se resiente, sobre todo en aplicaciones con muchas peticiones concurrentes. La solución es un <strong>pool de conexiones</strong>: un conjunto de conexiones ya abiertas y "listas para usar" que se reutilizan, en lugar de crearlas y destruirlas constantemente.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">com.zaxxer.hikari.HikariConfig</span><span class="p">;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">com.zaxxer.hikari.HikariDataSource</span><span class="p">;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.sql.Connection</span><span class="p">;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.sql.SQLException</span><span class="p">;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">PoolConexiones</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">HikariDataSource</span><span class="w"> </span><span class="n">dataSource</span><span class="p">;</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">        </span><span class="n">HikariConfig</span><span class="w"> </span><span class="n">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HikariConfig</span><span class="p">();</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">        </span><span class="n">config</span><span class="p">.</span><span class="na">setJdbcUrl</span><span class="p">(</span><span class="s">"jdbc:mysql://localhost:3306/ies"</span><span class="p">);</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">        </span><span class="n">config</span><span class="p">.</span><span class="na">setUsername</span><span class="p">(</span><span class="s">"root"</span><span class="p">);</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">        </span><span class="n">config</span><span class="p">.</span><span class="na">setPassword</span><span class="p">(</span><span class="s">"root"</span><span class="p">);</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">        </span><span class="n">config</span><span class="p">.</span><span class="na">setMaximumPoolSize</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="w"> </span><span class="c1">// máximo de conexiones simultáneas en el pool</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">        </span><span class="n">dataSource</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HikariDataSource</span><span class="p">(</span><span class="n">config</span><span class="p">);</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Connection</span><span class="w"> </span><span class="nf">obtenerConexion</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">SQLException</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">dataSource</span><span class="p">.</span><span class="na">getConnection</span><span class="p">();</span><span class="w"> </span><span class="c1">// "presta" una conexión del pool</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>HikariCP</strong> es actualmente el pool de conexiones de referencia en el ecosistema Java. Para empezar, basta con entender el concepto y ver una demostración; la implementación completa puede dejarse como contenido de ampliación.</p>
+<blockquote>
+<p><strong>Analogía</strong>: es como una flota de taxis en una parada, en vez de fabricar un taxi nuevo cada vez que alguien lo necesita (crear una conexión) y "desguazarlo" al llegar (cerrarla). Los taxis (conexiones) esperan en la parada (el pool), se cogen cuando hacen falta y, al terminar el trayecto, vuelven a la parada para el siguiente cliente.</p>
+<p><strong>Error común</strong>: no cerrar nunca las conexiones obtenidas de un pool. Cuando se usa un pool, <code>close()</code> <strong>no destruye la conexión física</strong>, sino que la devuelve al pool para que otro la reutilice. Si se olvida <code>close()</code>, la conexión queda "prestada" indefinidamente y el pool acaba agotándose, aunque parezca que "no se ha cerrado nada".</p>
+</blockquote>
+<h2 id="5-metadatos">5 Metadatos</h2>
+<h3 id="a-nivel-bd-tabla-campo">A nivel BD, tabla, campo</h3>
+<p>Para obtener los metadatos de la BD utilizamos la interfaz <strong>DatabaseMetaData</strong>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">DatabaseMetaData</span><span class="w"> </span><span class="n">datos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conexion</span><span class="p">.</span><span class="na">getMetaData</span><span class="p">();</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">""</span><span class="o">+</span><span class="n">datos</span><span class="p">.</span><span class="na">getDatabaseProductName</span><span class="p">());</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">ResultSet</span><span class="w"> </span><span class="n">tablas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">datos</span><span class="p">.</span><span class="na">getTables</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">while</span><span class="p">(</span><span class="n">tablas</span><span class="p">.</span><span class="na">next</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">tablas</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="p">}</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="n">ResultSet</span><span class="w"> </span><span class="n">campos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">datos</span><span class="p">.</span><span class="na">getColumns</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="s">"libros"</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="k">while</span><span class="p">(</span><span class="n">campos</span><span class="p">.</span><span class="na">next</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"---"</span><span class="o">+</span><span class="n">campos</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="mi">4</span><span class="p">));</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="p">}</span>
+</code></pre></div>
+<p>Métodos más usados: <code>getDatabaseProductName()</code>, <code>getDriverName()</code>, <code>getUrl()</code>, <code>getUserName()</code>, <code>getTables()</code>, <code>getColumns()</code>, <code>getPrimaryKeys()</code>, <code>getImportedKeys()</code>, <code>getProcedures()</code>.</p>
+<h3 id="a-nivel-de-resultado-de-consulta">A nivel de resultado de consulta</h3>
+<p>Para obtener los metadatos de los datos devueltos en una consulta utilizamos la interfaz <strong>ResultSetMetaData</strong>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">Statement</span><span class="w"> </span><span class="n">consulta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conexion</span><span class="p">.</span><span class="na">createStatement</span><span class="p">();</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">ResultSet</span><span class="w"> </span><span class="n">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">consulta</span><span class="p">.</span><span class="na">executeQuery</span><span class="p">(</span><span class="s">"select * from libros"</span><span class="p">);</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">ResultSetMetaData</span><span class="w"> </span><span class="n">datosConsulta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">resultado</span><span class="p">.</span><span class="na">getMetaData</span><span class="p">();</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;=</span><span class="n">datosConsulta</span><span class="p">.</span><span class="na">getColumnCount</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Campo:"</span><span class="o">+</span><span class="n">datosConsulta</span><span class="p">.</span><span class="na">getColumnName</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Tipo:"</span><span class="o">+</span><span class="n">datosConsulta</span><span class="p">.</span><span class="na">getColumnTypeName</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="p">}</span>
+</code></pre></div>
+<p>Métodos más usados: <code>getColumnCount()</code>, <code>getColumnName()</code>, <code>getColumnTypeName()</code>, <code>isNullable()</code>.</p>
+<blockquote>
+<p><strong>Ejercicio 2</strong>: Utilizando la clase Alumno, realiza un programa que muestre: gestor de base de datos, nombre del driver, URL, usuario y, para cada tabla, su nombre, clave primaria, claves externas y, de cada campo, su nombre y tipo.</p>
+<p><strong>Ejercicio 3</strong>: Muestra los datos de la tabla asignatura con el número de columnas, su tipo y si admiten nulos, seguido de los datos y el número de registros.</p>
+</blockquote>
+<p><img alt="Salida esperada del Ejercicio 3: número de columnas, columnas con tipo y si admiten nulos, datos de las asignaturas y número de registros" src="../out/Tema_2_imagenes/img-010.png" /></p>
+<h2 id="6-ejecucion-de-sentencias-dmlddl">6 Ejecución de sentencias DML/DDL</h2>
+<p><code>Statement</code> sirve para sentencias <strong>sin parámetros variables</strong>, típicamente DDL (<code>CREATE</code>, <code>ALTER</code>, <code>DROP</code>). Para DML con datos que varían (por ejemplo, insertar lo que ha escrito el usuario) se debe usar <code>PreparedStatement</code> (apartado 7), tanto por seguridad como por rendimiento.</p>
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ResultSet executeQuery(String)</code></td>
+<td>Cuando la sentencia devuelve un conjunto de filas (<code>SELECT</code>)</td>
+</tr>
+<tr>
+<td><code>int executeUpdate(String)</code></td>
+<td>Cuando no devuelve filas: para DDL (<code>create</code>, <code>drop</code>, <code>alter</code>) devuelve 0; para DML (<code>insert</code>, <code>update</code>, <code>delete</code>) devuelve el número de registros afectados</td>
+</tr>
+<tr>
+<td><code>boolean execute(String)</code></td>
+<td>Para cualquier tipo de sentencia. Devuelve <code>true</code> si se obtiene un <code>ResultSet</code> y <code>false</code> en caso contrario</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Nota</strong>: <code>executeUpdate()</code> no es solo para <code>UPDATE</code>; su nombre puede despistar. Sirve para cualquier sentencia que modifique datos o estructura (<code>INSERT</code>, <code>UPDATE</code>, <code>DELETE</code>, <code>CREATE TABLE</code>...). Si se intenta usar <code>executeQuery()</code> con un <code>INSERT</code>, se obtiene una excepción.</p>
+</blockquote>
+<p><strong>Ejemplo con <code>PreparedStatement</code> y clave generada</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">insertarProducto</span><span class="p">(</span><span class="n">Connection</span><span class="w"> </span><span class="n">conexion</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">precio</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">stock</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">SQLException</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">sql</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"INSERT INTO productos (nombre, precio, stock) VALUES (?, ?, ?)"</span><span class="p">;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">PreparedStatement</span><span class="w"> </span><span class="n">ps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conexion</span><span class="p">.</span><span class="na">prepareStatement</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span><span class="w"> </span><span class="n">Statement</span><span class="p">.</span><span class="na">RETURN_GENERATED_KEYS</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">        </span><span class="n">ps</span><span class="p">.</span><span class="na">setString</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">nombre</span><span class="p">);</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">        </span><span class="n">ps</span><span class="p">.</span><span class="na">setDouble</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">precio</span><span class="p">);</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">        </span><span class="n">ps</span><span class="p">.</span><span class="na">setInt</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">stock</span><span class="p">);</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">filasAfectadas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ps</span><span class="p">.</span><span class="na">executeUpdate</span><span class="p">();</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">filasAfectadas</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SQLException</span><span class="p">(</span><span class="s">"La inserción no afectó a ninguna fila."</span><span class="p">);</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">ResultSet</span><span class="w"> </span><span class="n">clavesGeneradas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ps</span><span class="p">.</span><span class="na">getGeneratedKeys</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">clavesGeneradas</span><span class="p">.</span><span class="na">next</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="n">clavesGeneradas</span><span class="p">.</span><span class="na">getInt</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// id autogenerado</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SQLException</span><span class="p">(</span><span class="s">"No se pudo obtener el id generado."</span><span class="p">);</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Error común</strong>: concatenar directamente los valores en la cadena SQL en vez de usar parámetros (<code>"INSERT INTO productos VALUES ('" + nombre + "', ...)"</code>). Además del riesgo de inyección SQL (apartado 7), esto rompe con datos que contienen comillas simples (<code>Funda 6.1'' para móvil</code>), provocando errores de sintaxis en pleno funcionamiento.</p>
+<p><strong>Ejercicio 4</strong>: Realiza un programa que muestre un menú con las siguientes opciones:
+1. <strong>Alumnos por asignatura</strong>: mostrar nombre de alumnos, asignatura y nota de una asignatura pedida por teclado. No usar consultas con parámetros.
+2. <strong>Notas de alumno</strong>: mostrar asignatura y nota de un alumno cuyo id se pide por teclado. Usar consultas con parámetros.
+3. <strong>Alta de alumno</strong>: insértate como alumno de 2DAM.
+4. <strong>Añadir cp</strong>: añade a la tabla alumno el campo cp de tipo entero.
+5. <strong>Rellenar cp</strong>: rellena el cp de los alumnos con 10300.
+6. <strong>Añadir fecha de nacimiento</strong>: añade a la tabla alumno el campo correspondiente.
+7. <strong>Rellenar fecha de nacimiento</strong>: rellena la fecha de nacimiento de un alumno cuyo id se pide por teclado con la fecha que también se pide por teclado.</p>
+</blockquote>
+<h2 id="7-sentencias-preparadas-y-seguridad-inyeccion-sql">7 Sentencias preparadas y seguridad (inyección SQL)</h2>
+<h3 id="71-el-problema-inyeccion-sql">7.1 El problema: inyección SQL</h3>
+<p>La <strong>inyección SQL</strong> es una de las vulnerabilidades más conocidas y peligrosas en aplicaciones que acceden a bases de datos. Ocurre cuando se construye una sentencia SQL <strong>concatenando directamente</strong> una entrada proporcionada por el usuario, permitiendo que ese usuario "inyecte" código SQL no previsto.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1">// ❌ CÓDIGO VULNERABLE — NUNCA HACER ESTO</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">String</span><span class="w"> </span><span class="n">nombreBuscado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">entradaUsuario</span><span class="p">;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">String</span><span class="w"> </span><span class="n">sql</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"SELECT * FROM clientes WHERE nombre = '"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombreBuscado</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"'"</span><span class="p">;</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">Statement</span><span class="w"> </span><span class="n">st</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conexion</span><span class="p">.</span><span class="na">createStatement</span><span class="p">();</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="n">ResultSet</span><span class="w"> </span><span class="n">rs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">st</span><span class="p">.</span><span class="na">executeQuery</span><span class="p">(</span><span class="n">sql</span><span class="p">);</span>
+</code></pre></div>
+<p>Si un usuario malicioso introduce como "nombre" el valor <code>' OR '1'='1</code>, la sentencia final ejecutada sería:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">clientes</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">''</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="s1">'1'</span><span class="o">=</span><span class="s1">'1'</span>
+</code></pre></div>
+<p>Esta condición es <strong>siempre verdadera</strong>, por lo que la consulta devolvería <strong>todos los clientes</strong>, saltándose el filtro previsto. Con técnicas más avanzadas (<code>; DROP TABLE clientes; --</code>) se podrían borrar tablas completas o extraer datos confidenciales.</p>
+<blockquote>
+<p><strong>Analogía</strong>: es como si en un formulario de "escribe tu nombre" para entrar a una fiesta privada, alguien escribiera una frase que, leída literalmente por el portero, sonara como <em>"...o déjame pasar a cualquiera"</em>. El portero (la base de datos) obedece la orden que recibe si no distingue entre "el nombre del invitado" y "una instrucción".</p>
+</blockquote>
+<h3 id="72-la-solucion-preparedstatement">7.2 La solución: <code>PreparedStatement</code></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1">// ✅ CÓDIGO SEGURO</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">String</span><span class="w"> </span><span class="n">sql</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"SELECT * FROM clientes WHERE nombre = ?"</span><span class="p">;</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">PreparedStatement</span><span class="w"> </span><span class="n">ps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conexion</span><span class="p">.</span><span class="na">prepareStatement</span><span class="p">(</span><span class="n">sql</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="n">ps</span><span class="p">.</span><span class="na">setString</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">nombreBuscado</span><span class="p">);</span><span class="w"> </span><span class="c1">// el valor SIEMPRE se trata como dato, nunca como código SQL</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">ResultSet</span><span class="w"> </span><span class="n">rs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ps</span><span class="p">.</span><span class="na">executeQuery</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">        </span><span class="c1">// ...</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="p">}</span>
+</code></pre></div>
+<p><code>PreparedStatement</code> permite construir una sentencia con marcadores (<code>?</code>) que se sustituyen por datos al ejecutar la sentencia. Cada marcador tiene un número de orden empezando en 1, y solo se puede usar para datos de columnas, nunca para nombres de tablas o columnas. Se rellenan con <code>sentencia.setTipo(nº orden, valor)</code>.</p>
+<p>Con <code>PreparedStatement</code>, la sentencia se envía <strong>precompilada</strong> al SGBD con "huecos" reservados para los parámetros. El motor conoce desde el principio la estructura exacta de la consulta y trata cualquier valor proporcionado después como <strong>dato literal</strong>, nunca como código SQL ejecutable.</p>
+<p><strong><code>Statement</code> vs. <code>PreparedStatement</code></strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><code>Statement</code></th>
+<th><code>PreparedStatement</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Seguridad frente a inyección SQL</td>
+<td>Ninguna si se concatenan datos</td>
+<td>Total, por diseño</td>
+</tr>
+<tr>
+<td>Rendimiento en ejecuciones repetidas</td>
+<td>Se recompila cada vez</td>
+<td>El SGBD puede reutilizar el plan compilado</td>
+</tr>
+<tr>
+<td>Uso recomendado</td>
+<td>Solo DDL fijo, sin datos de usuario</td>
+<td>Siempre que intervenga un valor variable</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Dato importante</strong>: según los informes anuales del <strong>OWASP Top 10</strong> (catálogo de referencia mundial de riesgos de seguridad web), los fallos de inyección llevan más de una década entre las categorías de riesgo más críticas. No es una amenaza "de laboratorio": ha causado fugas de datos masivas en empresas reales. Usar <code>PreparedStatement</code> de forma sistemática es una competencia profesional de seguridad básica, no un capricho académico.</p>
+<p><strong>Error común</strong>: pensar que basta con "escapar" manualmente las comillas del texto (sustituir <code>'</code> por <code>''</code>) en vez de usar <code>PreparedStatement</code>. Es una técnica frágil que no cubre todos los vectores de ataque posibles. <code>PreparedStatement</code> no es "una opción más segura", es la solución correcta y estándar.</p>
+</blockquote>
+<h2 id="8-consultas-y-tratamiento-del-resultset">8 Consultas y tratamiento del <code>ResultSet</code></h2>
+<p>Un <code>ResultSet</code> representa la tabla de resultados de una consulta <code>SELECT</code>. Se comporta como un <strong>cursor</strong>: apunta inicialmente <em>antes</em> de la primera fila, y hay que llamar a <code>next()</code> para avanzar fila a fila (recorrido secuencial hacia adelante por defecto — el mismo concepto de acceso secuencial visto con ficheros, aplicado a un conjunto de resultados).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">procesarResultado</span><span class="p">(</span><span class="n">Statement</span><span class="w"> </span><span class="n">sentencia</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">SQLException</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="n">ResultSet</span><span class="w"> </span><span class="n">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sentencia</span><span class="p">.</span><span class="na">getResultSet</span><span class="p">();</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">resultado</span><span class="p">.</span><span class="na">next</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">        </span><span class="c1">// Recuperamos los campos de dos formas:</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">        </span><span class="c1">// resultado.getTipo(num_columna) o resultado.getTipo(nombre_columna)</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"ID:"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">resultado</span><span class="p">.</span><span class="na">getInt</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">                </span><span class="o">+</span><span class="w"> </span><span class="s">"\tNOMBRE:"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">resultado</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">"nombre"</span><span class="p">)</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">                </span><span class="o">+</span><span class="w"> </span><span class="s">"\tCURSO:"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">resultado</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Analogía</strong>: es como una cinta transportadora en una fábrica de embalaje. Los productos (filas) pasan uno a uno frente a ti; puedes inspeccionar el que tienes delante (<code>rs.getXxx()</code>), pero para ver el siguiente hay que "hacer avanzar la cinta" (<code>rs.next()</code>) — no se puede ver dos a la vez ni, en el modo por defecto, retroceder.</p>
+<p><strong>Dato importante</strong>: es posible crear un <code>ResultSet</code> <strong>desplazable</strong> (<em>scrollable</em>) y hasta <strong>actualizable</strong>, indicándolo al crear el <code>Statement</code>: <code>conexion.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE)</code>. Esto permite <code>rs.previous()</code>, <code>rs.first()</code>, <code>rs.absolute(n)</code> o incluso <code>rs.updateString(...)</code> seguido de <code>rs.updateRow()</code>. En la práctica profesional actual se usa poco (se prefiere un <code>UPDATE</code> explícito), pero conviene saber que existe, ya que recuerda al acceso aleatorio visto con ficheros.</p>
+</blockquote>
+<p><strong>Errores comunes</strong></p>
+<ol>
+<li>Llamar a un <code>getXxx()</code> antes de la primera llamada a <code>next()</code>, o después de que <code>next()</code> devuelva <code>false</code>: lanza <code>SQLException</code>.</li>
+<li>Acceder a una columna por índice incorrecto: en JDBC los índices <strong>empiezan en 1, no en 0</strong>.</li>
+<li>Asumir que el nombre de columna siempre es sensible a mayúsculas/minúsculas (depende del SGBD).</li>
+<li>Usar el <code>ResultSet</code> después de cerrar la conexión o el <code>Statement</code> que lo generó: al cerrar el recurso "padre" con <code>try-with-resources</code>, el <code>ResultSet</code> deja de ser válido.</li>
+</ol>
+<h2 id="9-ejecucion-de-scripts">9 Ejecución de scripts</h2>
+<p>Para ejecutar un script SQL en el servidor de BD hay que indicarlo en la cadena de conexión añadiendo el modificador <code>allowMultiQueries=true</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">Connection</span><span class="w"> </span><span class="n">conexion</span><span class="w"> </span><span class="o">=</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="n">DriverManager</span><span class="p">.</span><span class="na">getConnection</span><span class="p">(</span><span class="s">"jdbc:mysql://localhost/alumnos?allowMultiQueries=true"</span><span class="p">,</span><span class="s">"root"</span><span class="p">,</span><span class="s">"rosa"</span><span class="p">);</span>
+</code></pre></div>
+<p>Para cargar el script, hay que formar un String con el contenido del fichero. La forma de ejecutar la sentencia es la misma que la de las sentencias DDL. Hay que tener cuidado, ya que algunas BD no soportan la ejecución de scripts.</p>
+<blockquote>
+<p><strong>Ejercicio 5</strong>: Realiza un script que añada a la base de datos la tabla profesor y la rellene con algunos profesores. Añade también la tabla imparte, donde se refleje qué profesor imparte cada asignatura.</p>
+</blockquote>
+<h2 id="10-rutinas-almacenadas-en-el-servidor">10 Rutinas almacenadas en el servidor</h2>
+<p>Un <strong>procedimiento almacenado</strong> es un bloque de código SQL (con lógica, variables, control de flujo) que se define y se guarda <strong>dentro del propio SGBD</strong>, invocable por su nombre desde la aplicación.</p>
+<p>JDBC permite ejecutar funciones o procedimientos. La forma de ejecutarlos es diferente, ya que las funciones tienen retorno y los procedimientos no.</p>
+<p><strong>Pasos</strong></p>
+<ol>
+<li>Rellenar un String con el nombre de la rutina y los parámetros:</li>
+<li>Procedimientos: <code>"{ call nombre_proc}"</code> o <code>"{ call nombre_proc(?,?,…)}"</code></li>
+<li>Funciones: <code>"{? = call nombre_func}"</code> o <code>"{? = call nombre_func(?,?,…)}"</code></li>
+<li>Crear la sentencia: un objeto <code>CallableStatement</code>, con <code>conexion.prepareCall(consulta)</code>.</li>
+<li>Rellenar los parámetros de entrada (igual que en <code>PreparedStatement</code>).</li>
+<li>Registrar los parámetros de salida <strong>antes de ejecutar</strong>, indicando su tipo (<code>java.sql.Types.INTEGER</code>, <code>Types.VARCHAR</code>...):
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">sentencia</span><span class="p">.</span><span class="na">registerOutParameter</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">indice</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">tipo</span><span class="p">);</span>
+</code></pre></div></li>
+<li>Ejecutar con <code>executeQuery</code>/<code>executeUpdate</code> según lo que devuelva la rutina.</li>
+<li>Recuperar el valor devuelto: <code>sentencia.getTipo(indice);</code></li>
+</ol>
+<blockquote>
+<p><strong>Ventajas e inconvenientes de los procedimientos almacenados</strong>
+- ✅ Reducen el tráfico de red (una sola llamada en vez de varias sentencias), centralizan lógica de negocio compartida por varias aplicaciones, pueden ser más eficientes al ejecutarse cerca de los datos.
+- ❌ La lógica queda "escondida" fuera del código de la aplicación y de su control de versiones; el lenguaje procedural no es portable entre SGBD; dificulta las pruebas unitarias automatizadas.</p>
+<p><strong>Error común</strong>: olvidar registrar el tipo del parámetro de salida con <code>registerOutParameter()</code> antes de ejecutar el procedimiento, o intentar leer el valor de salida antes de llamar a <code>execute()</code>.</p>
+<p><strong>Ejercicio 6</strong>: Realiza un programa Java que ejecute un script que cree en MySQL las siguientes rutinas almacenadas:
+- una función <code>chequear_alumno(idAlumno)</code> que devuelva <code>true</code> si el id existe y <code>false</code> en caso contrario.
+- un procedimiento que inserte una nota a un alumno (id, asignatura, nota) y devuelva un select de las notas del alumno si se ha insertado correctamente.</p>
+<p><strong>Ejercicio 7</strong>: Realiza un programa que pida un número de alumno por teclado y muestre si existe o no llamando a <code>chequear_alumno</code>.</p>
+<p><strong>Ejercicio 9</strong>: Realiza un programa que pida id de alumno, asignatura y nota, e inserte el registro en la tabla notas llamando al procedimiento <code>notas_Asig</code>.</p>
+<p><strong>Ejercicio 10 — Desfase Objeto-Relacional</strong>: a partir del siguiente diagrama de clases, realiza un programa que permita crear biblioteca, mostrar libros, dar de alta, modificar y borrar un libro.</p>
+</blockquote>
+<p><img alt="Diagrama de clases del Ejercicio 10: Libro (id, titulo, numEjemplares) con 0..N libros por Biblioteca; BDBiblioteca (conexión, obtenerLibros, altaLibro, modificarLibro, borrarLibro) relacionada con la clase Ejercicio 10" src="../out/Tema_2_imagenes/img-011.png" /></p>
+<h2 id="11-transacciones">11 Transacciones</h2>
+<h3 id="111-que-es-una-transaccion">11.1 ¿Qué es una transacción?</h3>
+<p>Una <strong>transacción</strong> es un conjunto de una o más operaciones sobre la base de datos que se ejecutan como <strong>una unidad indivisible</strong>: o se completan todas, o no se completa ninguna. Este comportamiento se resume en las propiedades <strong>ACID</strong> (Atomicidad, Consistencia, Aislamiento, Durabilidad).</p>
+<blockquote>
+<p><strong>Analogía</strong>: piensa en una transferencia bancaria: quitar 100 € de tu cuenta y añadir 100 € a la de otra persona son, en realidad, dos operaciones. Si el sistema falla justo después de restarte el dinero pero antes de sumárselo al destinatario, el dinero "desaparecería". Una transacción garantiza que, ante ese fallo, ninguna de las dos operaciones se queda a medias.</p>
+</blockquote>
+<h3 id="112-gestion-de-transacciones-en-jdbc">11.2 Gestión de transacciones en JDBC</h3>
+<p>Por defecto, JDBC funciona en modo <code>autocommit = true</code>: cada sentencia se confirma automáticamente al ejecutarse. Para agrupar varias operaciones en una sola transacción hay que desactivar ese modo:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">altaClienteConSocio</span><span class="p">(</span><span class="n">Connection</span><span class="w"> </span><span class="n">conexion</span><span class="p">,</span><span class="w"> </span><span class="n">Cliente</span><span class="w"> </span><span class="n">cliente</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">        </span><span class="n">conexion</span><span class="p">.</span><span class="na">setAutoCommit</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span><span class="w"> </span><span class="c1">// iniciamos la transacción manualmente</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">        </span><span class="c1">// 1. Insert en la tabla cliente</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">PreparedStatement</span><span class="w"> </span><span class="n">ps1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conexion</span><span class="p">.</span><span class="na">prepareStatement</span><span class="p">(</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">                </span><span class="s">"INSERT INTO cliente (usuario, dni, nombre, apellidos) VALUES (?,?,?,?)"</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">            </span><span class="n">ps1</span><span class="p">.</span><span class="na">setString</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">cliente</span><span class="p">.</span><span class="na">usuario</span><span class="p">());</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">            </span><span class="n">ps1</span><span class="p">.</span><span class="na">setString</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">cliente</span><span class="p">.</span><span class="na">dni</span><span class="p">());</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">            </span><span class="n">ps1</span><span class="p">.</span><span class="na">setString</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">cliente</span><span class="p">.</span><span class="na">nombre</span><span class="p">());</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">            </span><span class="n">ps1</span><span class="p">.</span><span class="na">setString</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">cliente</span><span class="p">.</span><span class="na">apellidos</span><span class="p">());</span>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w">            </span><span class="n">ps1</span><span class="p">.</span><span class="na">executeUpdate</span><span class="p">();</span>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="w">        </span><span class="c1">// 2. Insert en la tabla usuarios</span>
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">PreparedStatement</span><span class="w"> </span><span class="n">ps2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conexion</span><span class="p">.</span><span class="na">prepareStatement</span><span class="p">(</span>
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="w">                </span><span class="s">"INSERT INTO usuarios (usuario, clave, tipo) VALUES (?, sha2(?,256), 'C')"</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="w">            </span><span class="n">ps2</span><span class="p">.</span><span class="na">setString</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">cliente</span><span class="p">.</span><span class="na">usuario</span><span class="p">());</span>
+<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a><span class="w">            </span><span class="n">ps2</span><span class="p">.</span><span class="na">setString</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">cliente</span><span class="p">.</span><span class="na">clave</span><span class="p">());</span>
+<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a><span class="w">            </span><span class="n">ps2</span><span class="p">.</span><span class="na">executeUpdate</span><span class="p">();</span>
+<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a>
+<a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a><span class="w">        </span><span class="n">conexion</span><span class="p">.</span><span class="na">commit</span><span class="p">();</span><span class="w"> </span><span class="c1">// confirma TODAS las operaciones anteriores</span>
+<a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Cliente dado de alta correctamente."</span><span class="p">);</span>
+<a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a>
+<a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">SQLException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a><span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a><span class="w">            </span><span class="n">conexion</span><span class="p">.</span><span class="na">rollback</span><span class="p">();</span><span class="w"> </span><span class="c1">// deshace TODO lo hecho desde el último commit</span>
+<a id="__codelineno-12-29" name="__codelineno-12-29" href="#__codelineno-12-29"></a><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Alta cancelada. Motivo: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<a id="__codelineno-12-30" name="__codelineno-12-30" href="#__codelineno-12-30"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">SQLException</span><span class="w"> </span><span class="n">rollbackEx</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-31" name="__codelineno-12-31" href="#__codelineno-12-31"></a><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Error crítico al hacer rollback: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">rollbackEx</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<a id="__codelineno-12-32" name="__codelineno-12-32" href="#__codelineno-12-32"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-12-33" name="__codelineno-12-33" href="#__codelineno-12-33"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">finally</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-34" name="__codelineno-12-34" href="#__codelineno-12-34"></a><span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-35" name="__codelineno-12-35" href="#__codelineno-12-35"></a><span class="w">            </span><span class="n">conexion</span><span class="p">.</span><span class="na">setAutoCommit</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span><span class="w"> </span><span class="c1">// devolvemos la conexión a su estado habitual</span>
+<a id="__codelineno-12-36" name="__codelineno-12-36" href="#__codelineno-12-36"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">SQLException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-37" name="__codelineno-12-37" href="#__codelineno-12-37"></a><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Error al restaurar autocommit: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<a id="__codelineno-12-38" name="__codelineno-12-38" href="#__codelineno-12-38"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-12-39" name="__codelineno-12-39" href="#__codelineno-12-39"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-12-40" name="__codelineno-12-40" href="#__codelineno-12-40"></a><span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Ventajas e inconvenientes</strong>
+- ✅ Garantiza la integridad de operaciones compuestas por varios pasos; evita estados intermedios inconsistentes; permite deshacer de forma segura ante errores.
+- ❌ Mientras una transacción está abierta puede retener bloqueos, afectando a la concurrencia si se hace demasiado larga; añade complejidad (hay que acordarse de <code>commit</code>/<code>rollback</code>/restaurar <code>autocommit</code>); un mal diseño puede provocar interbloqueos.</p>
+<p><strong>Dato importante</strong>: además de <code>commit</code>/<code>rollback</code> completos, JDBC permite definir puntos de guardado (<code>Savepoint</code>) dentro de una transacción con <code>conexion.setSavepoint()</code>, para deshacer solo una parte del trabajo (<code>conexion.rollback(savepoint)</code>) sin perder todo lo anterior.</p>
+</blockquote>
+<p><strong>Errores comunes</strong></p>
+<ol>
+<li>Olvidar <code>conexion.setAutoCommit(false)</code> y pensar que se está trabajando "en transacción" cuando cada sentencia se confirma sola.</li>
+<li>No restaurar <code>autocommit = true</code> después de terminar, dejando la conexión en un estado inesperado si se reutiliza (grave si procede de un pool).</li>
+<li>Hacer el <code>commit()</code> demasiado pronto (antes de comprobar todas las condiciones necesarias) o el <code>rollback()</code> demasiado tarde.</li>
+</ol>
+<h2 id="12-sqlite">12 SQLite</h2>
+<p>JDBC permite conectarnos con diferentes SGBD. La forma de trabajar con las BD es independiente del SGBD.</p>
+<p><strong>Instalación del SGBD SQLite</strong></p>
+<ul>
+<li>Descarga de https://sqlite.org/download.html (herramientas de línea de comandos).</li>
+<li>Descomprime el zip.</li>
+<li>Crea una BD en modo comando: <code>sqlite3 ruta_BD</code>. Si no existe, se crea.</li>
+</ul>
+<p><strong>Driver JDBC de SQLite (Maven)</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="cm">&lt;!-- https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc --&gt;</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nt">&lt;dependency&gt;</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="nt">&lt;groupId&gt;</span>org.xerial<span class="nt">&lt;/groupId&gt;</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>sqlite-jdbc<span class="nt">&lt;/artifactId&gt;</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">    </span><span class="nt">&lt;version&gt;</span>3.46.0.0<span class="nt">&lt;/version&gt;</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>
+<p><strong>Establecer la conexión</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">Connection</span><span class="w"> </span><span class="n">conexion</span><span class="w"> </span><span class="o">=</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="n">DriverManager</span><span class="p">.</span><span class="na">getConnection</span><span class="p">(</span><span class="s">"jdbc:sqlite:c:\\SQLITE\\alumnos.db"</span><span class="p">);</span>
+</code></pre></div>
+<p>Admite la ejecución de múltiples consultas sin indicarlo en la cadena de conexión.</p>
+<p>Otros comandos de <code>sqlite3</code>:</p>
+<p><img alt="Tabla de comandos de sqlite3" src="../out/Tema_2_imagenes/img-013.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Comando</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.show</code></td>
+<td>Muestra los valores actuales de varios parámetros</td>
+</tr>
+<tr>
+<td><code>.databases</code></td>
+<td>Nombres de bases de datos y archivos</td>
+</tr>
+<tr>
+<td><code>.quit</code></td>
+<td>Salir del programa sqlite3</td>
+</tr>
+<tr>
+<td><code>.tables</code></td>
+<td>Mostrar tablas actuales</td>
+</tr>
+<tr>
+<td><code>.schema</code></td>
+<td>Esquema de la tabla</td>
+</tr>
+<tr>
+<td><code>.header</code></td>
+<td>Mostrar u ocultar el encabezado de la tabla de salida</td>
+</tr>
+<tr>
+<td><code>.mode</code></td>
+<td>Selecciona el modo de la tabla de salida</td>
+</tr>
+<tr>
+<td><code>.dump</code></td>
+<td>Volcado de la BD en formato de texto SQL</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Ejercicio 11</strong>: Crea la BD alumnos.</p>
+<p><strong>Ejercicio 12</strong>: Realiza un programa Java que permita: crear la BD alumnos (borrar tablas y volverlas a crear), ver datos, introducir alumnos, introducir asignaturas e introducir notas.</p>
+</blockquote>
+<h2 id="13-acceso-a-bd-access">13 Acceso a BD Access</h2>
+<p><strong>Instalación de drivers Access (UCanAccess)</strong></p>
+<ul>
+<li>Descargar los drivers: https://sourceforge.net/projects/ucanaccess/files/</li>
+<li>Descomprimir y añadir las librerías al proyecto:</li>
+</ul>
+<p><img alt="Librerías necesarias: commons-lang, commons-logging, hsqldb, jackcess y ucanaccess" src="../out/Tema_2_imagenes/img-015.png" /></p>
+<p><strong>Configuración Maven</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="cm">&lt;!-- https://mvnrepository.com/artifact/net.sf.ucanaccess/ucanaccess --&gt;</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nt">&lt;dependency&gt;</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="nt">&lt;groupId&gt;</span>net.sf.ucanaccess<span class="nt">&lt;/groupId&gt;</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>ucanaccess<span class="nt">&lt;/artifactId&gt;</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">    </span><span class="nt">&lt;version&gt;</span>5.0.1<span class="nt">&lt;/version&gt;</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>
+<p><strong>Conexión</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">Connection</span><span class="w"> </span><span class="n">conexion</span><span class="w"> </span><span class="o">=</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">    </span><span class="n">DriverManager</span><span class="p">.</span><span class="na">getConnection</span><span class="p">(</span><span class="s">"jdbc:ucanaccess://C:\\...\\biblioteca.mdb"</span><span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Ejercicio 13</strong>: Realiza un programa que:
+- Añada un libro a la BD <code>biblioteca.mdb</code> del tema 1 (Comedia) de la editorial 1 (Planeta). El campo autonumérico no se puede pasar. Las fechas hay que introducirlas con el formato <code>yyyy-mm-dd hh:mm:ss</code>.
+- Muestre la tabla libros de la BD <code>biblioteca.mdb</code>.</p>
+</blockquote>
+<h2 id="14-cierre-de-recursos-y-patron-dao">14 Cierre de recursos y patrón DAO</h2>
+<h3 id="141-la-jerarquia-de-recursos-a-cerrar">14.1 La jerarquía de recursos a cerrar</h3>
+<p>En una operación JDBC típica intervienen hasta tres recursos <code>AutoCloseable</code>, que deben cerrarse <strong>en orden inverso al de apertura</strong>: <code>ResultSet</code> → <code>Statement</code>/<code>PreparedStatement</code> → <code>Connection</code>. Cerrar el recurso "padre" cierra automáticamente los "hijos" abiertos sobre él, pero no es buena práctica depender de eso: hay que cerrarlos explícitamente, y <code>try-with-resources</code> es la herramienta ideal.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kd">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Alumno</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">listarTodos</span><span class="p">(</span><span class="n">Connection</span><span class="w"> </span><span class="n">conexion</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">SQLException</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">sql</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"SELECT id, nombre, curso FROM alumnos"</span><span class="p">;</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Alumno</span><span class="o">&gt;</span><span class="w"> </span><span class="n">alumnos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">PreparedStatement</span><span class="w"> </span><span class="n">ps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conexion</span><span class="p">.</span><span class="na">prepareStatement</span><span class="p">(</span><span class="n">sql</span><span class="p">);</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">         </span><span class="n">ResultSet</span><span class="w"> </span><span class="n">rs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ps</span><span class="p">.</span><span class="na">executeQuery</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">rs</span><span class="p">.</span><span class="na">next</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">            </span><span class="n">alumnos</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Alumno</span><span class="p">(</span><span class="n">rs</span><span class="p">.</span><span class="na">getInt</span><span class="p">(</span><span class="s">"id"</span><span class="p">),</span><span class="w"> </span><span class="n">rs</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">"nombre"</span><span class="p">),</span><span class="w"> </span><span class="n">rs</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">"curso"</span><span class="p">)));</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">alumnos</span><span class="p">;</span>
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="p">}</span>
+</code></pre></div>
+<p>Fíjate en que <strong>la <code>Connection</code> no se cierra aquí</strong>: siguiendo el patrón habitual, se abre en una capa superior (o se obtiene del pool) y se pasa como parámetro a los métodos de acceso a datos, cerrándose en el nivel que la abrió. Esto permite reutilizar la misma conexión en varias operaciones dentro de una transacción.</p>
+<h3 id="142-patron-dao-data-access-object">14.2 Patrón DAO (<em>Data Access Object</em>)</h3>
+<p>Conviene encapsular todo el código JDBC de una entidad (por ejemplo, <code>Alumno</code>) dentro de una única clase (<code>AlumnoDAO</code>), de forma que el resto de la aplicación nunca escriba SQL directamente, sino que llame a métodos con nombre claro (<code>insertar</code>, <code>buscarPorId</code>, <code>listarPorCurso</code>...).</p>
+<p><strong>Ventajas e inconvenientes de JDBC "puro" (sin ORM)</strong></p>
+<ul>
+<li>✅ Control total y explícito sobre el SQL ejecutado; sin "magia" oculta; no añade dependencias pesadas; rendimiento máximo al no existir capas intermedias.</li>
+<li>❌ Mucho código repetitivo (mapear cada columna a mano); fácil cometer errores de cierre de recursos si no se es disciplinado; un cambio en el esquema obliga a revisar manualmente el SQL disperso por el código.</li>
+</ul>
+<blockquote>
+<p><strong>Error común</strong>: cerrar la conexión dentro de un método "listar" o "buscar" genérico que en realidad la recibe como parámetro desde fuera. Rompe cualquier operación posterior que intente reutilizarla (por ejemplo, dentro de una transacción con varios pasos), provocando errores de "conexión cerrada" difíciles de depurar.</p>
+<p><strong>Ejercicio (nuevo)</strong>: Refactoriza el acceso a la tabla alumnos escrito a lo largo del tema en una clase <code>AlumnoDAO</code>, con métodos <code>insertar</code>, <code>actualizar</code>, <code>eliminar</code>, <code>buscarPorId</code>, <code>listarTodos</code>, <code>listarPorCurso</code>. La clase debe recibir la <code>Connection</code> por constructor, nunca crearla ella misma.</p>
+</blockquote>
+<h2 id="15-ejercicio-integrador-gestion-de-un-gimnasio">15 Ejercicio integrador: gestión de un gimnasio</h2>
+<p>Se proporciona el script <code>gimnasio.sql</code>.</p>
+<p>Realiza una aplicación que permita gestionar el funcionamiento de un gimnasio. La aplicación contará con dos tipos de usuarios: clientes y administradores.</p>
+<ul>
+<li><strong>Clientes</strong>: ver las actividades en las que está inscrito, inscribirse en una actividad, borrarse de una actividad, ver los recibos emitidos (filtrando entre pagados, no pagados y todos).</li>
+<li><strong>Administradores</strong>: gestionar clientes (modificar, añadir, dar de baja), gestionar actividades (modificar, añadir, dar de baja), generar los recibos de un mes, marcar un recibo como pagado, y generar un informe de recibos por año (con lo cobrado a cada cliente y el total del gimnasio).</li>
+</ul>
+<p>La aplicación pedirá usuario y contraseña, mostrando las operaciones según el tipo de usuario. El script crea el usuario <code>admin</code> con clave <code>admin</code>.</p>
+<p>Las contraseñas se almacenan encriptadas con <code>sha2('clave', longitud)</code> de MySQL (longitud: 224, 256, 384, 512, o 0 equivalente a 256).</p>
+<p>Cuando se dé de alta un cliente hay que hacer un insert en dos tablas ⇒ <strong>usar transacciones</strong> (ver apartado 11): <code>setAutoCommit(false)</code> antes del primer insert, <code>commit()</code> después del segundo, y <code>rollback()</code> si se produce algún error entre ambos.</p>
+<p>Cada vez que se añadan registros deberá informarse de si se ha insertado correctamente. Para recuperar el último número asignado por MySQL en un campo auto-increment:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">numero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stmt</span><span class="p">.</span><span class="na">executeUpdate</span><span class="p">(</span><span class="n">query</span><span class="p">,</span><span class="w"> </span><span class="n">Statement</span><span class="p">.</span><span class="na">RETURN_GENERATED_KEYS</span><span class="p">);</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="n">ResultSet</span><span class="w"> </span><span class="n">rs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stmt</span><span class="p">.</span><span class="na">getGeneratedKeys</span><span class="p">();</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rs</span><span class="p">.</span><span class="na">next</span><span class="p">()){</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rs</span><span class="p">.</span><span class="na">getInt</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="p">}</span>
+</code></pre></div>
+<p>Para gestionar los recibos se pedirá el mes y el año; si ya se han generado se mostrarán, si no, se generarán (rutina <code>generar_recibos()</code>). Al pagar un recibo, la fecha de pago se rellena automáticamente con la fecha del día.</p>
+<p><strong>Modelo entidad-relación de la BD del gimnasio:</strong></p>
+<p><img alt="Diagrama E/R del gimnasio: tablas cliente, actividad, participa, recibo y usuarios" src="../out/Tema_2_imagenes/img-017.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Tabla</th>
+<th>Campos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>cliente</strong></td>
+<td><code>id</code> INT(11) (PK), <code>usuario</code> VARCHAR(10), <code>dni</code> VARCHAR(10), <code>apellidos</code> VARCHAR(40), <code>nombre</code> VARCHAR(20), <code>tfno_contacto</code> VARCHAR(9), <code>baja</code> TINYINT(1)</td>
+</tr>
+<tr>
+<td><strong>actividad</strong></td>
+<td><code>id</code> INT(11) (PK), <code>nombre</code> VARCHAR(100), <code>coste_mensual</code> FLOAT, <code>activa</code> ENUM(...)</td>
+</tr>
+<tr>
+<td><strong>participa</strong></td>
+<td><code>actividad_id</code> INT(11), <code>cliente_id</code> INT(11)</td>
+</tr>
+<tr>
+<td><strong>recibo</strong></td>
+<td><code>cliente_id</code> INT(11), <code>fecha_emision</code> DATE (PK compuesta), <code>fecha_pago</code> DATE, <code>cuantia</code> FLOAT, <code>pagado</code> TINYINT(1)</td>
+</tr>
+<tr>
+<td><strong>usuarios</strong></td>
+<td><code>usuario</code> VARCHAR(10) (PK), <code>clave</code> BLOB, <code>tipo</code> ENUM('C','A')</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Ampliación (nuevo)</strong>: implementa toda la conexión a base de datos a través de un <em>pool</em> de conexiones (apartado 4.4), organiza el acceso a datos en clases DAO por entidad (apartado 14.2) y usa <code>PreparedStatement</code> en absolutamente todas las sentencias con datos variables (apartado 7).</p>
+</blockquote>
+<h2 id="16-glosario">16 Glosario</h2>
+<ul>
+<li><strong>ACID</strong>: conjunto de propiedades (Atomicidad, Consistencia, Aislamiento, Durabilidad) que garantiza una transacción bien gestionada.</li>
+<li><strong>Autocommit</strong>: modo por defecto de JDBC en el que cada sentencia se confirma automáticamente al ejecutarse.</li>
+<li><strong>Connection pooling</strong>: técnica de reutilización de un conjunto de conexiones ya abiertas, evitando el coste de crearlas y destruirlas constantemente.</li>
+<li><strong>DAO (Data Access Object)</strong>: patrón de diseño que encapsula todo el acceso a datos de una entidad en una única clase.</li>
+<li><strong>Desfase objeto-relacional</strong>: fricción conceptual entre el modelo de objetos de un lenguaje de programación y el modelo de tablas de una base de datos relacional.</li>
+<li><strong>Driver JDBC</strong>: implementación concreta, proporcionada por cada fabricante de SGBD, de la API estándar JDBC.</li>
+<li><strong>Inyección SQL</strong>: vulnerabilidad que permite a un atacante alterar el significado de una sentencia SQL insertando código no previsto a través de una entrada de datos.</li>
+<li><strong>Gestor embebido</strong>: SGBD que vive dentro del mismo proceso que la aplicación (SQLite, H2), sin servidor aparte.</li>
+<li><strong>Gestor independiente</strong>: SGBD que se ejecuta como servidor aparte (MySQL, PostgreSQL), pensado para concurrencia multiusuario.</li>
+<li><strong>PreparedStatement</strong>: sentencia SQL precompilada con parámetros, que trata cualquier valor proporcionado como dato literal, nunca como código ejecutable.</li>
+<li><strong>Procedimiento almacenado</strong>: bloque de lógica SQL guardado y ejecutado dentro del propio SGBD, invocable por su nombre.</li>
+<li><strong>ResultSet</strong>: objeto que representa, como un cursor de recorrido secuencial, el conjunto de filas devuelto por una consulta <code>SELECT</code>.</li>
+<li><strong>Rollback</strong>: operación que deshace todas las modificaciones realizadas desde el último <code>commit</code> de una transacción.</li>
+<li><strong>Savepoint</strong>: punto de guardado intermedio dentro de una transacción hasta el cual se puede deshacer parcialmente el trabajo realizado.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "toc.integrate", "content.code.copy"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+    
+  </body>
+</html>
