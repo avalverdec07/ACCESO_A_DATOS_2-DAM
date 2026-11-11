@@ -186,9 +186,9 @@ Para poder probar las aplicaciones desde Eclipse:
 - En Eclipse, panel *Server*: `Window → Show View → Other → Server`.
 - Agregar servidor:
 
-![Seleccionar tipo de servidor](Tema_6_imagenes/img-eclipse-select-server-type.png)
+![Seleccionar tipo de servidor](../out/Tema_6_imagenes/img-eclipse-select-server-type.png)
 
-![Configurar el servidor Tomcat](Tema_6_imagenes/img-eclipse-new-server-tomcat.png)
+![Configurar el servidor Tomcat](../out/Tema_6_imagenes/img-eclipse-new-server-tomcat.png)
 
 ### Servlet
 

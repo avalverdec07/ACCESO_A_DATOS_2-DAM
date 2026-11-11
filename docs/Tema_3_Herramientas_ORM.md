@@ -38,7 +38,7 @@
 
 ## 1 ORM (Object Relational Mapping)
 
-![Esquema ORM: una aplicación con Types (Classes) se comunica mediante ORM con las Tables de una Database](Tema_3_imagenes/img-000.png)
+![Esquema ORM: una aplicación con Types (Classes) se comunica mediante ORM con las Tables de una Database](../out/Tema_3_imagenes/img-000.png)
 
 Las herramientas **ORM** transforman representaciones de datos de SGBD relacionales a representaciones de objetos: por cada tabla de la BD se genera una clase Java, y cada registro de la tabla es un objeto de dicha clase. Las relaciones se transforman en atributos de las clases relacionadas.
 
@@ -65,7 +65,7 @@ Es fundamental distinguir estos dos conceptos, muy habituales en el ecosistema J
 - **JPA (Jakarta Persistence API)** es una **especificación**: un conjunto de interfaces y anotaciones estándar (`@Entity`, `EntityManager`...) que define *qué* debe poder hacer un ORM en Java, sin implementar nada por sí misma.
 - **Hibernate** es la implementación de JPA más extendida (no la única; existen otras como EclipseLink). Es el motor real que genera el SQL y se comunica con el SGBD por debajo, **usando JDBC internamente** — el ORM no sustituye a JDBC (Tema 2), se apoya en él.
 
-![Arquitectura de Hibernate: Java Application con Persistent Object, sobre Hibernate (Configuration, Session Factory, Session, Transaction, Query, Criteria), apoyado en JTA, JDBC y JNDI, sobre la Database](Tema_3_imagenes/img-002.png)
+![Arquitectura de Hibernate: Java Application con Persistent Object, sobre Hibernate (Configuration, Session Factory, Session, Transaction, Query, Criteria), apoyado en JTA, JDBC y JNDI, sobre la Database](../out/Tema_3_imagenes/img-002.png)
 
 Hibernate usa otras librerías, como **JDBC**, **Java Transaction API (JTA)** y **Java Naming and Directory Interface (JNDI)**. JDBC realiza la conexión con el SGBD; JNDI y JTA permiten la integración de Hibernate con servidores de aplicación J2EE. El lenguaje de consulta propio de Hibernate es **HQL**.
 
@@ -111,7 +111,7 @@ Hibernate usa otras librerías, como **JDBC**, **Java Transaction API (JTA)** y 
 
 **Sin Maven**: crear una librería de usuario con las librerías de Hibernate de la carpeta `lib/required` de la distribución descargada de http://hibernate.org/orm/releases/, más el conector JDBC del SGBD que se vaya a usar.
 
-![Librería de usuario "Hibernate" en Eclipse, con el conector JDBC y todos los jars requeridos de hibernate-release](Tema_3_imagenes/img-003.png)
+![Librería de usuario "Hibernate" en Eclipse, con el conector JDBC y todos los jars requeridos de hibernate-release](../out/Tema_3_imagenes/img-003.png)
 
 ### 3.2 Fichero de configuración `persistence.xml`
 
@@ -242,13 +242,13 @@ public class Ejercicio2 {
 
 Los ejercicios de la unidad se realizarán sobre una BD alumnos que tiene las siguientes tablas:
 
-![Esquema de la BD alumnos: tabla alumnos (id, curso, nif, nombre), tabla notas (nota, asig, alumno) relacionada con alumnos y con asig (nombreC, nombreL)](Tema_3_imagenes/img-004.png)
+![Esquema de la BD alumnos: tabla alumnos (id, curso, nif, nombre), tabla notas (nota, asig, alumno) relacionada con alumnos y con asig (nombreC, nombreL)](../out/Tema_3_imagenes/img-004.png)
 
 - **alumnos**: `id` INT(11) (PK), `curso` VARCHAR(255), `nif` VARCHAR(255), `nombre` VARCHAR(255)
 - **notas**: `nota` INT(11), `asig` VARCHAR(255) (PK, FK), `alumno` INT(11) (PK, FK)
 - **asig**: `nombreC` VARCHAR(255) (PK), `nombreL` VARCHAR(255)
 
-![Estructura del proyecto Hibernate en Eclipse: persistence.xml en src/main.resources/META-INF, paquete del proyecto, Maven Dependencies y pom.xml](Tema_3_imagenes/img-005.png)
+![Estructura del proyecto Hibernate en Eclipse: persistence.xml en src/main.resources/META-INF, paquete del proyecto, Maven Dependencies y pom.xml](../out/Tema_3_imagenes/img-005.png)
 
 ## 5 Mapeo de entidades mediante anotaciones
 
@@ -301,7 +301,7 @@ public class alumno implements Serializable {
 
 **Ejemplo de uso de `@Temporal`**
 
-![Ejemplo de anotaciones @Column(name="fecharecogida") y @Temporal(TemporalType.DATE) sobre el atributo Date fechaRecogida](Tema_3_imagenes/img-007.png)
+![Ejemplo de anotaciones @Column(name="fecharecogida") y @Temporal(TemporalType.DATE) sobre el atributo Date fechaRecogida](../out/Tema_3_imagenes/img-007.png)
 
 ```java
 @Column(name="fecharecogida")
@@ -749,7 +749,7 @@ Realiza una aplicación que gestione los préstamos de una pequeña biblioteca, 
 
 Diseña la BD y crea la aplicación con Hibernate. Crea las claves externas con diferentes valores para las operaciones en cascada.
 
-![Esquema de la BD de la biblioteca: tabla libro (isbn, numEjemplares, titulo), tabla prestamo (fechaP, fechaDevolPrevista, fechaDevolReal, socio, libro) relacionada con libro y con socio (id, nif, nombre, sancionado)](Tema_3_imagenes/img-008.png)
+![Esquema de la BD de la biblioteca: tabla libro (isbn, numEjemplares, titulo), tabla prestamo (fechaP, fechaDevolPrevista, fechaDevolReal, socio, libro) relacionada con libro y con socio (id, nif, nombre, sancionado)](../out/Tema_3_imagenes/img-008.png)
 
 - **libro**: `isbn` VARCHAR(255) (PK), `numEjemplares` INT(11), `titulo` VARCHAR(255)
 - **prestamo**: `fechaP` DATE, `fechaDevolPrevista` DATE, `fechaDevolReal` DATE, `socio` INT(11) (PK, FK), `libro` VARCHAR(255) (PK, FK)
@@ -763,7 +763,7 @@ Programa con las siguientes opciones: crear socio (comprobando NIF único), crea
 
 A partir de la BD ACB:
 
-![Esquema de la BD ACB: tablas tipoaccion (tipo, descrip), accion (codigo, partido, tipo, jugador, anulada), jugador (codigo, equipo, dorsal, nombre, tipo), equipo (nombre, localidad) y partido (codigo, local, visitante)](Tema_3_imagenes/img-009.png)
+![Esquema de la BD ACB: tablas tipoaccion (tipo, descrip), accion (codigo, partido, tipo, jugador, anulada), jugador (codigo, equipo, dorsal, nombre, tipo), equipo (nombre, localidad) y partido (codigo, local, visitante)](../out/Tema_3_imagenes/img-009.png)
 
 - **tipoaccion**: `tipo` VARCHAR(1) (PK), `descrip` VARCHAR(50)
 - **accion**: `codigo` INT(11) (PK), `partido` INT(11) (FK), `tipo` VARCHAR(1) (FK), `jugador` INT(11) (FK), `anulada` TINYINT(1)
@@ -783,7 +783,7 @@ Crea un proyecto con Hibernate que permita:
 
 **Ejercicio 5 - Mostrar Estadística Partido**: usa la rutina almacenada `obtenerEstadistica` como consulta nativa (`call obtenerEstadistica(:partido)`), que devuelve:
 
-![Resultado de ejemplo de la rutina obtenerEstadistica: PuntosLocal 7, PuntosVisitante 6, Canastas1Local 2, Canastas1Visitante 1, Canastas2Local 1, Canastas2Visitante 1, Canastas3Local 1, Canastas3Visitante 1](Tema_3_imagenes/img-010.png)
+![Resultado de ejemplo de la rutina obtenerEstadistica: PuntosLocal 7, PuntosVisitante 6, Canastas1Local 2, Canastas1Visitante 1, Canastas2Local 1, Canastas2Visitante 1, Canastas3Local 1, Canastas3Visitante 1](../out/Tema_3_imagenes/img-010.png)
 
 | PuntosLocal | PuntosVisitante | Canastas1Local | Canastas1Visitante | Canastas2Local | Canastas2Visitante | Canastas3Local | Canastas3Visitante |
 |---|---|---|---|---|---|---|---|

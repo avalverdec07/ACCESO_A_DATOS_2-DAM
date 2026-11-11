@@ -56,7 +56,7 @@ Se puede descargar desde [https://www.postgresql.org/download/](https://www.post
 - **pgAdmin**: herramienta gráfica para administrar la BD.
 - **Stack Builder**: paquete que permite descargar e instalar herramientas adicionales de PostgreSQL y drivers.
 
-![Instalación con Stack Builder](Tema_4_imagenes/img-instalacion-stackbuilder.png)
+![Instalación con Stack Builder](../out/Tema_4_imagenes/img-instalacion-stackbuilder.png)
 
 > **Nota**: las capturas de este documento corresponden a PostgreSQL 10. A día de hoy conviene instalar la versión más reciente disponible (PostgreSQL 16/17), ya que las versiones antiguas dejan de recibir actualizaciones de seguridad. Los pasos de instalación y el uso de pgAdmin 4 siguen siendo los mismos.
 >
@@ -79,7 +79,7 @@ Para un proyecto Java moderno, **no es necesario descargar el `.jar` manualmente
 
 Abre pgAdmin y crea una nueva base de datos llamada **Alumnos**:
 
-![Crear base de datos en pgAdmin](Tema_4_imagenes/img-pgadmin-crear-bd.png)
+![Crear base de datos en pgAdmin](../out/Tema_4_imagenes/img-pgadmin-crear-bd.png)
 
 ### 1.2 Tipos de datos
 

@@ -73,7 +73,7 @@ Existen múltiples tipos de bases de datos NoSQL, agrupadas normalmente en estas
 
 De entre las bases NoSQL son las que tienen el modelo más sencillo. Conceptualmente se conciben como una tabla hash de dos columnas (**clave** y **valor**), donde la clave actúa como clave primaria e identifica cada elemento de forma única, y el valor puede ser cualquier tipo de objeto. Los registros clave-valor pueden agruparse lógicamente en **buckets**.
 
-![Diagrama de buckets clave-valor: Bucket A y Bucket B, cada uno con pares Key→Value](Tema_5_imagenes/img-clave-valor-buckets.png)
+![Diagrama de buckets clave-valor: Bucket A y Bucket B, cada uno con pares Key→Value](../out/Tema_5_imagenes/img-clave-valor-buckets.png)
 
 Normalmente, las bases NoSQL de este tipo son de **tipo AP** (Disponibilidad y Tolerancia a Particiones) y tratan de mantener la mayor parte de la información en memoria, serializando los datos periódicamente. Así se obtiene un gran rendimiento, a costa de una consistencia eventual.
 
@@ -85,11 +85,11 @@ Las NoSQL basadas en documentos permiten almacenar los registros como **document
 
 Los documentos se agrupan en **colecciones**. Si hacemos un paralelismo con el modelo relacional, las colecciones serían tablas y los documentos, registros.
 
-![Estructura de MongoDB: una base de datos contiene una o más colecciones, y cada colección contiene documentos (pares clave-valor o listas o documentos anidados)](Tema_5_imagenes/img-mongodb-estructura.png)
+![Estructura de MongoDB: una base de datos contiene una o más colecciones, y cada colección contiene documentos (pares clave-valor o listas o documentos anidados)](../out/Tema_5_imagenes/img-mongodb-estructura.png)
 
 MongoDB representa los documentos en **BSON** (*Binary JSON*), una serialización binaria del formato JSON que añade tipos adicionales que JSON no tiene de forma nativa (fechas, enteros de 32/64 bits, `ObjectId`, binarios...).
 
-![Ejemplo de documento BSON anotado: _id como ObjectId, nombre como texto, fecha como ISO 8601, activo como booleano, notas como array, dirección como objeto embebido](Tema_5_imagenes/img-bson-ejemplo.png)
+![Ejemplo de documento BSON anotado: _id como ObjectId, nombre como texto, fecha como ISO 8601, activo como booleano, notas como array, dirección como objeto embebido](../out/Tema_5_imagenes/img-bson-ejemplo.png)
 
 En una base de datos documental, cada documento puede tener su propio esquema; no obstante, semánticamente, dentro de una misma colección deberíamos incluir únicamente documentos que referencien al mismo tipo de elementos.
 
@@ -103,7 +103,7 @@ A diferencia de los sistemas relacionales clásicos, que organizan el contenido 
 
 Además, permiten que un registro tenga un esquema variable y referencie a más o menos columnas según su naturaleza. Para leer rápidamente todas las columnas de un registro, cada valor columnar está vinculado a una clave de registro.
 
-![Comparación row-oriented vs column-oriented: en el primero las filas se almacenan secuencialmente en un fichero; en el segundo cada columna se almacena en un fichero separado, y cada columna está en el mismo offset para una fila dada](Tema_5_imagenes/img-row-vs-column.png)
+![Comparación row-oriented vs column-oriented: en el primero las filas se almacenan secuencialmente en un fichero; en el segundo cada columna se almacena en un fichero separado, y cada columna está en el mismo offset para una fila dada](../out/Tema_5_imagenes/img-row-vs-column.png)
 
 Este tipo de bases de datos se usa normalmente en **sistemas analíticos (OLAP)**. Los sistemas transaccionales (**OLTP**) usan principalmente sistemas relacionales, optimizados para trabajar a nivel de registro (dar de alta usuarios, gestionar compras, hacer reservas...). Sin embargo, operaciones típicas de sistemas analíticos, como las agregaciones, se hacen de forma mucho más eficiente en sistemas columnares, ya que requieren leer menos datos:
 
@@ -121,7 +121,7 @@ Dadas sus características, este tipo de bases de datos son adecuadas como **Dat
 
 Este modelo permite almacenar información sobre entidades y relaciones entre ellas. Las entidades están formadas por atributos, y las relaciones entre entidades tienen también sus propios atributos y un sentido. El resultado es una estructura de red compleja, muy útil en aplicaciones de redes sociales, sistemas de mapeo y rutas, etc.
 
-![Ejemplo de grafo: dos personas (Dan y Ann) conectadas por relaciones LOVES y LIVES WITH, y Dan conectado a un coche mediante OWNS](Tema_5_imagenes/img-grafo-ejemplo.png)
+![Ejemplo de grafo: dos personas (Dan y Ann) conectadas por relaciones LOVES y LIVES WITH, y Dan conectado a un coche mediante OWNS](../out/Tema_5_imagenes/img-grafo-ejemplo.png)
 
 La gran fortaleza de estos sistemas es que no necesitan hacer consultas para comprobar la relación entre elementos, ya que las relaciones son intrínsecas al modelo y se pueden recorrer directamente. No son aptos para cualquier caso de uso: modificar todas o un subconjunto de entidades es costoso, y hacer búsquedas de datos no relacionados entre sí también lo es.
 
@@ -137,7 +137,7 @@ El **teorema de CAP** (o conjetura de Brewer) se aplica a sistemas de almacenami
 
 Según este teorema, se pueden construir sistemas **CP** (consistentes y tolerantes a particiones), sistemas **AP** (disponibles y tolerantes a particiones) y sistemas **CA** (consistentes y disponibles, pero no tolerantes a particiones). Cada base de datos NoSQL trabaja en un modo determinado:
 
-![Triángulo del teorema de CAP: vértice Availability con categoría CA (Neo4j) donde un problema de red puede detener el sistema; vértice Partition Tolerance con categoría AP (Riak, Cassandra) donde los clientes pueden leer datos inconsistentes; vértice Consistency con categoría CP (MongoDB, Redis, HBase) donde hay riesgo de que algunos nodos queden no disponibles](Tema_5_imagenes/img-teorema-cap.png)
+![Triángulo del teorema de CAP: vértice Availability con categoría CA (Neo4j) donde un problema de red puede detener el sistema; vértice Partition Tolerance con categoría AP (Riak, Cassandra) donde los clientes pueden leer datos inconsistentes; vértice Consistency con categoría CP (MongoDB, Redis, HBase) donde hay riesgo de que algunos nodos queden no disponibles](../out/Tema_5_imagenes/img-teorema-cap.png)
 
 En un sistema **fuertemente consistente** (*strong consistency*), las escrituras son visibles en las próximas lecturas; en un sistema con **consistencia eventual** (*eventual consistency*), las escrituras no son visibles de inmediato, pudiendo devolverse valores desfasados.
 

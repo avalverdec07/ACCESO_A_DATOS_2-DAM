@@ -75,7 +75,7 @@ Las aplicaciones usan APIs para abrir una conexión a una BD, enviar consultas, 
 - **ODBC** (Open Database Connectivity): conector de Microsoft, estándar para acceder a cualquier BD desde aplicaciones Windows. Complejo de usar desde Java, con problemas de seguridad, robustez y portabilidad al estar escrito en C.
 - **JDBC** (Java Database Connectivity): API estándar de Java (un conjunto de interfaces: `Connection`, `Statement`, `ResultSet`...) que define *cómo* debe comunicarse un programa Java con cualquier BD relacional, sin importar el fabricante. Cada SGBD proporciona su propia implementación en forma de **driver** (una librería `.jar`).
 
-![Esquema JDBC: un programa Java accede mediante JDBC a Oracle, SQL Server, Sybase y MySQL](Tema_2_imagenes/img-000.png)
+![Esquema JDBC: un programa Java accede mediante JDBC a Oracle, SQL Server, Sybase y MySQL](../out/Tema_2_imagenes/img-000.png)
 
 > **Analogía**: JDBC es como un enchufe universal de viaje. El enchufe (la API JDBC) es siempre igual desde el punto de vista del aparato (tu programa Java), pero necesitas el adaptador correcto (el driver) según el país (el SGBD): uno para MySQL, otro para PostgreSQL, otro para SQLite... El programa apenas cambia entre un SGBD y otro; solo cambian la URL de conexión y el driver.
 
@@ -96,11 +96,11 @@ Las clases para operar con BD a través de JDBC se encuentran en el paquete **ja
 - **ResultSet**: contiene las filas resultantes de una consulta.
 - **ResultSetMetaData**: obtiene información (metadatos) sobre un ResultSet.
 
-![Diagrama de clases JDBC: DriverManager devuelve Connection, que devuelve PreparedStatement, que devuelve ResultSet; aparece también SQLException](Tema_2_imagenes/img-001.png)
+![Diagrama de clases JDBC: DriverManager devuelve Connection, que devuelve PreparedStatement, que devuelve ResultSet; aparece también SQLException](../out/Tema_2_imagenes/img-001.png)
 
 ### 4.2 Pasos para acceder a una BD
 
-![Pasos: Cargar el driver JDBC del motor de la BD → Crear Conexión (Connection) → Crear Sentencia (Statement) → Ejecutar Sentencia → Recuperar el resultado (ResultSet) → Liberar Objetos](Tema_2_imagenes/img-007.png)
+![Pasos: Cargar el driver JDBC del motor de la BD → Crear Conexión (Connection) → Crear Sentencia (Statement) → Ejecutar Sentencia → Recuperar el resultado (ResultSet) → Liberar Objetos](../out/Tema_2_imagenes/img-007.png)
 
 **Ejemplo completo y actualizado**
 
@@ -160,7 +160,7 @@ Vamos a preparar el entorno para poder acceder desde los programas Java a BD MyS
 
 Si no se usa Maven, se puede añadir el `.jar` manualmente al *Build Path* del proyecto (`Project/Properties/Java Build Path/Libraries/Classpath/Add External Jar`):
 
-![Ventana Properties del proyecto en Eclipse: Java Build Path → Libraries → Classpath → Add External JARs, con el conector MySQL añadido](Tema_2_imagenes/img-009.png)
+![Ventana Properties del proyecto en Eclipse: Java Build Path → Libraries → Classpath → Add External JARs, con el conector MySQL añadido](../out/Tema_2_imagenes/img-009.png)
 
 > **Ejercicio 1**: Crea una clase Java que gestione el acceso a los datos de la BD alumnos. Realiza un programa en Java que muestre los datos de la tabla alumnos, usando `try-with-resources`.
 
@@ -241,7 +241,7 @@ Métodos más usados: `getColumnCount()`, `getColumnName()`, `getColumnTypeName(
 
 > **Ejercicio 3**: Muestra los datos de la tabla asignatura con el número de columnas, su tipo y si admiten nulos, seguido de los datos y el número de registros.
 
-![Salida esperada del Ejercicio 3: número de columnas, columnas con tipo y si admiten nulos, datos de las asignaturas y número de registros](Tema_2_imagenes/img-010.png)
+![Salida esperada del Ejercicio 3: número de columnas, columnas con tipo y si admiten nulos, datos de las asignaturas y número de registros](../out/Tema_2_imagenes/img-010.png)
 
 ## 6 Ejecución de sentencias DML/DDL
 
@@ -422,7 +422,7 @@ JDBC permite ejecutar funciones o procedimientos. La forma de ejecutarlos es dif
 
 > **Ejercicio 10 — Desfase Objeto-Relacional**: a partir del siguiente diagrama de clases, realiza un programa que permita crear biblioteca, mostrar libros, dar de alta, modificar y borrar un libro.
 
-![Diagrama de clases del Ejercicio 10: Libro (id, titulo, numEjemplares) con 0..N libros por Biblioteca; BDBiblioteca (conexión, obtenerLibros, altaLibro, modificarLibro, borrarLibro) relacionada con la clase Ejercicio 10](Tema_2_imagenes/img-011.png)
+![Diagrama de clases del Ejercicio 10: Libro (id, titulo, numEjemplares) con 0..N libros por Biblioteca; BDBiblioteca (conexión, obtenerLibros, altaLibro, modificarLibro, borrarLibro) relacionada con la clase Ejercicio 10](../out/Tema_2_imagenes/img-011.png)
 
 ## 11 Transacciones
 
@@ -523,7 +523,7 @@ Admite la ejecución de múltiples consultas sin indicarlo en la cadena de conex
 
 Otros comandos de `sqlite3`:
 
-![Tabla de comandos de sqlite3](Tema_2_imagenes/img-013.png)
+![Tabla de comandos de sqlite3](../out/Tema_2_imagenes/img-013.png)
 
 | Comando | Descripción |
 |---|---|
@@ -547,7 +547,7 @@ Otros comandos de `sqlite3`:
 - Descargar los drivers: https://sourceforge.net/projects/ucanaccess/files/
 - Descomprimir y añadir las librerías al proyecto:
 
-![Librerías necesarias: commons-lang, commons-logging, hsqldb, jackcess y ucanaccess](Tema_2_imagenes/img-015.png)
+![Librerías necesarias: commons-lang, commons-logging, hsqldb, jackcess y ucanaccess](../out/Tema_2_imagenes/img-015.png)
 
 **Configuración Maven**
 
@@ -637,7 +637,7 @@ Para gestionar los recibos se pedirá el mes y el año; si ya se han generado se
 
 **Modelo entidad-relación de la BD del gimnasio:**
 
-![Diagrama E/R del gimnasio: tablas cliente, actividad, participa, recibo y usuarios](Tema_2_imagenes/img-017.png)
+![Diagrama E/R del gimnasio: tablas cliente, actividad, participa, recibo y usuarios](../out/Tema_2_imagenes/img-017.png)
 
 | Tabla | Campos |
 |---|---|

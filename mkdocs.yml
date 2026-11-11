@@ -1,0 +1,48 @@
+site_name: Acceso a Datos 2º DAM
+site_url: https://avalverdec07.github.io/ACCESO_A_DATOS_2-DAM/
+repo_url: https://github.com/avalverdec07/ACCESO_A_DATOS_2-DAM
+repo_name: avalverdec07/ACCESO_A_DATOS_2-DAM
+
+theme:
+  name: material
+  language: es
+  features:
+    - navigation.sections      # Agrupa los elementos del menú
+    - navigation.expand        # Despliega los subapartados automáticamente
+    - navigation.top           # Botón para volver arriba
+    - toc.integrate            # Integra el índice del tema en la barra lateral izquierda
+    - content.code.copy        # Botón para copiar el código Java/SQL con un clic
+  palette:
+    # Modo claro por defecto
+    - scheme: default
+      primary: teal
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Cambiar a modo oscuro
+    # Modo oscuro
+    - scheme: slate
+      primary: teal
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Cambiar a modo claro
+
+# Resaltado de código nativo
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
+# Estructura del menú lateral
+nav:
+  - Inicio: index.md
+  - Unidades Didácticas:
+      - UD1 - Gestión de Ficheros: Tema_1_Gestion_de_Ficheros_y_Directorios.md
+      - UD2 - Conectores BD (JDBC): Tema_2_Acceso_BD_Relacionales_Conectores.md
+      - UD3 - Herramientas ORM (Hibernate): Tema_3_Herramientas_ORM.md
+      - UD4 - Bases de Datos objeto-relacionales y orientadas a objetos : Tema_4_BD_OR_y_OO.md
+      - UD5 - Bases de Datos Documentales Nativas: Tema5_Bases_de_Datos_Documentales_Nativas.md
+      - UD6 - Creación de Componentes_de_AD: Tema6_Creacion_de_Componentes_de_AD.md
