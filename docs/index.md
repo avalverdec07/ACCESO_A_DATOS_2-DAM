@@ -13,7 +13,7 @@
     </div>
     <h4>Gestión de Ficheros y Directorios</h4>
     <p>Clases java.io y java.nio, flujos de entrada/salida (I/O), serialización de objetos y formatos XML / JSON.</p>
-    <a href="Tema_1_Gestion_de_Ficheros_y_Directorios.md" class="btn">Ver Unidad Didáctica →</a>
+    <a href="Tema_1_Gestion_de_Ficheros_y_Directorios" class="btn">Ver Unidad Didáctica →</a>
   </div>
 
   <div class="card">
@@ -22,7 +22,7 @@
     </div>
     <h4>Acceso a BD Relacionales (Conectores)</h4>
     <p>Arquitectura JDBC, ejecución de sentencias SQL, gestión de transacciones y pools de conexiones.</p>
-    <a href="Tema_2_Acceso_BD_Relacionales_Conectores.md" class="btn">Ver Unidad Didáctica →</a>
+    <a href="Tema_2_Acceso_BD_Relacionales_Conectores" class="btn">Ver Unidad Didáctica →</a>
   </div>
 
   <div class="card">
@@ -31,7 +31,7 @@
     </div>
     <h4>Herramientas de Mapeo Objeto Relacional (ORM)</h4>
     <p>Mapeo de entidades con Hibernate/JPA, estados de objetos, consultas HQL/JPQL y relaciones 1:N / N:M.</p>
-    <a href="Tema_3_Herramientas_ORM.md" class="btn">Ver Unidad Didáctica →</a>
+    <a href="Tema_3_Herramientas_ORM" class="btn">Ver Unidad Didáctica →</a>
   </div>
 
   <div class="card">
@@ -40,7 +40,7 @@
     </div>
     <h4>Bases de Datos Objeto-Relacionales y Orientadas a Objetos</h4>
     <p>Instalación de PostgreSQL, JDBC, JSON/JSONB, DB40.</p>
-    <a href="Tema_4_BD_OR_y_OO.md" class="btn">Ver Unidad Didáctica →</a>
+    <a href="Tema_4_BD_OR_y_OO" class="btn">Ver Unidad Didáctica →</a>
   </div>
 
   <div class="card">
@@ -49,7 +49,7 @@
     </div>
     <h4>Bases de Datos Documentales Nativas (MongoDB)</h4>
     <p>Bases de datos NOSQL, MongoDB, CRUD, POJO, Modelado de datos.</p>
-    <a href="Tema_5_Bases_de_Datos_Documentales_Nativas.md" class="btn">Ver Unidad Didáctica →</a>
+    <a href="Tema_5_Bases_de_Datos_Documentales_Nativas" class="btn">Ver Unidad Didáctica →</a>
   </div>
 
   <div class="card">
@@ -58,7 +58,7 @@
     </div>
     <h4>Creación de componentes de acceso a datos</h4>
     <p>Tecnologías de desarrollo de componentes, JavaBeans, empaquetado de componentes, desarrollo con JakartaEE.</p>
-    <a href="Tema_6_Creacion_de_Componentes_de_AD.md" class="btn">Ver Unidad Didáctica →</a>
+    <a href="Tema_6_Creacion_de_Componentes_de_AD" class="btn">Ver Unidad Didáctica →</a>
   </div>
 
 </div>
