@@ -1,127 +1,98 @@
 # ACCESO A DATOS 2ºDAM
-## Repositorio con apuntes y ejercicios del módulo de Acceso a Datos de 2º de DAM
-### Profesor: Andrés Valverde Consentino.
 
-<h3>UNIDADES DIDÁCTICAS</h3>
+Repositorio con los apuntes y ejercicios del módulo de **Acceso a Datos** del Ciclo Formativo de Grado Superior de Desarrollo de Aplicaciones Multiplataforma (DAM).
 
-<div class="grid-container">
+> **Profesor:** Andrés Valverde Consentino  
+> **Curso:** 2º DAM
 
-  <div class="card">
-    <div class="card-header">
-      <span class="badge">UD 1</span>
-    </div>
-    <h4>Gestión de Ficheros y Directorios</h4>
-    <p>Clases java.io y java.nio, flujos de entrada/salida (I/O), serialización de objetos y formatos XML / JSON.</p>
-    <a href="Tema_1_Gestion_de_Ficheros_y_Directorios.html" class="btn">Ver Unidad Didáctica →</a>
-  </div>
+---
 
-  <div class="card">
-    <div class="card-header">
-      <span class="badge">UD 2</span>
-    </div>
-    <h4>Acceso a BD Relacionales (Conectores)</h4>
-    <p>Arquitectura JDBC, ejecución de sentencias SQL, gestión de transacciones y pools de conexiones.</p>
-    <a href="Tema_2_Acceso_BD_Relacionales_Conectores.html" class="btn">Ver Unidad Didáctica →</a>
-  </div>
+## 📚 Unidades Didácticas
 
-  <div class="card">
-    <div class="card-header">
-      <span class="badge">UD 3</span>
-    </div>
-    <h4>Herramientas de Mapeo Objeto Relacional (ORM)</h4>
-    <p>Mapeo de entidades con Hibernate/JPA, estados de objetos, consultas HQL/JPQL y relaciones 1:N / N:M.</p>
-    <a href="Tema_3_Herramientas_ORM.html" class="btn">Ver Unidad Didáctica →</a>
-  </div>
+<div class="grid cards" markdown>
 
-  <div class="card">
-    <div class="card-header">
-      <span class="badge">UD 4</span>
-    </div>
-    <h4>Bases de Datos Objeto-Relacionales y Orientadas a Objetos.</h4>
-    <p>Instalación de PostgreSLQ, JDBC, JSON/JSONB, DB40</p>
-    <a href="Tema_4_BD_OR_y_OO.html" class="btn">Ver Unidad Didáctica →</a>
-  </div>
+-   :material-folder-file:{ .lg .middle } __UD 1: Gestión de Ficheros y Directorios__
 
-  <div class="card">
-    <div class="card-header">
-      <span class="badge">UD 5</span>
-    </div>
-    <h4>Bases de Datos Documentales Nativas (MongoDB)</h4>
-    <p>Bases de datos NOSQL, MongoDB, CRUD, POJO, Modelado de datos.</p>
-    <a href="Tema_5_Bases_de_Datos_Documentales_Nativas.html" class="btn">Ver Unidad Didáctica →</a>
-  </div>
+    ---
 
-<div class="card">
-    <div class="card-header">
-      <span class="badge">UD 6</span>
-    </div>
-    <h4>Creación de componentes de acceso a datos.</h4>
-    <p>Tecnologías de desarrollo de componentes, JavaBeans, empaquetado de componentes, desarrollo con JakartaEE.</p>
-    <a href="Tema_6_Creacion_de_Componentes_de_AD.html" class="btn">Ver Unidad Didáctica →</a>
-  </div>
+    Clases `java.io` y `java.nio`, flujos de entrada/salida (I/O), serialización de objetos y formatos XML / JSON.
+
+    [:octicons-arrow-right-24: Ver Unidad Didáctica](Tema_1_Gestion_de_Ficheros_y_Directorios.md){ .md-button .md-button--primary }
+
+-   :material-database-connect:{ .lg .middle } __UD 2: Acceso a BD Relacionales (Conectores)__
+
+    ---
+
+    Arquitectura JDBC, ejecución de sentencias SQL, gestión de transacciones y pools de conexiones.
+
+    [:octicons-arrow-right-24: Ver Unidad Didáctica](Tema_2_Acceso_BD_Relacionales_Conectores.md){ .md-button .md-button--primary }
+
+-   :material-database-sync:{ .lg .middle } __UD 3: Herramientas ORM (Hibernate)__
+
+    ---
+
+    Mapeo de entidades con Hibernate/JPA, estados de objetos, consultas HQL/JPQL y relaciones 1:N / N:M.
+
+    [:octicons-arrow-right-24: Ver Unidad Didáctica](Tema_3_Herramientas_ORM.md){ .md-button .md-button--primary }
+
+-   :material-database-cog:{ .lg .middle } __UD 4: BD Objeto-Relacionales y OO__
+
+    ---
+
+    Instalación de PostgreSQL, JDBC, almacenamiento JSON/JSONB y persistencia de objetos con DB4O.
+
+    [:octicons-arrow-right-24: Ver Unidad Didáctica](Tema_4_BD_OR_y_OO.md){ .md-button .md-button--primary }
+
+-   :material-leaf:{ .lg .middle } __UD 5: BD Documentales Nativas (MongoDB)__
+
+    ---
+
+    Bases de datos NoSQL, arquitectura MongoDB, operaciones CRUD, mapeo POJO y modelado de documentos.
+
+    [:octicons-arrow-right-24: Ver Unidad Didáctica](Tema_5_Bases_de_Datos_Documentales_Nativas.md){ .md-button .md-button--primary }
+
+-   :material-cube-outline:{ .lg .middle } __UD 6: Creación de Componentes de AD__
+
+    ---
+
+    Tecnologías de desarrollo de componentes, especificación JavaBeans, empaquetado de librerías y JakartaEE.
+
+    [:octicons-arrow-right-24: Ver Unidad Didáctica](Tema_6_Creacion_de_Componentes_de_AD.md){ .md-button .md-button--primary }
 
 </div>
 
-<!-- Estilos para crear las tarjetas visuales -->
+<!-- Ajuste visual de las tarjetas para integrarse perfectamente con el tema Material -->
 <style>
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
-}
-
-.card {
-  border: 1px solid #e1e4e8;
+.md-typeset .grid.cards > ul > li {
+  border: 1px solid var(--md-default-fore-color--lightest);
   border-radius: 8px;
-  padding: 20px;
-  background-color: #ffffff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.card:hover {
+.md-typeset .grid.cards > ul > li:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  border-color: var(--md-primary-bg-color);
 }
 
-.badge {
-  background-color: #159957;
-  color: white;
-  padding: 4px 10px;
-  border-radius: 12px;
-  font-size: 0.8rem;
-  font-weight: bold;
+.md-typeset .grid.cards hr {
+  margin: 0.8em 0;
 }
 
-.card h4 {
-  margin: 12px 0 8px 0;
-  color: #159957;
-}
-
-.card p {
-  font-size: 0.9rem;
-  color: #606f7b;
-  flex-grow: 1;
-}
-
-.btn {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 8px 14px;
-  background-color: #159957;
-  color: white !important;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 0.9rem;
-  font-weight: bold;
+.md-typeset .md-button--primary {
+  background-color: var(--md-primary-bg-color);
+  color: var(--md-primary-fg-color) !important;
+  border: none;
+  margin-top: 1em;
+  width: 100%;
   text-align: center;
 }
 
-.btn:hover {
-  background-color: #117a45;
+.md-typeset .md-button--primary:hover {
+  background-color: var(--md-accent-fg-color);
 }
 </style>
