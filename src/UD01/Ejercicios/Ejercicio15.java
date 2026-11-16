@@ -7,9 +7,6 @@ import java.util.List;
 import java.util.Scanner;
 
 
-public class Ejercicio15 {
-
-
     // --- CLASE EMPLEADO ---
     class Empleado implements Serializable {
         private static final long serialVersionUID = 1L;
@@ -33,7 +30,7 @@ public class Ejercicio15 {
     }
 
     // --- CLASE PRINCIPAL ---
-    public class GestionEmpleados {
+    public class Ejercicio15 {
 
         private static final String RUTA_FICHERO = "empleados.obj";
 
@@ -197,4 +194,3 @@ public class Ejercicio15 {
             }
         }
     }
-}

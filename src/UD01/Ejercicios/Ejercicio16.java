@@ -6,9 +6,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
-public class Ejercicio16 {
-
-
     // --- CLASE PRODUCTO ---
     class Producto implements Serializable {
         private static final long serialVersionUID = 1L;
@@ -37,7 +34,7 @@ public class Ejercicio16 {
     }
 
     // --- CLASE PRINCIPAL ---
-    public class GestionProductos {
+    public class Ejercicio16 {
 
         private static final String RUTA_FICHERO = "productos.obj";
 
@@ -235,4 +232,3 @@ public class Ejercicio16 {
             }
         }
     }
-}
