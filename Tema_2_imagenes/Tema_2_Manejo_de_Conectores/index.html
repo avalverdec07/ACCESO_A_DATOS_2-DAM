@@ -1,0 +1,1073 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://avalverdec07.github.io/ACCESO_A_DATOS_2-DAM/Tema_2_imagenes/Tema_2_Manejo_de_Conectores/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
+    
+    
+      
+        <title>Tema 2: Manejo de Conectores - Acceso a Datos 2º DAM</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tema-2-manejo-de-conectores" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Acceso a Datos 2º DAM" class="md-header__button md-logo" aria-label="Acceso a Datos 2º DAM" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Acceso a Datos 2º DAM
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tema 2: Manejo de Conectores
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/avalverdec07/ACCESO_A_DATOS_2-DAM" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    avalverdec07/ACCESO_A_DATOS_2-DAM
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Acceso a Datos 2º DAM" class="md-nav__button md-logo" aria-label="Acceso a Datos 2º DAM" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Acceso a Datos 2º DAM
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/avalverdec07/ACCESO_A_DATOS_2-DAM" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    avalverdec07/ACCESO_A_DATOS_2-DAM
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidades Didácticas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unidades Didácticas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tema_1_Gestion_de_Ficheros_y_Directorios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD1 - Gestión de Ficheros
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tema_2_Acceso_BD_Relacionales_Conectores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD2 - Conectores BD (JDBC)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tema_3_Herramientas_ORM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD3 - Herramientas ORM (Hibernate)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tema_4_BD_OR_y_OO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD4 - Bases de Datos objeto-relacionales y orientadas a objetos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tema5_Bases_de_Datos_Documentales_Nativas.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD5 - Bases de Datos Documentales Nativas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tema6_Creacion_de_Componentes_de_AD.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD6 - Creación de Componentes_de_AD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="tema-2-manejo-de-conectores">Tema 2: Manejo de Conectores</h1>
+<h2 id="acceso-a-datos-ies-augustobriga">Acceso a Datos — IES Augustóbriga</h2>
+<h2 id="indice">Índice</h2>
+<ol>
+<li>El desfase objeto-relacional</li>
+<li>Protocolos de acceso a BD SQL</li>
+<li>Conector JDBC</li>
+<li>3.1 Clases</li>
+<li>3.2 Pasos para acceder a una BD</li>
+<li>3.3 Acceso a BD MySQL</li>
+<li>3.4 Metadatos</li>
+<li>3.5 Ejecución de sentencias DML/DDL</li>
+<li>3.6 Ejecución de scripts</li>
+<li>3.7 Ejecución de rutinas almacenadas en el servidor</li>
+<li>3.8 SQLite</li>
+<li>3.9 Acceso a BD Access</li>
+<li>Ejercicio 14</li>
+</ol>
+<hr />
+<h2 id="1-el-desfase-objeto-relacional">1 El desfase objeto-relacional</h2>
+<p>El término <strong>desfase o impedancia</strong> objeto-relacional se refiere a las dificultades técnicas que surgen cuando una base de datos relacional se usa en conjunto con un programa escrito en POO. Estos aspectos se pueden presentar en cuestiones como:</p>
+<ul>
+<li><strong>Lenguaje de programación</strong>: el programador debe conocer el lenguaje de programación orientado a objetos (POO) y el lenguaje de acceso a datos.</li>
+<li><strong>Tipos de datos</strong>: en las bases de datos relacionales siempre hay restricciones en el uso de tipos, mientras que la programación orientada a objetos utiliza tipos de datos más complejos.</li>
+<li><strong>Paradigma de programación</strong>: en el proceso de diseño y construcción del software se tiene que hacer una traducción del modelo orientado a objetos de clases al modelo Entidad-Relación (E/R), puesto que el primero maneja objetos y el segundo maneja tablas y tuplas (o filas), lo que implica que se tengan que diseñar dos diagramas diferentes para el diseño de la aplicación.</li>
+</ul>
+<h2 id="2-protocolos-de-acceso-a-bd-sql">2 Protocolos de acceso a BD SQL</h2>
+<p>Las aplicaciones usan APIs para abrir una conexión a una BD, enviar consultas, actualizaciones y resultados. Las más usadas son:</p>
+<ul>
+<li><strong>ODBC</strong> (Open Database Connectivity): Es el conector de Microsoft, estándar para acceder a cualquier BD desde aplicaciones Windows. Los SGBD compatibles con ODBC proporcionan una biblioteca que se debe enlazar con el programa cliente. Cuando el programa cliente realiza una llamada a la API ODBC la biblioteca se comunica con la BD para realizar la acción solicitada y obtener los resultados. Es complejo de usar desde Java, presenta problemas de seguridad, robustez y portabilidad debido a que la API está escrita en C.</li>
+<li><strong>JDBC</strong> (Java Database Connectivity): Librería estándar para BD relacionales. Dispone de conectores (drivers) para cada tipo de BD.</li>
+</ul>
+<p><img alt="Esquema JDBC: un programa Java accede mediante JDBC a Oracle, SQL Server, Sybase y MySQL" src="Tema_2_imagenes/img-000.png" /></p>
+<h2 id="3-conector-jdbc">3 Conector JDBC</h2>
+<p>Para poder conectarse a una base de datos y lanzar consultas, una aplicación necesita tener un driver adecuado. Un conector o driver es un conjunto de clases encargadas de implementar los interfaces de la API JDBC y acceder a la base de datos.</p>
+<p>El conector lo proporciona el fabricante de la base de datos o bien un tercero.</p>
+<h3 id="31-clases">3.1 Clases</h3>
+<p>Las clases para operar con BD a través de JDBC se encuentran en el paquete <strong>java.sql</strong>.</p>
+<p>A continuación, se detallan las principales clases con las que vamos a trabajar:</p>
+<ul>
+<li><strong>DriverManager</strong>: Para gestionar todos los drivers instalados.</li>
+<li><strong>Connection</strong>: Representa una conexión a una BD.</li>
+<li><strong>DatabaseMetaData</strong>: Proporciona información (metadatos) acerca de una BD.</li>
+<li><strong>Statement</strong>: Permite ejecutar sentencias SQL sin parámetros.</li>
+<li><strong>PreparedStatement</strong>: Permite ejecutar sentencias SQL con parámetros.</li>
+<li><strong>CallableStatement</strong>: Permite ejecutar sentencias SQL con parámetros de e/s como procedimientos almacenados.</li>
+<li><strong>ResultSet</strong>: Contiene las filas resultantes de ejecutar una consulta que devuelve un conjunto de registros.</li>
+<li><strong>ResultSetMetaData</strong>: Obtiene información (metadatos) sobre un ResultSet como el número de columnas, sus nombres, etc.</li>
+</ul>
+<p><img alt="Diagrama de clases JDBC: DriverManager devuelve Connection, que devuelve PreparedStatement, que devuelve ResultSet; aparece también SQLException" src="Tema_2_imagenes/img-001.png" /></p>
+<h3 id="32-pasos-para-acceder-a-una-bd">3.2 Pasos para acceder a una BD</h3>
+<p><img alt="Pasos: Cargar el driver JDBC del motor de la BD → Crear Conexión (Connection) → Crear Sentencia (Statement) → Ejecutar Sentencia → Recuperar el resultado (ResultSet) → Liberar Objetos" src="Tema_2_imagenes/img-007.png" /></p>
+<p><strong>1. Cargar el driver JDBC del motor de la BD</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">//Cargamos el driver MySQL</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">Class</span><span class="p">.</span><span class="na">forName</span><span class="p">(</span><span class="s">"com.mysql.cj.jdbc.Driver"</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>2. Crear Conexión (Connection)</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">//Parámetros de acceso a la BD</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">String</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"jdbc:mysql://localhost:3306/ies?serverTimezone=Europe/Madrid"</span><span class="p">,</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">       </span><span class="n">usuario</span><span class="w"> </span><span class="o">=</span><span class="s">"root"</span><span class="p">,</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">       </span><span class="n">clave</span><span class="o">=</span><span class="s">"root"</span><span class="p">;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1">//Abrir conexión con la BD</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">Connection</span><span class="w"> </span><span class="n">conexion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DriverManager</span><span class="p">.</span><span class="na">getConnection</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">usuario</span><span class="p">,</span><span class="n">clave</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>3. Crear Sentencia (Statement)</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">//Preparar la consulta</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">String</span><span class="w"> </span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"select * from alumnos"</span><span class="p">;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">Statement</span><span class="w"> </span><span class="n">sentencia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conexion</span><span class="p">.</span><span class="na">createStatement</span><span class="p">();</span>
+</code></pre></div>
+<p><strong>4. Ejecutar Sentencia</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">//Ejecutar la consulta</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">ResultSet</span><span class="w"> </span><span class="n">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sentencia</span><span class="p">.</span><span class="na">executeQuery</span><span class="p">(</span><span class="n">query</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>5. Recuperar el resultado (ResultSet)</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">//Procesar el resultado</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1">//Se realiza un bucle mientras se lean registros devueltos</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">while</span><span class="p">(</span><span class="n">resultado</span><span class="p">.</span><span class="na">next</span><span class="p">()){</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="c1">//Recuperamos los campos de las tablas de dos formas</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="c1">//resultado.getTipo(num_columna) o</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="c1">//  resultado.getTipo(nombre_columna)</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"ID:"</span><span class="o">+</span><span class="n">resultado</span><span class="p">.</span><span class="na">getInt</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s">"\tNOMBRE:"</span><span class="o">+</span><span class="n">resultado</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">"nombre"</span><span class="p">)</span><span class="o">+</span><span class="s">"\tCURSO:"</span><span class="o">+</span><span class="n">resultado</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>6. Liberar objetos</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1">//Liberamos recursos</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">resultado</span><span class="p">.</span><span class="na">close</span><span class="p">();</span><span class="w"> </span><span class="n">sentencia</span><span class="p">.</span><span class="na">close</span><span class="p">();</span><span class="w"> </span><span class="n">conexion</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+</code></pre></div>
+<h3 id="33-acceso-a-bd-mysql">3.3 Acceso a BD MySQL</h3>
+<p>Vamos a preparar nuestro entorno para poder acceder desde los programas Java a BD MySQL con JDBC. Para ello debemos:</p>
+<ul>
+<li>Instalar <strong>Servidor MySQL</strong> (XAMPP o directamente el servidor).</li>
+<li>Instalar <strong>MySQL Workbench</strong>.</li>
+<li>Obtener el driver del conector JDBC:</li>
+<li>Descargar el driver JDBC: debemos incluir la ruta del archivo <strong>mysql-connector-java-XXX.jar</strong> en el BuildPath del proyecto. El conector queda descargado en la carpeta <code>C:\Program Files (x86)\MySQL\Connector J 8.0\mysql-connector-java-8.0.22.jar</code>.<ul>
+<li>Añadir el driver al proyecto. Selecciona el proyecto y accede a:</li>
+<li>Project/Properties/</li>
+<li>Java BuildPath</li>
+<li>Libraries</li>
+<li>Classpath</li>
+<li>Add External Jar</li>
+</ul>
+</li>
+</ul>
+<p><img alt="Ventana Properties del proyecto en Eclipse: Java Build Path → Libraries → Classpath → Add External JARs, con mysql-connector-java-8.0.22.jar añadido; se pulsa Apply and Close" src="Tema_2_imagenes/img-009.png" /></p>
+<ul>
+<li>Utilizar Maven: configuramos el archivo <code>pom.xml</code> de la siguiente forma:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cm">&lt;!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java --&gt;</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nt">&lt;dependency&gt;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nt">&lt;groupId&gt;</span>mysql<span class="nt">&lt;/groupId&gt;</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>mysql-connector-java<span class="nt">&lt;/artifactId&gt;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="nt">&lt;version&gt;</span>8.0.33<span class="nt">&lt;/version&gt;</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Ejercicio 1</strong>: Crea una clase Java que gestione el acceso a los datos de la BD alumnos. Realiza un programa en Java que muestre los datos de la tabla alumnos.</p>
+</blockquote>
+<h3 id="34-metadatos">3.4 Metadatos</h3>
+<h4 id="a-nivel-bd-tabla-campo">A nivel BD, tabla, campo</h4>
+<p>Para obtener los metadatos de la BD utilizamos la interfaz <strong>DatabaseMetaData</strong>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">DatabaseMetaData</span><span class="w"> </span><span class="n">datos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conexion</span><span class="p">.</span><span class="na">getMetaData</span><span class="p">();</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">""</span><span class="o">+</span><span class="n">datos</span><span class="p">.</span><span class="na">getDatabaseProductName</span><span class="p">());</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">ResultSet</span><span class="w"> </span><span class="n">tablas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">datos</span><span class="p">.</span><span class="na">getTables</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="k">while</span><span class="p">(</span><span class="n">tablas</span><span class="p">.</span><span class="na">next</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">tablas</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="p">}</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="n">ResultSet</span><span class="w"> </span><span class="n">campos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">datos</span><span class="p">.</span><span class="na">getColumns</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="s">"libros"</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="k">while</span><span class="p">(</span><span class="n">campos</span><span class="p">.</span><span class="na">next</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"---"</span><span class="o">+</span><span class="n">campos</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="mi">4</span><span class="p">));</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="p">}</span>
+</code></pre></div>
+<p>Los métodos más usados son:</p>
+<ul>
+<li><code>getDatabaseProductName()</code></li>
+<li><code>getDriverName()</code></li>
+<li><code>getUrl()</code></li>
+<li><code>getUserName()</code></li>
+<li><code>getTables()</code></li>
+<li><code>getColumns()</code></li>
+<li><code>getPrimaryKeys()</code></li>
+<li><code>getImportedKeys()</code></li>
+<li><code>getProcedures()</code></li>
+</ul>
+<h4 id="a-nivel-de-resultado-de-consulta">A nivel de resultado de consulta</h4>
+<p>Para obtener los metadatos sobre los datos devueltos en una consulta utilizamos la interfaz <strong>ResultSetMetaData</strong>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">Statement</span><span class="w"> </span><span class="n">consulta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conexion</span><span class="p">.</span><span class="na">createStatement</span><span class="p">();</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">ResultSet</span><span class="w"> </span><span class="n">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">consulta</span><span class="p">.</span><span class="na">executeQuery</span><span class="p">(</span><span class="s">"select * from libros"</span><span class="p">);</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="n">ResultSetMetaData</span><span class="w"> </span><span class="n">datosConsulta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">resultado</span><span class="p">.</span><span class="na">getMetaData</span><span class="p">();</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;=</span><span class="n">datosConsulta</span><span class="p">.</span><span class="na">getColumnCount</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Campo:"</span><span class="o">+</span><span class="n">datosConsulta</span><span class="p">.</span><span class="na">getColumnName</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Tipo:"</span><span class="o">+</span><span class="n">datosConsulta</span><span class="p">.</span><span class="na">getColumnTypeName</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="p">}</span>
+</code></pre></div>
+<p>Los métodos más usados son:</p>
+<ul>
+<li><code>getColumnCount()</code></li>
+<li><code>getColumnName()</code></li>
+<li><code>getColumnTypeName()</code></li>
+<li><code>isNullable()</code></li>
+</ul>
+<blockquote>
+<p><strong>Ejercicio 2</strong>: Utilizando la clase Alumno, realiza un programa que muestre los siguientes metadatos:
+- Gestor de base de datos
+- Nombre del driver
+- URL
+- Usuario
+- Tablas: para cada tabla
+  - Nombre de la tabla
+  - Clave primaria
+  - Claves externas
+  - Información del campo
+    - Nombre
+    - Tipo</p>
+<p><strong>Ejercicio 3</strong>: Hacer un programa que muestre los datos de la tabla asignatura de la siguiente forma:</p>
+</blockquote>
+<p><img alt="Salida esperada del Ejercicio 3: número de columnas, columnas con tipo y si admiten nulos, datos de las asignaturas y número de registros" src="Tema_2_imagenes/img-010.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Número de columnas:2
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>Columna Tipo    Admite Nulos
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>nombreC VARCHAR 0
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>nombreL VARCHAR 1
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>Datos
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>AD Acceso a datos
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>BD Bases de datos
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>LM Lenguajes de Marcas
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>Número de registros:3
+</code></pre></div>
+<h3 id="35-ejecucion-de-sentencias-dmlddl">3.5 Ejecución de sentencias DML/DDL</h3>
+<p>Para ejecutar una sentencia DML o DDL debemos:</p>
+<table>
+<thead>
+<tr>
+<th>Paso</th>
+<th>Instrucción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Crear un objeto Sentencia</strong></td>
+<td><code>Statement conexion.createStatement();</code></td>
+</tr>
+<tr>
+<td><strong>Ejecutar la sentencia.</strong> La forma de ejecutar la sentencia depende de si la consulta ejecutada devuelve un conjunto de filas o no.</td>
+<td></td>
+</tr>
+<tr>
+<td>Si la sentencia devuelve un conjunto de filas.</td>
+<td><code>ResultSet executeQuery(String)</code></td>
+</tr>
+<tr>
+<td>Si la sentencia no devuelve un conjunto de filas. Para sentencias DDL (create, drop, alter) devuelve 0 y para DML (insert, update, delete) devuelve el número de registros afectados.</td>
+<td><code>int executeUpdate(String)</code></td>
+</tr>
+<tr>
+<td>Para cualquier tipo de sentencia. Devuelve <em>true</em> si se obtiene un ResultSet y <em>false</em> en caso contrario.</td>
+<td><code>Boolean execute(String)</code></td>
+</tr>
+<tr>
+<td><strong>Recuperar el ResultSet de una sentencia.</strong> Si la ejecución se hace con el método <em>execute</em>: recuperar el ResultSet, o el número de registros tratados si devuelve false.</td>
+<td><code>sentencia.getResultSet</code> / <code>sentencia.getUpdateCount</code></td>
+</tr>
+<tr>
+<td>Para acceder a los datos de un registro devuelto en un ResultSet</td>
+<td><code>while(ResultSet.next()){ ResultSet.getTipo(numColumna) ResultSet.getTipo(nombreColum) }</code></td>
+</tr>
+<tr>
+<td><strong>Sentencias con parámetros.</strong> Interfaz <strong>PreparedStatement</strong> en vez de <strong>Statement</strong>.</td>
+<td><code>String consulta = "select * from alumnos where id = ? and asig=?";</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>PreparedStatement</code> permite construir una sentencia con marcadores (representados por <code>?</code>) que serán sustituidos por datos cuando se ejecute la sentencia. Cada marcador tiene un número de orden empezando en 1.</p>
+<p>Los marcadores sólo se pueden usar para los datos de columnas y no para nombres de tablas, o de columnas.</p>
+<p>Para rellenar los marcadores de la sentencia se utilizan los métodos <code>sentencia.setTipo(nº orden parámetro, valor)</code> en el orden en el que se definen los marcadores.</p>
+<p>Los métodos para ejecutar estas sentencias son los mismos que los de <code>Statement</code>, pero no hace falta pasar el String con la consulta, ya que este se fija en la declaración de la sentencia.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">PreparedStatement</span><span class="w"> </span><span class="n">sentencia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conexion</span><span class="p">.</span><span class="na">prepareStatement</span><span class="p">(</span><span class="n">consulta</span><span class="p">);</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">sentencia</span><span class="p">.</span><span class="na">setInt</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">sentencia</span><span class="p">.</span><span class="na">setString</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">"AD"</span><span class="p">);</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="c1">//Ejecutamos la sentencia</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="n">ResultSet</span><span class="w"> </span><span class="n">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sentencia</span><span class="p">.</span><span class="na">executeQuery</span><span class="p">();</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Ejercicio 4</strong>: Realiza un programa que muestre un menú con las siguientes opciones:</p>
+<ol>
+<li><strong>Alumnos por asignatura</strong>: Mostrar los nombres de alumnos, de asignatura y la nota de los alumnos de una asignatura que se pide por teclado. No usar consultas con parámetros.</li>
+<li><strong>Notas de alumno</strong>: Mostrar los nombres de asignatura y la nota de un alumno cuyo id se pide por teclado. Usar consultas con parámetros.</li>
+<li><strong>Alta de alumno</strong>: Insértate como alumno de 2DAM.</li>
+<li><strong>Añadir cp</strong>: Añadir a la tabla alumno el campo cp de tipo entero.</li>
+<li><strong>Rellenar cp</strong>: Rellena el cp de los alumnos con 10300.</li>
+<li><strong>Añadir fecha de nacimiento</strong>: Añade a la tabla alumno el campo fecha de nacimiento.</li>
+<li><strong>Rellenar fecha de nacimiento</strong>: Rellena la fecha de nacimiento de un alumno cuyo id se pide por teclado con la fecha que también se pide por teclado.</li>
+</ol>
+</blockquote>
+<h3 id="36-ejecucion-de-scripts">3.6 Ejecución de scripts</h3>
+<p>Para poder ejecutar un script SQL en el servidor de BD hay que indicarlo en la cadena de conexión añadiendo el modificador <code>allowMultiQueries=true</code> de la siguiente forma:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">Connection</span><span class="w"> </span><span class="n">conexion</span><span class="w"> </span><span class="o">=</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="n">DriverManager</span><span class="p">.</span><span class="na">getConnection</span><span class="p">(</span><span class="s">"jdbc:mysql://localhost/alumnos?allowMultiQueries=true"</span><span class="p">,</span><span class="s">"root"</span><span class="p">,</span><span class="s">"rosa"</span><span class="p">);</span>
+</code></pre></div>
+<p>Para cargar el script, hay que formar un String con el contenido del fichero. La forma de ejecutar la sentencia es la misma que la de las sentencias DDL.</p>
+<p>Debemos tener cuidado ya que hay BD que no soportan la ejecución de scripts.</p>
+<blockquote>
+<p><strong>Ejercicio 5</strong>: Realiza un script que añada a la base de datos la tabla profesor y rellénala con algunos profesores. Además, debe añadir también la tabla imparte donde se refleje qué profesor imparte cada asignatura.</p>
+</blockquote>
+<h3 id="37-ejecucion-de-rutinas-almacenadas-en-el-servidor">3.7 Ejecución de rutinas almacenadas en el servidor</h3>
+<p>JDBC permite también ejecutar rutinas almacenadas en el servidor, ya sean funciones o procedimientos. La forma de ejecutar una rutina es diferente según el tipo de rutina, ya que las funciones tienen un retorno y los procedimientos no.</p>
+<p>Los pasos que hay que dar son:</p>
+<ul>
+<li><strong>Rellenar un String con el nombre de la rutina y los parámetros necesarios.</strong></li>
+<li>Procedimientos:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">String</span><span class="w"> </span><span class="n">consulta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"{ call nombre_proc}"</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">String</span><span class="w"> </span><span class="n">consulta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"{ call nombre_proc(?,?,…)}"</span>
+</code></pre></div></li>
+<li>Funciones:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">String</span><span class="w"> </span><span class="n">consulta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"{? = call nombre_func}"</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">String</span><span class="w"> </span><span class="n">consulta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"{? = call nombre_func(?,?,…)}"</span>
+</code></pre></div></li>
+<li><strong>Crear la sentencia.</strong> La sentencia será un objeto de la clase <code>CallableStatement</code> y se crea con el método <code>prepareCall(String consulta)</code> de la conexión.</li>
+<li><strong>Rellenar los parámetros de entrada.</strong> Se rellenan del mismo modo que los parámetros de las sentencias preparadas.</li>
+<li><strong>Registrar los parámetros de salida</strong> para funciones y procedimientos. Los parámetros de salida deben registrarse antes de ejecutar la sentencia, indicando de qué tipo es el parámetro. Tipo es una constante definida en la clase <code>java.sql.Types</code>: <code>Types.INTEGER</code>, <code>Types.VARCHAR</code>, …
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">sentencia</span><span class="p">.</span><span class="na">registerOutParameter</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">indice</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">tipo</span><span class="p">);</span>
+</code></pre></div></li>
+<li><strong>Ejecutar la rutina.</strong> La sentencia se ejecuta con el método <code>executeQuery</code>/<code>executeUpdate</code>, según lo que devuelva la rutina. Normalmente <code>executeQuery</code> en procedimientos y <code>executeUpdate</code> en funciones.</li>
+<li><strong>Recuperar el valor devuelto</strong> en función o en procedimiento con: <code>sentencia.getTipo(indice);</code></li>
+</ul>
+<blockquote>
+<p><strong>Ejercicio 6</strong>: Realiza un programa Java que ejecute un script que cree en MySQL las siguientes rutinas almacenadas:
+- una función llamada <code>chequear_alumno(idAlumno)</code> que devuelva true si un id de alumno que se pasa por parámetro existe y false en caso contrario.
+- un procedimiento que inserte una nota a un alumno cuyo id, asignatura y nota se pasa por parámetro. La rutina debe devolver un select de las notas del alumno si se ha insertado correctamente.</p>
+<p><strong>Ejercicio 7</strong>: Realiza un programa que pida un número de alumno por teclado y muestre si existe o no llamando a la función <code>chequear_alumno</code>.</p>
+<p><strong>Ejercicio 9</strong>: Realiza un programa que pida un id de alumno, una asignatura y una nota e inserte el registro en la tabla notas llamando al procedimiento <code>notas_Asig</code>.</p>
+<p><strong>Ejercicio 10: Desfase Objeto-Relacional.</strong> A partir del siguiente diagrama de clases, realiza un programa que permita:
+- Crear biblioteca
+- Mostrar libros
+- Alta libro
+- Modificar libro
+- Borrar libro</p>
+</blockquote>
+<p><img alt="Diagrama de clases del Ejercicio 10: Libro (id, titulo, numEjemplares) con 0..N libros por Biblioteca (mostrarLibros, altaLibro, modificarLibro, borrarLibro); BDBiblioteca (conexión, bdBiblioteca, obtenerLibros, altaLibro, modificarLibro, borrarLibro); ambas relacionadas 1 a 1 con la clase Ejercicio 10" src="Tema_2_imagenes/img-011.png" /></p>
+<h3 id="38-sqlite">3.8 SQLite</h3>
+<p>JDBC permite conectarnos con diferentes SGBD. La forma de trabajar con las BD es independiente del SGBD.</p>
+<h4 id="instalacion-del-sgbd-sqlite">Instalación del SGBD SQLite</h4>
+<ul>
+<li>Descarga de SQLite (versión 3.15.1) de https://sqlite.org/download.html: <code>sqlite-tools-win32-x86-3300000.zip</code></li>
+<li>Descomprime el zip.</li>
+<li>Crear una BD en modo comando: ejecutar <code>sqlite3 ruta_BD</code>. Si no existe la BD, se crea.</li>
+</ul>
+<h4 id="instalacion-driver-jdbc-de-sqlite">Instalación driver JDBC de SQLite</h4>
+<ul>
+<li>Descarga: https://bitbucket.org/xerial/sqlite-jdbc/downloads/ → <code>sqlite-jdbc-3.27.2.1.jar</code></li>
+<li>Añadir la librería al proyecto.</li>
+<li>Cargar la clase: <code>Class.forName("org.sqlite.JDBC");</code></li>
+</ul>
+<h4 id="configuracion-maven-para-driver-jdbc-sqlite">Configuración Maven para driver JDBC SQLite</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="cm">&lt;!-- https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc --&gt;</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nt">&lt;dependency&gt;</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="nt">&lt;groupId&gt;</span>org.xerial<span class="nt">&lt;/groupId&gt;</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>sqlite-jdbc<span class="nt">&lt;/artifactId&gt;</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">    </span><span class="nt">&lt;version&gt;</span>3.28.0<span class="nt">&lt;/version&gt;</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>
+<h4 id="establecer-la-conexion">Establecer la conexión</h4>
+<ul>
+<li><code>java
+  Connection conexion =
+      DriverManager.getConnection("jdbc:sqlite:c:\\SQLITE\\alumnos.db");</code></li>
+<li>Admite la ejecución de múltiples consultas sin indicarlo en la cadena de conexión.</li>
+</ul>
+<p>Para trabajar con el servidor utilizaremos el programa <code>sqlite3</code> de la carpeta descomprimida.</p>
+<p>Para crear una BD en modo comando debemos ejecutar <code>sqlite3 ruta_BD</code>. Si no existe la BD, se crea.</p>
+<p>Otros comandos de <code>sqlite3</code> son:</p>
+<p><img alt="Tabla de comandos de sqlite3" src="Tema_2_imagenes/img-013.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Comando</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.show</code></td>
+<td>Muestra los valores actuales de varios parámetros</td>
+</tr>
+<tr>
+<td><code>.databases</code></td>
+<td>Proporciona nombres de bases de datos y archivos</td>
+</tr>
+<tr>
+<td><code>.quit</code></td>
+<td>Salir del programa sqlite3</td>
+</tr>
+<tr>
+<td><code>.tables</code></td>
+<td>Mostrar tablas actuales</td>
+</tr>
+<tr>
+<td><code>.schema</code></td>
+<td>Pantalla de esquema de la tabla</td>
+</tr>
+<tr>
+<td><code>.header</code></td>
+<td>Mostrar u ocultar el encabezado de la tabla de salida</td>
+</tr>
+<tr>
+<td><code>.mode</code></td>
+<td>Selecciona el modo de la tabla de salida</td>
+</tr>
+<tr>
+<td><code>.dump</code></td>
+<td>Base de datos de volcado en formato de texto SQL</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Ejercicio 11</strong>: Crea la BD alumnos.</p>
+<p><strong>Ejercicio 12</strong>: Realiza un programa en Java que permita realizar las siguientes acciones:
+- Crear BD alumnos: borrar tablas y volverlas a crear
+- Ver datos
+- Introducir alumnos
+- Introducir asignaturas
+- Introducir notas</p>
+</blockquote>
+<h3 id="39-acceso-a-bd-access">3.9 Acceso a BD Access</h3>
+<h4 id="instalacion-de-drivers-access">Instalación de drivers Access</h4>
+<ul>
+<li>Descargar los drivers: https://sourceforge.net/projects/ucanaccess/files/</li>
+<li>Descomprimir drivers.</li>
+<li>Añadir librerías al proyecto:</li>
+</ul>
+<p><img alt="Librerías necesarias: commons-lang-2.6.jar, commons-logging-1.1.1.jar, hsqldb.jar, jackcess-2.1.3.jar y ucanaccess-3.0.7.jar" src="Tema_2_imagenes/img-015.png" />
+<img alt="ucanaccess-3.0.7.jar" src="Tema_2_imagenes/img-016.png" /></p>
+<ul>
+<li><code>commons-lang-2.6.jar</code></li>
+<li><code>commons-logging-1.1.1.jar</code></li>
+<li><code>hsqldb.jar</code></li>
+<li><code>jackcess-2.1.3.jar</code></li>
+<li><code>ucanaccess-3.0.7.jar</code></li>
+</ul>
+<h4 id="configuracion-maven">Configuración Maven</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="cm">&lt;!-- https://mvnrepository.com/artifact/net.sf.ucanaccess/ucanaccess --&gt;</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="nt">&lt;dependency&gt;</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="nt">&lt;groupId&gt;</span>net.sf.ucanaccess<span class="nt">&lt;/groupId&gt;</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>ucanaccess<span class="nt">&lt;/artifactId&gt;</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">    </span><span class="nt">&lt;version&gt;</span>4.0.4<span class="nt">&lt;/version&gt;</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>
+<h4 id="conexion">Conexión</h4>
+<ul>
+<li>Cargar la clase: <code>Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");</code></li>
+<li>Crear la conexión: <code>DriverManager.getConnection("jdbc:ucanaccess://C:\\...biblioteca.mdb")</code></li>
+</ul>
+<blockquote>
+<p><strong>Ejercicio 13</strong>: Realiza un programa que:
+- Añada un libro a la BD <code>biblioteca.mdb</code> del tema 1 (Comedia) de la editorial 1 (Planeta). El campo autonumérico no se puede pasar. Las fechas hay que introducirlas con el formato <code>yyyy-mm-dd hh:mm:ss</code>.
+- Muestre la tabla libros de la BD <code>biblioteca.mdb</code>.</p>
+</blockquote>
+<h2 id="4-ejercicio-14">4 Ejercicio 14</h2>
+<p>Se proporciona el script <code>gimnasio.sql</code>.</p>
+<p>Realiza una aplicación que permita gestionar el funcionamiento de un gimnasio. La aplicación contará con dos tipos de usuarios: clientes y administradores. Las funciones que puede hacer cada tipo de usuario son:</p>
+<ul>
+<li><strong>Clientes:</strong></li>
+<li>Ver las actividades en las que está inscrito.</li>
+<li>Inscribirse en una actividad.</li>
+<li>Borrarse de una actividad.</li>
+<li>Ver los recibos que se le han emitido, pudiendo filtrar entre recibos pagados, no pagados y todos.</li>
+<li><strong>Administradores:</strong></li>
+<li>Gestionar los clientes, con la posibilidad de modificar, añadir y dar de baja clientes.</li>
+<li>Gestionar las actividades, con la posibilidad de modificar, añadir y dar de baja actividades.</li>
+<li>Generar los recibos de un mes.</li>
+<li>Marcar recibo como pagado cuando el cliente pague.</li>
+<li>Mostrar recibos: realiza un informe que muestre los recibos realizados en un año que se pasa como parámetro. El informe debe mostrar lo que se ha cobrado a cada cliente en ese año. Al final del informe se mostrará lo que ha cobrado el gimnasio a todos los clientes.</li>
+</ul>
+<p>La aplicación pedirá el usuario y la contraseña y, en función del tipo de usuario, se le mostrarán las operaciones que puede hacer. El script crea el usuario <code>admin</code> con clave <code>admin</code>; este será el usuario administrador.</p>
+<p>Las contraseñas en la BD se almacenan encriptadas con la función de MySQL <code>sha2('clave', longitud)</code>; longitud puede ser 224, 256, 384, 512, o 0 (equivalente a 256). Para comprobar si se introduce la contraseña correcta, se deberá chequear que las claves encriptadas coinciden.</p>
+<p>Cuando se dé de alta un cliente hay que hacer un insert en dos tablas ⇒ <strong>¡¡USAR TRANSACCIONES!!</strong></p>
+<ul>
+<li><code>dbConnection.setAutoCommit(false)</code> antes del primer insert.</li>
+<li><code>dbConnection.commit()</code> después del segundo insert.</li>
+<li>Si se produce algún error entre los dos insert: <code>dbConnection.rollback()</code>.</li>
+</ul>
+<p>Cada vez que se añadan registros deberá informarse de si se ha insertado el registro o no. Los mensajes mostrarán la mayor información posible sin saturar al usuario. Para recuperar el último número asignado por MySQL en un campo auto-increment debemos:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">numero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stmt</span><span class="p">.</span><span class="na">executeUpdate</span><span class="p">(</span><span class="n">query</span><span class="p">,</span><span class="w"> </span><span class="n">Statement</span><span class="p">.</span><span class="na">RETURN_GENERATED_KEYS</span><span class="p">);</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="n">ResultSet</span><span class="w"> </span><span class="n">rs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stmt</span><span class="p">.</span><span class="na">getGeneratedKeys</span><span class="p">();</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rs</span><span class="p">.</span><span class="na">next</span><span class="p">()){</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="n">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rs</span><span class="p">.</span><span class="na">getInt</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="p">}</span>
+</code></pre></div>
+<p>Para gestionar los recibos se pedirá el mes y el año. Si se han generado los recibos para esta fecha se mostrarán, si no, se generarán. Para generar los recibos puedes usar la rutina <code>generar_recibos()</code>.</p>
+<p>Cuando un cliente paga un recibo, la fecha de pago se rellena automáticamente con la fecha del día en que se paga.</p>
+<p><strong>Modelo entidad-relación de la BD del gimnasio:</strong></p>
+<p><img alt="Diagrama E/R del gimnasio: tablas cliente (id, usuario, dni, apellidos, nombre, tfno_contacto, baja), actividad (id, nombre, coste_mensual, activa), participa (actividad_id, cliente_id), recibo (cliente_id, fecha_emision, fecha_pago, cuantia, pagado) y usuarios (usuario, clave, tipo)" src="Tema_2_imagenes/img-017.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Tabla</th>
+<th>Campos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>cliente</strong></td>
+<td><code>id</code> INT(11) (PK), <code>usuario</code> VARCHAR(10), <code>dni</code> VARCHAR(10), <code>apellidos</code> VARCHAR(40), <code>nombre</code> VARCHAR(20), <code>tfno_contacto</code> VARCHAR(9), <code>baja</code> TINYINT(1)</td>
+</tr>
+<tr>
+<td><strong>actividad</strong></td>
+<td><code>id</code> INT(11) (PK), <code>nombre</code> VARCHAR(100), <code>coste_mensual</code> FLOAT, <code>activa</code> ENUM(...)</td>
+</tr>
+<tr>
+<td><strong>participa</strong></td>
+<td><code>actividad_id</code> INT(11), <code>cliente_id</code> INT(11)</td>
+</tr>
+<tr>
+<td><strong>recibo</strong></td>
+<td><code>cliente_id</code> INT(11), <code>fecha_emision</code> DATE (PK compuesta), <code>fecha_pago</code> DATE, <code>cuantia</code> FLOAT, <code>pagado</code> TINYINT(1)</td>
+</tr>
+<tr>
+<td><strong>usuarios</strong></td>
+<td><code>usuario</code> VARCHAR(10) (PK), <code>clave</code> BLOB, <code>tipo</code> ENUM('C','A')</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "toc.integrate", "content.code.copy"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+    
+  </body>
+</html>

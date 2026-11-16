@@ -1,0 +1,1951 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://avalverdec07.github.io/ACCESO_A_DATOS_2-DAM/Tema_1_Gestion_de_Ficheros_y_Directorios/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../Tema_2_Acceso_BD_Relacionales_Conectores/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
+    
+    
+      
+        <title>UD1 - Gestión de Ficheros - Acceso a Datos 2º DAM</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tema-1-gestion-de-ficheros-y-directorios" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="Acceso a Datos 2º DAM" class="md-header__button md-logo" aria-label="Acceso a Datos 2º DAM" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Acceso a Datos 2º DAM
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              UD1 - Gestión de Ficheros
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/avalverdec07/ACCESO_A_DATOS_2-DAM" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    avalverdec07/ACCESO_A_DATOS_2-DAM
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Acceso a Datos 2º DAM" class="md-nav__button md-logo" aria-label="Acceso a Datos 2º DAM" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Acceso a Datos 2º DAM
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/avalverdec07/ACCESO_A_DATOS_2-DAM" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    avalverdec07/ACCESO_A_DATOS_2-DAM
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidades Didácticas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unidades Didácticas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD1 - Gestión de Ficheros
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD1 - Gestión de Ficheros
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#version-actualizada-javaniofile-try-with-resources-jsonxml-excepciones-modernas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Versión actualizada (java.nio.file, try-with-resources, JSON/XML, excepciones modernas)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Índice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Introducción
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-ficheros-tipos-y-formas-de-acceso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Ficheros: tipos y formas de acceso
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Ficheros: tipos y formas de acceso">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-segun-el-contenido-texto-vs-binario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Según el contenido: texto vs. binario
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-segun-la-forma-de-acceso-secuencial-vs-aleatorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Según la forma de acceso: secuencial vs. aleatorio
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-gestion-de-ficheros-y-directorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Gestión de ficheros y directorios
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Gestión de ficheros y directorios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-la-clase-clasica-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 La clase clásica File
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-la-api-moderna-javaniofile-path-y-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 La API moderna java.nio.file (Path y Files)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-ejercicios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Ejercicios
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-flujos-o-streams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 Flujos o Streams
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 Flujos o Streams">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-tipos-de-stream" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Tipos de Stream
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-codificacion-de-caracteres-charset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Codificación de caracteres (Charset)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-clases-de-streams-de-caracteres" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Clases de Streams de Caracteres
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-clases-de-streams-de-bytes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Clases de Streams de Bytes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-ejercicios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 Ejercicios
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-gestion-de-excepciones-de-es" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 Gestión de excepciones de E/S
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 Gestión de excepciones de E/S">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-jerarquia-de-excepciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Jerarquía de excepciones
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-try-catch-finally-vs-try-with-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 try-catch-finally vs. try-with-resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-buenas-practicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Buenas prácticas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-ficheros-de-acceso-aleatorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 Ficheros de Acceso Aleatorio
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6 Ficheros de Acceso Aleatorio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-tamano-de-los-tipos-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Tamaño de los tipos de datos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-ejercicios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Ejercicios
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-serializacion-y-deserializacion-de-objetos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7 Serialización y deserialización de objetos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7 Serialización y deserialización de objetos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-la-interfaz-serializable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 La interfaz Serializable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-serialversionuid-y-transient" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 serialVersionUID y transient
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-ejercicios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Ejercicios
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-ficheros-de-intercambio-xml-y-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8 Ficheros de intercambio: XML y JSON
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8 Ficheros de intercambio: XML y JSON">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-xml-con-dom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 XML con DOM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-xml-con-jaxb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 XML con JAXB
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-json-con-jackson" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 JSON con Jackson
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84-ejercicios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4 Ejercicios
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-glosario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9 Glosario
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tema_2_Acceso_BD_Relacionales_Conectores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD2 - Conectores BD (JDBC)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tema_3_Herramientas_ORM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD3 - Herramientas ORM (Hibernate)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tema_4_BD_OR_y_OO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD4 - Bases de Datos objeto-relacionales y orientadas a objetos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tema5_Bases_de_Datos_Documentales_Nativas.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD5 - Bases de Datos Documentales Nativas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tema6_Creacion_de_Componentes_de_AD.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD6 - Creación de Componentes_de_AD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="tema-1-gestion-de-ficheros-y-directorios">Tema 1: Gestión de Ficheros y Directorios.</h1>
+<h2 id="version-actualizada-javaniofile-try-with-resources-jsonxml-excepciones-modernas">Versión actualizada (java.nio.file, try-with-resources, JSON/XML, excepciones modernas)</h2>
+<blockquote>
+<p>Apuntes del tema 1, revisados e integrados con contenidos actuales de Java (paquetes <code>java.io</code>, <code>java.nio.file</code>) y con soporte de JSON además de XML.</p>
+</blockquote>
+<hr />
+<h2 id="indice">Índice</h2>
+<ol>
+<li><a href="#1-introducción">Introducción</a></li>
+<li><a href="#2-ficheros-tipos-y-formas-de-acceso">Ficheros: tipos y formas de acceso</a></li>
+<li><a href="#3-gestión-de-ficheros-y-directorios">Gestión de ficheros y directorios</a></li>
+<li><a href="#31-la-clase-clásica-file">La clase clásica <code>File</code></a></li>
+<li><a href="#32-la-api-moderna-javaniofile-path-y-files">La API moderna <code>java.nio.file</code> (<code>Path</code> y <code>Files</code>)</a></li>
+<li><a href="#33-ejercicios">Ejercicios</a></li>
+<li><a href="?id=4-flujos-o-streams">Flujos o Streams</a></li>
+<li><a href="#41-tipos-de-stream">Tipos de Stream</a></li>
+<li><a href="#42-codificación-de-caracteres-charset">Codificación de caracteres (Charset)</a></li>
+<li><a href="#43-clases-de-streams-de-caracteres">Clases de Streams de Caracteres</a></li>
+<li><a href="#44-clases-de-streams-de-bytes">Clases de Streams de Bytes</a></li>
+<li><a href="#45-ejercicios">Ejercicios</a></li>
+<li><a href="#5-gestión-de-excepciones-de-es">Gestión de excepciones de E/S</a></li>
+<li><a href="#51-jerarquía-de-excepciones">Jerarquía de excepciones</a></li>
+<li><a href="#52-try-catch-finally-vs-try-with-resources"><code>try-catch-finally</code> vs. <code>try-with-resources</code></a></li>
+<li><a href="#53-buenas-prácticas">Buenas prácticas</a></li>
+<li><a href="#6-ficheros-de-acceso-aleatorio">Ficheros de Acceso Aleatorio</a></li>
+<li><a href="#61-tamaño-de-los-tipos-de-datos">Tamaño de los tipos de datos</a></li>
+<li><a href="#62-ejercicios">Ejercicios</a></li>
+<li><a href="#7-serialización-y-deserialización-de-objetos">Serialización y deserialización de objetos</a></li>
+<li><a href="#7-serialización-y-deserialización-de-objetos">La interfaz <code>Serializable</code></a></li>
+<li><a href="#72-serialversionuid-y-transient"><code>serialVersionUID</code> y <code>transient</code></a></li>
+<li><a href="#73-ejercicios">Ejercicios</a></li>
+<li><a href="#8-ficheros-de-intercambio-xml-y-json">Ficheros de intercambio: XML y JSON</a></li>
+<li><a href="#81-xml-con-dom">XML con DOM</a></li>
+<li><a href="#82-xml-con-jaxb">XML con JAXB</a></li>
+<li><a href="#83-json-con-jackson">JSON con Jackson</a></li>
+<li><a href="#84-ejercicios">Ejercicios</a></li>
+<li><a href="#9-glosario">Glosario</a></li>
+</ol>
+<hr />
+<h2 id="1-introduccion">1 Introducción</h2>
+<p>Interesa que los programas guarden los datos que le hemos introducido, o los resultados que dicho programa haya obtenido, de manera que, si el programa termina su ejecución, los datos no se pierdan y puedan ser recuperados posteriormente. Dicho de otro modo, interesa que los datos <strong>persistan</strong>.</p>
+<p>En los primeros tiempos de la informática, los datos se guardaban en <strong>ficheros</strong> convencionales. Con el tiempo, y la experiencia de trabajar con ellos, se observaron sus inconvenientes (<strong>redundancia</strong>, <strong>inconsistencia</strong>, <strong>falta de integridad</strong>, <strong>fuerte dependencia entre programas y datos</strong>), y para intentar solucionarlos surgieron las <strong>bases de datos</strong>.</p>
+<p>Antes de que una aplicación pueda hablar con una base de datos relacional, con un ORM o con una base de datos documental, tiene que ser capaz de hacer algo mucho más básico: <strong>leer y escribir información en el disco</strong>. El fichero es la forma de persistencia más antigua y universal: ficheros de configuración, logs, exportaciones, copias de seguridad, ficheros de intercambio entre sistemas (JSON, XML, CSV)... Todo programador necesita dominar el acceso a ficheros.</p>
+<p>Las clases Java que nos permiten trabajar con ficheros se encuentran principalmente en dos paquetes:</p>
+<ul>
+<li><strong><code>java.io</code></strong>: paquete clásico, con la clase <code>File</code> y los streams tradicionales (<code>FileReader</code>, <code>FileInputStream</code>, <code>RandomAccessFile</code>...).</li>
+<li><strong><code>java.nio.file</code></strong>: paquete moderno (desde Java 7), con <code>Path</code> y la clase de utilidades <code>Files</code>. Es más potente, ofrece excepciones más informativas y es la opción recomendada en proyectos actuales.</li>
+</ul>
+<p>Ambos paquetes conviven: en código nuevo se prioriza <code>java.nio.file</code> para operaciones sobre el sistema de archivos, pero los streams de <code>java.io</code> (<code>Reader</code>/<code>Writer</code>, <code>InputStream</code>/<code>OutputStream</code>) se siguen usando para leer y escribir el contenido de los ficheros.</p>
+<h2 id="2-ficheros-tipos-y-formas-de-acceso">2 Ficheros: tipos y formas de acceso</h2>
+<h3 id="21-segun-el-contenido-texto-vs-binario">2.1 Según el contenido: texto vs. binario</h3>
+<p>Un fichero, a nivel físico, es siempre una secuencia de bytes. La diferencia entre "texto" y "binario" está en <strong>cómo interpretamos esos bytes</strong>:</p>
+<ul>
+<li><strong>Texto</strong>: los bytes se interpretan como caracteres según una codificación (<em>charset</em>) como UTF-8. Es legible por humanos con cualquier editor de texto.</li>
+<li><strong>Binario</strong>: los bytes codifican información en un formato propio de la aplicación (una imagen, un ejecutable, un objeto Java serializado). No tiene sentido "leerlo como texto"; solo pueden abrirlo aplicaciones que entiendan cómo están dispuestos los bytes.</li>
+</ul>
+<blockquote>
+<p><strong>Nota:</strong> el carácter "A" en UTF-8 ocupa 1 byte, pero un carácter como "ñ" o un emoji puede ocupar 2, 3 o 4 bytes. Si un fichero se escribió en UTF-8 y se lee asumiendo otra codificación (o viceversa), aparecen los famosos "caracteres corruptos" (mojibake), por ejemplo <code>Ã±</code> en lugar de <code>ñ</code>. Por eso es importante indicar siempre la codificación explícitamente al trabajar con flujos de caracteres.</p>
+</blockquote>
+<h3 id="22-segun-la-forma-de-acceso-secuencial-vs-aleatorio">2.2 Según la forma de acceso: secuencial vs. aleatorio</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Acceso secuencial</th>
+<th>Acceso aleatorio (directo)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Definición</strong></td>
+<td>Para acceder a una posición hay que pasar por todas las anteriores</td>
+<td>Se puede acceder a una posición concreta sin pasar por las anteriores</td>
+</tr>
+<tr>
+<td><strong>Analogía</strong></td>
+<td>Una cinta de casete: para llegar a la canción 8 hay que pasar por la 1-7</td>
+<td>Un CD: el láser se posiciona directamente en la pista que se quiera</td>
+</tr>
+<tr>
+<td><strong>Clases típicas en Java</strong></td>
+<td><code>FileReader</code>, <code>FileInputStream</code>, <code>BufferedReader</code>...</td>
+<td><code>RandomAccessFile</code></td>
+</tr>
+<tr>
+<td><strong>Cuándo usarlo</strong></td>
+<td>Procesar todo el contenido (logs, informes, texto en general)</td>
+<td>Leer o modificar un registro concreto sin releer todo el fichero (registros de longitud fija, índices)</td>
+</tr>
+<tr>
+<td><strong>Coste de acceder al registro <em>n</em></strong></td>
+<td>O(n) — proporcional a la posición</td>
+<td>O(1) — inmediato, si se conoce el desplazamiento</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ventajas e inconvenientes del acceso secuencial</strong>
+- Sencillo de programar, eficiente para procesar todo el fichero, fácil de depurar si es texto.
+- Muy ineficiente si solo se necesita un registro concreto de un fichero grande; no permite actualizar un registro intermedio sin reescribir el fichero (salvo usando un fichero temporal).</p>
+<p><strong>Ventajas e inconvenientes del acceso aleatorio</strong>
+- Acceso y modificación puntual muy rápidos; ideal para registros de longitud fija.
+- Exige que los registros tengan longitud fija (o una estructura de índices adicional); el fichero no es directamente legible como texto; mayor complejidad de programación (cálculo de desplazamientos).</p>
+<blockquote>
+<p><strong>Error común:</strong> confundir "fichero binario" con "fichero de acceso aleatorio". No son sinónimos: se puede tener un fichero binario de acceso secuencial (una imagen, que se lee de un tirón) y, en teoría, un fichero de texto de acceso aleatorio, aunque es poco habitual porque los caracteres en UTF-8 pueden ocupar un número variable de bytes.</p>
+</blockquote>
+<h2 id="3-gestion-de-ficheros-y-directorios">3 Gestión de ficheros y directorios</h2>
+<h3 id="31-la-clase-clasica-file">3.1 La clase clásica <code>File</code></h3>
+<p>La clase <strong>File</strong> (paquete <code>java.io</code>) proporciona información sobre archivos/carpetas y permite operaciones básicas (creación, renombrado, borrado). Las instancias de <code>File</code> representan <em>nombres</em> de archivo, no su contenido.</p>
+<p><strong>Elementos más usados de la clase File</strong></p>
+<table>
+<thead>
+<tr>
+<th>Categoría</th>
+<th>Miembros</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Constante</td>
+<td><code>File.pathSeparator</code></td>
+</tr>
+<tr>
+<td>Constructor</td>
+<td><code>File(String rutaFichero)</code></td>
+</tr>
+<tr>
+<td>Nombre</td>
+<td><code>getName()</code>, <code>getParent()</code>, <code>getAbsolutePath()</code>, <code>renameTo(File nuevoNombre)</code></td>
+</tr>
+<tr>
+<td>Predicados</td>
+<td><code>exists()</code>, <code>canWrite()</code>, <code>canRead()</code>, <code>isFile()</code>, <code>isDirectory()</code></td>
+</tr>
+<tr>
+<td>Información</td>
+<td><code>lastModified()</code>, <code>length()</code></td>
+</tr>
+<tr>
+<td>Borrar</td>
+<td><code>delete()</code></td>
+</tr>
+<tr>
+<td>Crear</td>
+<td><code>createNewFile()</code>, <code>mkdir()</code>, <code>mkdirs()</code></td>
+</tr>
+<tr>
+<td>Listar</td>
+<td><code>list()</code>, <code>list(FilenameFilter)</code>, <code>listFiles()</code>, <code>listFiles(FilenameFilter)</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>File</code> sigue apareciendo mucho en proyectos y ejemplos antiguos, y algunas APIs (como <code>RandomAccessFile</code> o los constructores de <code>FileReader</code>/<code>FileWriter</code>) todavía la aceptan como parámetro. Pero <strong>para código nuevo se recomienda <code>java.nio.file</code></strong>, más potente y con mejor gestión de errores.</p>
+<h3 id="32-la-api-moderna-javaniofile-path-y-files">3.2 La API moderna <code>java.nio.file</code> (<code>Path</code> y <code>Files</code>)</h3>
+<p>Desde Java 7, la forma recomendada de gestionar el sistema de archivos es mediante la clase <strong><code>Path</code></strong> (que representa una ruta, sustituyendo conceptualmente a <code>File</code>) y la clase de utilidades <strong><code>Files</code></strong>, que concentra prácticamente todas las operaciones: crear, copiar, mover, borrar, listar, comprobar existencia, leer atributos, etc.</p>
+<p><strong>Crear directorios y ficheros</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.nio.file.*</span><span class="p">;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.IOException</span><span class="p">;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">GestionDirectorios</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="n">Path</span><span class="w"> </span><span class="n">carpetaCatalogo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Path</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"catalogo"</span><span class="p">);</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="n">Path</span><span class="w"> </span><span class="n">subcarpetaImagenes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">carpetaCatalogo</span><span class="p">.</span><span class="na">resolve</span><span class="p">(</span><span class="s">"imagenes"</span><span class="p">);</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">            </span><span class="c1">// Crea el directorio "catalogo" si no existe, y también los padres necesarios</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">            </span><span class="n">Files</span><span class="p">.</span><span class="na">createDirectories</span><span class="p">(</span><span class="n">subcarpetaImagenes</span><span class="p">);</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Directorios creados correctamente."</span><span class="p">);</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">            </span><span class="n">Path</span><span class="w"> </span><span class="n">ficheroConfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">carpetaCatalogo</span><span class="p">.</span><span class="na">resolve</span><span class="p">(</span><span class="s">"config.txt"</span><span class="p">);</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">Files</span><span class="p">.</span><span class="na">exists</span><span class="p">(</span><span class="n">ficheroConfig</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">                </span><span class="n">Files</span><span class="p">.</span><span class="na">createFile</span><span class="p">(</span><span class="n">ficheroConfig</span><span class="p">);</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Error al crear la estructura de directorios: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Nota:</strong> <code>Files.createDirectory()</code> (singular) lanza excepción si el directorio padre no existe. <code>Files.createDirectories()</code> (plural) crea toda la cadena de directorios intermedios, igual que <code>mkdir -p</code> en Linux.</p>
+</blockquote>
+<p><strong>Copiar, mover y borrar</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.nio.file.*</span><span class="p">;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.IOException</span><span class="p">;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">OperacionesFichero</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="n">Path</span><span class="w"> </span><span class="n">origen</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">Path</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"catalogo/config.txt"</span><span class="p">);</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="n">Path</span><span class="w"> </span><span class="n">copia</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">Path</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"catalogo/config_copia.txt"</span><span class="p">);</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">        </span><span class="n">Path</span><span class="w"> </span><span class="n">destino</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Path</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"catalogo/backup/config.txt"</span><span class="p">);</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">        </span><span class="c1">// Copiar (sobrescribiendo si ya existe)</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">        </span><span class="n">Files</span><span class="p">.</span><span class="na">copy</span><span class="p">(</span><span class="n">origen</span><span class="p">,</span><span class="w"> </span><span class="n">copia</span><span class="p">,</span><span class="w"> </span><span class="n">StandardCopyOption</span><span class="p">.</span><span class="na">REPLACE_EXISTING</span><span class="p">);</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">        </span><span class="c1">// Mover / renombrar</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">        </span><span class="n">Files</span><span class="p">.</span><span class="na">createDirectories</span><span class="p">(</span><span class="n">destino</span><span class="p">.</span><span class="na">getParent</span><span class="p">());</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">        </span><span class="n">Files</span><span class="p">.</span><span class="na">move</span><span class="p">(</span><span class="n">copia</span><span class="p">,</span><span class="w"> </span><span class="n">destino</span><span class="p">,</span><span class="w"> </span><span class="n">StandardCopyOption</span><span class="p">.</span><span class="na">REPLACE_EXISTING</span><span class="p">);</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">        </span><span class="c1">// Borrar de forma segura</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">        </span><span class="kt">boolean</span><span class="w"> </span><span class="n">borrado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Files</span><span class="p">.</span><span class="na">deleteIfExists</span><span class="p">(</span><span class="n">Path</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"catalogo/fichero_temporal.tmp"</span><span class="p">));</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"¿Se borró el fichero temporal? "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">borrado</span><span class="p">);</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Error común:</strong> usar <code>Files.delete()</code> a secas sobre un fichero que puede no existir. Lanza <code>NoSuchFileException</code> y detiene el programa si no se controla. La alternativa segura es <code>Files.deleteIfExists()</code>, que devuelve <code>true</code>/<code>false</code> en lugar de lanzar excepción.</p>
+</blockquote>
+<p><strong>Listar y recorrer directorios</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.nio.file.*</span><span class="p">;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.IOException</span><span class="p">;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.stream.Stream</span><span class="p">;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ExploradorFicheros</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">        </span><span class="n">Path</span><span class="w"> </span><span class="n">raiz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Path</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"catalogo"</span><span class="p">);</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">        </span><span class="c1">// Listar solo el contenido directo (no recursivo)</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">Stream</span><span class="o">&lt;</span><span class="n">Path</span><span class="o">&gt;</span><span class="w"> </span><span class="n">listado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Files</span><span class="p">.</span><span class="na">list</span><span class="p">(</span><span class="n">raiz</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">            </span><span class="n">listado</span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">        </span><span class="c1">// Recorrer TODO el árbol de subdirectorios (recursivo)</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">Stream</span><span class="o">&lt;</span><span class="n">Path</span><span class="o">&gt;</span><span class="w"> </span><span class="n">arbol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Files</span><span class="p">.</span><span class="na">walk</span><span class="p">(</span><span class="n">raiz</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">            </span><span class="n">arbol</span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">Files</span><span class="p">::</span><span class="n">isRegularFile</span><span class="p">)</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">                 </span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Fichero encontrado: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p</span><span class="p">));</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="p">}</span>
+</code></pre></div>
+<p><code>Files.walk()</code> sustituye a la recursividad manual que se hacía antes con <code>File.listFiles()</code> (recorrer con un bucle y llamar recursivamente a la función por cada subdirectorio).</p>
+<p><strong>Equivalencia entre <code>File</code> y <code>java.nio.file</code></strong></p>
+<table>
+<thead>
+<tr>
+<th>Operación</th>
+<th><code>java.io.File</code> (clásico)</th>
+<th><code>java.nio.file</code> (moderno)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Crear directorio</td>
+<td><code>mkdir()</code> / <code>mkdirs()</code></td>
+<td><code>Files.createDirectory()</code> / <code>Files.createDirectories()</code></td>
+</tr>
+<tr>
+<td>Crear fichero</td>
+<td><code>createNewFile()</code></td>
+<td><code>Files.createFile()</code></td>
+</tr>
+<tr>
+<td>Comprobar existencia</td>
+<td><code>exists()</code></td>
+<td><code>Files.exists(path)</code></td>
+</tr>
+<tr>
+<td>Borrar</td>
+<td><code>delete()</code></td>
+<td><code>Files.delete(path)</code> / <code>Files.deleteIfExists(path)</code></td>
+</tr>
+<tr>
+<td>Copiar</td>
+<td>(no incluido, había que programarlo con streams)</td>
+<td><code>Files.copy(origen, destino, opciones)</code></td>
+</tr>
+<tr>
+<td>Mover / renombrar</td>
+<td><code>renameTo()</code></td>
+<td><code>Files.move(origen, destino, opciones)</code></td>
+</tr>
+<tr>
+<td>Listar directorio</td>
+<td><code>list()</code> / <code>listFiles()</code></td>
+<td><code>Files.list(path)</code></td>
+</tr>
+<tr>
+<td>Recorrer árbol recursivamente</td>
+<td>Recursividad manual</td>
+<td><code>Files.walk(path)</code></td>
+</tr>
+<tr>
+<td>Tamaño</td>
+<td><code>length()</code></td>
+<td><code>Files.size(path)</code></td>
+</tr>
+<tr>
+<td>Fecha de modificación</td>
+<td><code>lastModified()</code></td>
+<td><code>Files.getLastModifiedTime(path)</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="33-ejercicios">3.3 Ejercicios</h3>
+<p><strong>Ejercicio 0</strong>: Realiza un programa (usando <code>Path</code>/<code>Files</code>) que implemente las siguientes acciones:</p>
+<ol>
+<li>Mostrar la ruta absoluta de la carpeta actual.</li>
+<li>Pedir por teclado una ruta de fichero o carpeta y mostrar si lo introducido existe, si es un fichero o una carpeta, la fecha de modificación y el tamaño.</li>
+<li>Mostrar el contenido de una carpeta cuya ruta se pide por teclado, comprobando que existe y que es una carpeta.</li>
+<li>Crear una carpeta cuyo nombre se pide por teclado en la ruta por defecto, comprobando antes que no existe.</li>
+<li>Crear un fichero cuyo nombre se pide por teclado, comprobando antes que no existe.</li>
+<li>Pedir por teclado una ruta de fichero y un nuevo nombre, y renombrar el fichero original comprobando que existe y que el nuevo nombre no está ya en uso.</li>
+</ol>
+<p><strong>Ejercicio 1</strong>: Realiza un programa que reciba por parámetro nombres de ficheros y para cada uno de ellos muestre: si existe, si es fichero o carpeta, el nombre sin ruta, la ruta absoluta, si se puede leer/escribir/ejecutar, el tamaño y la fecha de última modificación.</p>
+<p><strong>Ejercicio 2</strong>: Realiza un programa que, usando <code>Files.walk()</code>, pida por teclado una ruta de carpeta y, si existe, muestre su contenido y el de todos sus subdirectorios (directos e indirectos).</p>
+<p><strong>Ejercicio 3</strong>: Realiza un programa que borre un fichero pasado por parámetro, comprobando antes que existe y pidiendo confirmación antes de borrarlo (usa <code>Files.deleteIfExists()</code>).</p>
+<p><strong>Ejercicio 3b (nuevo)</strong>: Crea una clase <code>ExploradorFicheros</code> que, recibiendo una ruta por parámetro, sea capaz de: mostrar el número total de ficheros y directorios (recursivamente), calcular el tamaño total ocupado en bytes (<code>Files.size()</code>), listar únicamente los ficheros con una extensión concreta, y crear una carpeta <code>backup</code> copiando dentro todos los ficheros de esa extensión.</p>
+<h2 id="4-flujos-o-streams">4 Flujos o Streams</h2>
+<p>Un <strong>flujo</strong> o <strong>stream</strong> es un canal de comunicación entre un fichero y un programa Java, por el que circula información que puede leerse o escribirse de forma secuencial. Actúan de intermediario entre un programa y un fichero (o la memoria, o una operación de E/S). La vinculación del flujo con el dispositivo físico la hace el sistema de E/S de Java; las clases son independientes del dispositivo con el que se esté trabajando.</p>
+<h3 id="41-tipos-de-stream">4.1 Tipos de Stream</h3>
+<p>Java diferencia claramente entre flujos <strong>de bytes</strong> (datos binarios) y flujos <strong>de caracteres</strong> (texto), evitando mezclar por error datos binarios con texto:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Flujos de bytes</th>
+<th>Flujos de caracteres</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tamaño</strong></td>
+<td>8 bits</td>
+<td>16 bits (Unicode)</td>
+</tr>
+<tr>
+<td><strong>Clases base (abstractas)</strong></td>
+<td><code>InputStream</code> / <code>OutputStream</code></td>
+<td><code>Reader</code> / <code>Writer</code></td>
+</tr>
+<tr>
+<td><strong>Para ficheros</strong></td>
+<td><code>FileInputStream</code> / <code>FileOutputStream</code></td>
+<td><code>FileReader</code> / <code>FileWriter</code></td>
+</tr>
+<tr>
+<td><strong>Con buffer (recomendado)</strong></td>
+<td><code>BufferedInputStream</code> / <code>BufferedOutputStream</code></td>
+<td><code>BufferedReader</code> / <code>BufferedWriter</code></td>
+</tr>
+<tr>
+<td><strong>Se usan para</strong></td>
+<td>Imágenes, audio, vídeo, ejecutables, objetos serializados</td>
+<td>Ficheros <code>.txt</code>, <code>.csv</code>, <code>.json</code>, <code>.xml</code>...</td>
+</tr>
+</tbody>
+</table>
+<p>La forma de trabajar con streams secuenciales es siempre la misma:</p>
+<p><strong>Lectura</strong>: 1) se abre el stream, 2) se va leyendo carácter a carácter, byte a byte o línea a línea, 3) se cierra el stream.</p>
+<p><strong>Escritura (añadir)</strong>: 1) se abre el stream (si no existe se crea), 2) se escribe la información, 3) se cierra el stream.</p>
+<p><strong>Escritura (modificar o borrar)</strong>: al no poder insertar/eliminar en medio de un fichero secuencial, hay que: crear un flujo de lectura sobre el original y otro de escritura sobre un fichero temporal; copiar los datos leídos al temporal tal cual hasta llegar al dato a modificar/borrar; escribir la versión nueva (o nada, si se borra); seguir copiando el resto; cerrar ambos ficheros; borrar el original y renombrar el temporal con su nombre.</p>
+<h3 id="42-codificacion-de-caracteres-charset">4.2 Codificación de caracteres (Charset)</h3>
+<p><code>FileReader</code> y <code>FileWriter</code>, si no se indica lo contrario, usan la codificación por defecto de la JVM/del sistema operativo, que puede variar entre un Windows en español y un servidor Linux. Desde Java 11 existen constructores que permiten indicar explícitamente el <code>Charset</code> (por ejemplo <code>new FileReader(fichero, StandardCharsets.UTF_8)</code>), y es una <strong>buena práctica usarlos siempre</strong>, para que el programa se comporte igual en cualquier equipo.</p>
+<h3 id="43-clases-de-streams-de-caracteres">4.3 Clases de Streams de Caracteres</h3>
+<p><strong>Jerarquía:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Reader
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>├── BufferedReader → LineNumberReader
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>├── CharArrayReader
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>├── InputStreamReader → FileReader
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>├── FilterReader → PushbackReader
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>├── PipedReader
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>└── StringReader
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>Writer
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>├── BufferedWriter
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>├── CharArrayWriter
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>├── OutputStreamWriter → FileWriter
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>├── FilterWriter
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>├── PipedWriter
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>├── StringWriter
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>└── PrintWriter
+</code></pre></div>
+<p><strong>FileReader / FileWriter</strong>: cada lectura o escritura se hace físicamente en el disco duro. Si se leen o escriben pocos caracteres cada vez, el proceso es costoso y lento por los muchos accesos a disco.</p>
+<p><strong>BufferedReader / BufferedWriter</strong>: añaden un buffer intermedio que agrupa los accesos a disco, haciendo el programa más rápido. Además, <code>BufferedReader</code> permite leer línea a línea con <code>readLine()</code>.</p>
+<p><strong>Ejemplo: leer un fichero de texto línea a línea, con buffer, codificación explícita y <code>try-with-resources</code></strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.*</span><span class="p">;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.nio.charset.StandardCharsets</span><span class="p">;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.nio.file.Path</span><span class="p">;</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">LectorTexto</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">        </span><span class="n">Path</span><span class="w"> </span><span class="n">fichero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Path</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"catalogo/config.txt"</span><span class="p">);</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">BufferedReader</span><span class="w"> </span><span class="n">br</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BufferedReader</span><span class="p">(</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">                </span><span class="k">new</span><span class="w"> </span><span class="n">FileReader</span><span class="p">(</span><span class="n">fichero</span><span class="p">.</span><span class="na">toFile</span><span class="p">(),</span><span class="w"> </span><span class="n">StandardCharsets</span><span class="p">.</span><span class="na">UTF_8</span><span class="p">)))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">linea</span><span class="p">;</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">numeroLinea</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">            </span><span class="k">while</span><span class="w"> </span><span class="p">((</span><span class="n">linea</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">br</span><span class="p">.</span><span class="na">readLine</span><span class="p">())</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">numeroLinea</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">": "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">linea</span><span class="p">);</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">                </span><span class="n">numeroLinea</span><span class="o">++</span><span class="p">;</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Error de lectura: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Ejemplo: escribir en un fichero de texto, con buffer</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.*</span><span class="p">;</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.nio.charset.StandardCharsets</span><span class="p">;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">EscritorTexto</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">productos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"Teclado mecánico"</span><span class="p">,</span><span class="w"> </span><span class="s">"Ratón inalámbrico"</span><span class="p">,</span><span class="w"> </span><span class="s">"Monitor 27\""</span><span class="p">);</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">BufferedWriter</span><span class="w"> </span><span class="n">bw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BufferedWriter</span><span class="p">(</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">                </span><span class="k">new</span><span class="w"> </span><span class="n">FileWriter</span><span class="p">(</span><span class="s">"catalogo/productos.txt"</span><span class="p">,</span><span class="w"> </span><span class="n">StandardCharsets</span><span class="p">.</span><span class="na">UTF_8</span><span class="p">)))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">producto</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">productos</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">                </span><span class="n">bw</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">producto</span><span class="p">);</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">                </span><span class="n">bw</span><span class="p">.</span><span class="na">newLine</span><span class="p">();</span><span class="w"> </span><span class="c1">// salto de línea multiplataforma</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Error de escritura: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Constructores y métodos principales</strong></p>
+<ul>
+<li><code>FileReader(String ruta)</code> / <code>FileReader(File fichero)</code> / <code>FileReader(File fichero, Charset cs)</code>: lanza <code>FileNotFoundException</code> si no se puede abrir. Métodos: <code>read()</code> (devuelve -1 al llegar al final), <code>close()</code>.</li>
+<li><code>BufferedReader(Reader in)</code>: método <code>readLine()</code>, que devuelve <code>null</code> al llegar al final.</li>
+<li><code>FileWriter(String ruta, [boolean añadir])</code>: si <code>añadir</code> es <code>false</code> (o se omite), se sobrescribe; si es <code>true</code>, se añade al final. Si el fichero no existe, se crea. Métodos: <code>write(String s)</code>, <code>append(String texto)</code>, <code>flush()</code>, <code>close()</code>, <code>newLine()</code> (en <code>BufferedWriter</code>).</li>
+</ul>
+<h3 id="44-clases-de-streams-de-bytes">4.4 Clases de Streams de Bytes</h3>
+<p><strong>Jerarquía:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>InputStream
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>├── FileInputStream
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>├── PipedInputStream
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>├── FilterInputStream → BufferedInputStream, DataInputStream, PushbackInputStream
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>├── ByteArrayInputStream
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>├── SequenceInputStream
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>└── ObjectInputStream
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>OutputStream
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>├── FileOutputStream
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>├── PipedOutputStream
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>├── FilterOutputStream → BufferedOutputStream, DataOutputStream, PushbackOutputStream
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>├── ByteArrayOutputStream
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>└── ObjectOutputStream
+</code></pre></div>
+<p>Los archivos binarios guardan datos codificados en binario, sin caracteres reconocibles.</p>
+<ul>
+<li><strong>FileInputStream / FileOutputStream</strong>: leen/escriben bytes de un fichero. <code>FileOutputStream</code> borra el contenido existente al abrir para escritura, salvo que se use el constructor con <code>append=true</code>.</li>
+<li><strong>DataInputStream / DataOutputStream</strong>: leen/escriben tipos primitivos (<code>readInt</code>, <code>readChar</code>, <code>writeFloat</code>...) de forma independiente de la máquina. Al leer hasta el final se produce <code>EOFException</code>.</li>
+<li><strong>ObjectInputStream / ObjectOutputStream</strong>: convierten objetos en bytes y viceversa (ver apartado de serialización).</li>
+</ul>
+<p><strong>Ejemplo: copiar un fichero binario con buffer y <code>try-with-resources</code></strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.*</span><span class="p">;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CopiadorImagen</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">InputStream</span><span class="w"> </span><span class="n">entrada</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BufferedInputStream</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">FileInputStream</span><span class="p">(</span><span class="s">"origen/logo.png"</span><span class="p">));</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">             </span><span class="n">OutputStream</span><span class="w"> </span><span class="n">salida</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BufferedOutputStream</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">FileOutputStream</span><span class="p">(</span><span class="s">"destino/logo_copia.png"</span><span class="p">)))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">            </span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">buffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">byte</span><span class="o">[</span><span class="mi">4096</span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="c1">// bloques de 4 KB</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">bytesLeidos</span><span class="p">;</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">            </span><span class="k">while</span><span class="w"> </span><span class="p">((</span><span class="n">bytesLeidos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">entrada</span><span class="p">.</span><span class="na">read</span><span class="p">(</span><span class="n">buffer</span><span class="p">))</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">                </span><span class="n">salida</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">bytesLeidos</span><span class="p">);</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Imagen copiada correctamente."</span><span class="p">);</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Error al copiar la imagen: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Nota:</strong> existe una forma mucho más corta de copiar ficheros: <code>Files.copy(origen, destino)</code> (apartado 3.2). Entonces, ¿por qué aprender a hacerlo "a mano" con flujos? Porque en el mundo real no siempre se copia un fichero tal cual: a menudo hace falta <strong>procesar los datos mientras se leen o escriben</strong> (cifrarlos, comprimirlos, convertir su formato, filtrar líneas...), y para eso hace falta dominar el manejo directo de flujos.</p>
+</blockquote>
+<p><strong>Errores comunes con flujos</strong></p>
+<ol>
+<li><strong>No cerrar los flujos</strong>: cada flujo abierto consume un recurso del sistema operativo. Si no se cierra, se puede agotar el número de ficheros abiertos permitidos. Solución: usar siempre <code>try-with-resources</code>.</li>
+<li><strong>Mezclar flujos de bytes y de caracteres sobre un mismo fichero de texto sin necesidad</strong>: usar <code>FileInputStream</code> para leer un <code>.txt</code> en vez de <code>FileReader</code> obliga a convertir bytes a <code>String</code> manualmente sin gestionar bien la codificación.</li>
+<li><strong>No usar buffer</strong>: leer/escribir byte a byte o carácter a carácter directamente sobre el fichero es muy lento, porque cada operación implica una llamada al sistema operativo.</li>
+<li><strong>Olvidar el <code>flush()</code></strong> en escenarios donde no se use <code>try-with-resources</code> ni se cierre correctamente el flujo.</li>
+</ol>
+<h3 id="45-ejercicios">4.5 Ejercicios</h3>
+<p><strong>Ejercicio 4</strong>: Lee y muestra un fichero de texto con nombre, apellidos y fecha de nacimiento de personas separados por <code>;</code>. Muestra también el número de personas. El nombre del fichero se pide por teclado.</p>
+<p><strong>Ejercicio 5</strong>: Añade un texto al final de un fichero pasado por parámetro, creándolo si no existe (usa el modo <code>append</code> de <code>FileWriter</code>).</p>
+<p>Ejercicio 5 ALTERNATIVO (Clase NIO): Añade un texto al final de un fichero pasado por parámetro, creándolo si no existe. Para ello, utiliza el método Files.writeString() de la librería NIO.2 y añade los enumerados StandardOpenOption.CREATE y StandardOpenOption.APPEND</p>
+<p><strong>Ejercicio 6</strong>: Crea un fichero de personas (nombre, apellidos, teléfono) pidiendo los datos por teclado; si el fichero existe, añade registros.</p>
+<p><strong>Ejercicio 7</strong>: Modifica una línea concreta de un fichero de texto (pide el número de línea y los nuevos datos), reescribiendo el fichero con la técnica de fichero temporal.</p>
+<p><strong>Ejercicio 8</strong>: Igual que el anterior, pero para borrar una línea en vez de modificarla.</p>
+<p><strong>Ejercicio 9</strong>: Genera un fichero igual a uno dado, pero con las mayúsculas y minúsculas intercambiadas (<code>Hola</code> → <code>hOLA</code>).</p>
+<p><strong>Ejercicio 10</strong>: Gestiona una lista de teléfonos (número y nombre) en un fichero <code>Telefonos.dat</code>, permitiendo consultar, añadir (sin repeticiones), modificar y borrar por número.</p>
+<p><strong>Ejercicio 11</strong>: Genera un fichero binario que almacene un número entero, comparando el resultado con la tabla UTF-8.</p>
+<p><strong>Ejercicio 12</strong>: Muestra el número del fichero generado en el ejercicio anterior.</p>
+<p><strong>Ejercicio 13</strong>: Genera un fichero con notas de alumnos (expediente <code>int</code>, nota <code>double</code>, nombre <code>String</code> terminado en <code>\n</code>).</p>
+<p><strong>Ejercicio 14</strong>: Menú para consultar, modificar una nota y borrar un alumno del fichero del ejercicio anterior.</p>
+<p><strong>Ejercicio 14b (nuevo)</strong>: Lee un fichero de texto (<code>entrada.txt</code>) línea a línea y genera <code>salida.txt</code> con el texto en mayúsculas y el número de línea al principio de cada línea, usando flujos de caracteres con buffer y codificación UTF-8 explícita.</p>
+<p><strong>Ejercicio 14c (nuevo)</strong>: Implementa dos versiones de un programa que copie un fichero grande: una sin buffer (byte a byte) y otra con buffer. Mide el tiempo de cada una con <code>System.nanoTime()</code> y compara los resultados.</p>
+<h2 id="5-gestion-de-excepciones-de-es">5 Gestión de excepciones de E/S</h2>
+<p>Prácticamente todas las operaciones de E/S en Java pueden fallar por causas externas al programa: el fichero no existe, no hay permisos, el disco está lleno... Por eso, los métodos de E/S declaran <code>throws IOException</code> (una excepción <strong>comprobada</strong>, <em>checked exception</em>), obligando a gestionarla.</p>
+<h3 id="51-jerarquia-de-excepciones">5.1 Jerarquía de excepciones</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Exception
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a> └── IOException
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>       ├── FileNotFoundException
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>       ├── EOFException
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>       ├── UncheckedIOException (envuelve IOException en streams/lambdas)
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>       └── (en java.nio.file) NoSuchFileException, FileAlreadyExistsException, AccessDeniedException...
+</code></pre></div>
+<h3 id="52-try-catch-finally-vs-try-with-resources">5.2 <code>try-catch-finally</code> vs. <code>try-with-resources</code></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1">// Estilo antiguo (antes de Java 7) — evitar en código nuevo</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">BufferedReader</span><span class="w"> </span><span class="n">br</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="n">br</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BufferedReader</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">FileReader</span><span class="p">(</span><span class="s">"datos.txt"</span><span class="p">));</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">br</span><span class="p">.</span><span class="na">readLine</span><span class="p">());</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Error: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="p">}</span><span class="w"> </span><span class="k">finally</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">br</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">            </span><span class="n">br</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Error al cerrar: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1">// Estilo moderno y recomendado: try-with-resources</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">BufferedReader</span><span class="w"> </span><span class="n">br</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BufferedReader</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">FileReader</span><span class="p">(</span><span class="s">"datos.txt"</span><span class="p">)))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">br</span><span class="p">.</span><span class="na">readLine</span><span class="p">());</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Error: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="p">}</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="c1">// El recurso se cierra automáticamente al salir del try, incluso si hay excepción</span>
+</code></pre></div>
+<p><code>try-with-resources</code> funciona con cualquier clase que implemente <code>AutoCloseable</code> (todos los flujos de <code>java.io</code> la implementan), y puede gestionar varios recursos a la vez, separados por punto y coma, cerrándolos en orden inverso al de apertura.</p>
+<h3 id="53-buenas-practicas">5.3 Buenas prácticas</h3>
+<ul>
+<li>Capturar la excepción más específica posible primero (<code>FileNotFoundException</code> antes que <code>IOException</code>), para dar mensajes de error más útiles.</li>
+<li>No "tragarse" la excepción con un <code>catch</code> vacío: como mínimo, registrar el error.</li>
+<li>Distinguir entre errores recuperables (reintentar, pedir otra ruta) y errores que deben propagarse.</li>
+<li>No usar excepciones para controlar el flujo normal: por ejemplo, no usar <code>FileNotFoundException</code> para comprobar si un fichero existe; para eso está <code>Files.exists()</code>.</li>
+</ul>
+<blockquote>
+<p><strong>Errores comunes</strong>: capturar <code>Exception</code> a secas en vez de <code>IOException</code> (ocultando errores de programación como <code>NullPointerException</code>); dejar un <code>catch</code> vacío; reintentar una operación en bucle infinito sin límite ante un fallo persistente.</p>
+</blockquote>
+<h2 id="6-ficheros-de-acceso-aleatorio">6 Ficheros de Acceso Aleatorio</h2>
+<p>Java proporciona la clase <strong>RandomAccessFile</strong> para este tipo de entrada/salida. Permite posicionarse en una posición concreta del fichero sin pasar por los datos anteriores, avanzar y retroceder. Es útil para ficheros cuyos <strong>registros tienen un tamaño fijo</strong>.</p>
+<p>Permite leer y escribir con la misma clase (no hace falta una clase de lectura y otra de escritura).</p>
+<p><strong>Constructores</strong></p>
+<ul>
+<li><code>RandomAccessFile(String nombre, String modoAcceso)</code></li>
+<li><code>RandomAccessFile(File fichero, String modoAcceso)</code></li>
+</ul>
+<p><code>modoAcceso</code> puede ser <code>"r"</code> (solo lectura, el fichero debe existir) o <code>"rw"</code> (lectura y escritura; si no existe, se crea).</p>
+<p>Para leer y escribir se usan los métodos <code>readXXX</code>/<code>writeXXX</code> de <code>DataInputStream</code>/<code>DataOutputStream</code>. La clase maneja un puntero de posición (apunta al principio al abrir) que se desplaza con cada lectura/escritura según los bytes leídos/escritos. Al llegar al final se produce <code>EOFException</code>.</p>
+<p>Métodos de gestión del puntero:</p>
+<ul>
+<li><code>long getFilePointer()</code>: posición actual.</li>
+<li><code>void seek(long posicion)</code>: mueve el puntero.</li>
+<li><code>long length()</code>: tamaño del fichero en bytes.</li>
+<li><code>int skipBytes(int desplazamiento)</code>: desplaza el puntero desde la posición actual.</li>
+</ul>
+<h3 id="61-tamano-de-los-tipos-de-datos">6.1 Tamaño de los tipos de datos</h3>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Tamaño en bytes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>char</td>
+<td>2 (Unicode)</td>
+</tr>
+<tr>
+<td>int</td>
+<td>4</td>
+</tr>
+<tr>
+<td>double</td>
+<td>8</td>
+</tr>
+<tr>
+<td>short</td>
+<td>2</td>
+</tr>
+<tr>
+<td>byte</td>
+<td>1</td>
+</tr>
+<tr>
+<td>long</td>
+<td>8</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>1</td>
+</tr>
+<tr>
+<td>float</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Error común:</strong> calcular mal el desplazamiento (<code>offset</code>) al mezclar tipos de distinto tamaño. Si el cálculo del tamaño de registro no es exacto, <code>seek()</code> apuntará a mitad de otro registro y la lectura devolverá basura. Conviene dibujar el "mapa de bytes" del registro antes de programar.</p>
+</blockquote>
+<p><strong>Ejemplo: fichero de registros de longitud fija</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.*</span><span class="p">;</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FicheroAleatorioAlumnos</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">LONGITUD_NOMBRE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">TAMANIO_REGISTRO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LONGITUD_NOMBRE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w"> </span><span class="c1">// 2 bytes/car (UTF-16) + int edad</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">escribirAlumno</span><span class="p">(</span><span class="n">RandomAccessFile</span><span class="w"> </span><span class="n">raf</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">indice</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">edad</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">        </span><span class="n">raf</span><span class="p">.</span><span class="na">seek</span><span class="p">((</span><span class="kt">long</span><span class="p">)</span><span class="w"> </span><span class="n">indice</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">TAMANIO_REGISTRO</span><span class="p">);</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">        </span><span class="n">StringBuilder</span><span class="w"> </span><span class="n">sb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StringBuilder</span><span class="p">(</span><span class="n">nombre</span><span class="p">);</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">        </span><span class="n">sb</span><span class="p">.</span><span class="na">setLength</span><span class="p">(</span><span class="n">LONGITUD_NOMBRE</span><span class="p">);</span><span class="w"> </span><span class="c1">// trunca o rellena</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">        </span><span class="n">raf</span><span class="p">.</span><span class="na">writeChars</span><span class="p">(</span><span class="n">sb</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">        </span><span class="n">raf</span><span class="p">.</span><span class="na">writeInt</span><span class="p">(</span><span class="n">edad</span><span class="p">);</span>
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">leerAlumno</span><span class="p">(</span><span class="n">RandomAccessFile</span><span class="w"> </span><span class="n">raf</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">indice</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="w">        </span><span class="n">raf</span><span class="p">.</span><span class="na">seek</span><span class="p">((</span><span class="kt">long</span><span class="p">)</span><span class="w"> </span><span class="n">indice</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">TAMANIO_REGISTRO</span><span class="p">);</span>
+<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="w">        </span><span class="kt">char</span><span class="o">[]</span><span class="w"> </span><span class="n">nombreChars</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">char</span><span class="o">[</span><span class="n">LONGITUD_NOMBRE</span><span class="o">]</span><span class="p">;</span>
+<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">LONGITUD_NOMBRE</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a><span class="w">            </span><span class="n">nombreChars</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">raf</span><span class="p">.</span><span class="na">readChar</span><span class="p">();</span>
+<a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">edad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">raf</span><span class="p">.</span><span class="na">readInt</span><span class="p">();</span>
+<a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Alumno #"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">indice</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" -&gt; "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="p">(</span><span class="n">nombreChars</span><span class="p">).</span><span class="na">trim</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">", "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">edad</span><span class="p">);</span>
+<a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a>
+<a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a><span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">RandomAccessFile</span><span class="w"> </span><span class="n">raf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RandomAccessFile</span><span class="p">(</span><span class="s">"alumnos.dat"</span><span class="p">,</span><span class="w"> </span><span class="s">"rw"</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a><span class="w">            </span><span class="n">escribirAlumno</span><span class="p">(</span><span class="n">raf</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s">"Ana García"</span><span class="p">,</span><span class="w"> </span><span class="mi">19</span><span class="p">);</span>
+<a id="__codelineno-11-29" name="__codelineno-11-29" href="#__codelineno-11-29"></a><span class="w">            </span><span class="n">escribirAlumno</span><span class="p">(</span><span class="n">raf</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">"Luis Pérez"</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">);</span>
+<a id="__codelineno-11-30" name="__codelineno-11-30" href="#__codelineno-11-30"></a><span class="w">            </span><span class="n">leerAlumno</span><span class="p">(</span><span class="n">raf</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// acceso directo, sin leer el registro 0 antes</span>
+<a id="__codelineno-11-31" name="__codelineno-11-31" href="#__codelineno-11-31"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-11-32" name="__codelineno-11-32" href="#__codelineno-11-32"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-11-33" name="__codelineno-11-33" href="#__codelineno-11-33"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="62-ejercicios">6.2 Ejercicios</h3>
+<p><strong>Ejercicio 18</strong>: Gestiona una agenda con ficheros de acceso aleatorio. Cada registro: índice (4 bytes), fecha (long, 8 bytes), descripción (String de 30 caracteres, 60 bytes), activo (boolean, 1 byte). El programa debe permitir ver la agenda, introducir cita (id autonumérico, siempre activa), modificar la descripción, borrar (reordenando ids), buscar citas activas por fecha, y desactivar una cita por id.</p>
+<p><strong>Ejercicio 19</strong>: Gestiona consultas de un doctor (id, nombre de paciente de 20 caracteres, fecha, diagnóstico de 50 caracteres) con acceso aleatorio: mostrar todas, introducir consulta, añadir diagnóstico, buscar por nombre (o parte) y por fecha.</p>
+<p><strong>Ejercicio 19b (nuevo)</strong>: Diseña un fichero de acceso aleatorio para una agenda de contactos (nombre 15 caracteres, teléfono 9 caracteres, contador de llamadas <code>int</code>). Implementa un menú: añadir contacto, consultar por posición, incrementar el contador de llamadas de un contacto sin reescribir los demás registros.</p>
+<h2 id="7-serializacion-y-deserializacion-de-objetos">7 Serialización y deserialización de objetos</h2>
+<h3 id="71-la-interfaz-serializable">7.1 La interfaz <code>Serializable</code></h3>
+<p><strong>Serializar</strong> un objeto consiste en convertirlo en una secuencia de bits que pueden ser restaurados posteriormente para regenerar el objeto original. <strong>Deserializar</strong> es el proceso inverso.</p>
+<p>La clase del objeto que se desea guardar/leer debe implementar la interfaz marcadora <code>java.io.Serializable</code> (no declara métodos, solo "marca" la clase).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.Serializable</span><span class="p">;</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Producto</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Serializable</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">serialVersionUID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1L</span><span class="p">;</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">precio</span><span class="p">;</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">transient</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">cacheTemporal</span><span class="p">;</span><span class="w"> </span><span class="c1">// "transient": NO se serializa</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Producto</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">precio</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">precio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">precio</span><span class="p">;</span>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="w">    </span><span class="nd">@Override</span>
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">toString</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">"Producto{nombre='"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"', precio="</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">precio</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"}"</span><span class="p">;</span>
+<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a><span class="w">    </span><span class="c1">// getters / setters omitidos</span>
+<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a><span class="p">}</span>
+</code></pre></div>
+<p>Los métodos para guardar/leer objetos son:</p>
+<ul>
+<li><code>void writeObject(Object obj)</code> (en <code>ObjectOutputStream</code>)</li>
+<li><code>Object readObject()</code> (en <code>ObjectInputStream</code>) — al llegar al final del fichero se produce <code>EOFException</code>.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.*</span><span class="p">;</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SerializadorCatalogo</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">guardarCatalogo</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Producto</span><span class="o">&gt;</span><span class="w"> </span><span class="n">productos</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">rutaFichero</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">ObjectOutputStream</span><span class="w"> </span><span class="n">oos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ObjectOutputStream</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">FileOutputStream</span><span class="p">(</span><span class="n">rutaFichero</span><span class="p">)))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">            </span><span class="n">oos</span><span class="p">.</span><span class="na">writeObject</span><span class="p">(</span><span class="n">productos</span><span class="p">);</span><span class="w"> </span><span class="c1">// se puede serializar una colección entera</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">    </span><span class="nd">@SuppressWarnings</span><span class="p">(</span><span class="s">"unchecked"</span><span class="p">)</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Producto</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">cargarCatalogo</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">rutaFichero</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="p">,</span><span class="w"> </span><span class="n">ClassNotFoundException</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">ObjectInputStream</span><span class="w"> </span><span class="n">ois</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ObjectInputStream</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">FileInputStream</span><span class="p">(</span><span class="n">rutaFichero</span><span class="p">)))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Producto</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="n">ois</span><span class="p">.</span><span class="na">readObject</span><span class="p">();</span>
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Problema al guardar varios objetos en un fichero</strong>: cada vez que se abre el fichero para añadir un objeto se escribe una cabecera, lo que provoca error al leer (solo se espera una cabecera al principio). Para solucionarlo se puede redefinir el método <code>writeStreamHeader()</code> de <code>ObjectOutputStream</code> para que no haga nada, y usarlo solo a partir de la segunda escritura.</p>
+<h3 id="72-serialversionuid-y-transient">7.2 <code>serialVersionUID</code> y <code>transient</code></h3>
+<p>El campo <code>serialVersionUID</code> identifica la "versión" de la clase para el mecanismo de serialización. Si se modifica la clase más adelante (por ejemplo, se añade un atributo) y no se cambia este identificador, Java seguirá aceptando deserializar ficheros antiguos si es compatible; pero si se omite, Java lo calcula automáticamente a partir de detalles internos de la clase, y <strong>cualquier cambio mínimo puede invalidar todos los ficheros serializados anteriormente</strong>, lanzando <code>InvalidClassException</code>. Por eso es buena práctica declararlo siempre explícitamente.</p>
+<p>Un atributo marcado como <code>transient</code> no se serializa; al deserializar, recupera su valor por defecto (<code>null</code>, <code>0</code>, <code>false</code>).</p>
+<p><strong>Ventajas e inconvenientes de la serialización nativa de Java</strong></p>
+<ul>
+<li>Muy sencilla de usar (una línea de código persiste un grafo completo de objetos, listas, mapas, referencias...).</li>
+<li>El fichero resultante solo lo puede leer Java (no interoperable con otros lenguajes, a diferencia de JSON/XML); es sensible a cambios en la clase; no es legible por humanos; puede suponer un riesgo de seguridad si se deserializan datos de origen no confiable.</li>
+</ul>
+<p><strong>Errores comunes</strong></p>
+<ol>
+<li>Olvidar que un atributo de tipo objeto también debe implementar <code>Serializable</code>, o se produce <code>NotSerializableException</code>.</li>
+<li>Marcar como <code>transient</code> un campo imprescindible sin ser consciente de que, al deserializar, volverá a su valor por defecto.</li>
+<li>Confundir serialización con clonación: sirve para crear una copia, pero no es la forma más eficiente si solo se necesita clonar en memoria.</li>
+</ol>
+<h3 id="73-ejercicios">7.3 Ejercicios</h3>
+<p><strong>Ejercicio 15</strong>: Implementa la clase <code>Empleado</code> (nombre, sueldo) como <code>Serializable</code>. Gestiona un fichero de empleados: listar, dar de alta, borrar por nombre, buscar por parte del nombre, subir el sueldo a todos.</p>
+<p><strong>Ejercicio 16</strong>: Gestiona productos (código, nombre, precio) en un fichero binario de objetos: alta, listar todos, buscar por parte del nombre, modificar por código, borrar por código.</p>
+<p><strong>Ejercicio 17</strong>: Gestiona notas de alumnos (expediente, nombre, nota) como objetos: mostrar, añadir, poner nota, mostrar estadística (suspensos, aprobados, nota media), borrar.</p>
+<p><strong>Ejercicio 17b (nuevo)</strong>: Diseña una clase <code>Personaje</code> (nombre, nivel, puntos de vida, inventario como <code>List&lt;String&gt;</code>) <code>Serializable</code>, con <code>serialVersionUID</code> explícito. Crea un pequeño programa que guarde el estado del personaje al salir y lo recupere exactamente igual al volver a arrancar.</p>
+<h2 id="8-ficheros-de-intercambio-xml-y-json">8 Ficheros de intercambio: XML y JSON</h2>
+<p>Java permite desarrollar aplicaciones portables. Los formatos de texto estandarizados permiten el intercambio de información entre sistemas no compatibles. Los dos más habituales son:</p>
+<ul>
+<li><strong>XML</strong> (eXtensible Markup Language): basado en etiquetas anidadas; muy usado en configuración, documentos, sistemas heredados y cuando se necesita validación estricta con esquemas (XSD).</li>
+<li><strong>JSON</strong> (JavaScript Object Notation): más ligero, basado en pares clave-valor; es el estándar de facto en APIs REST modernas.</li>
+</ul>
+<p><strong>El mismo dato en ambos formatos</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">{</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span><span class="nt">"nombre"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Teclado mecánico"</span><span class="p">,</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">  </span><span class="nt">"precio"</span><span class="p">:</span><span class="w"> </span><span class="mf">59.90</span><span class="p">,</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">  </span><span class="nt">"disponible"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">  </span><span class="nt">"categorias"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"periféricos"</span><span class="p">,</span><span class="w"> </span><span class="s2">"oficina"</span><span class="p">]</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nt">&lt;producto&gt;</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">    </span><span class="nt">&lt;nombre&gt;</span>Teclado<span class="w"> </span>mecánico<span class="nt">&lt;/nombre&gt;</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="nt">&lt;precio&gt;</span>59.90<span class="nt">&lt;/precio&gt;</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span><span class="nt">&lt;disponible&gt;</span>true<span class="nt">&lt;/disponible&gt;</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">    </span><span class="nt">&lt;categorias&gt;</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">        </span><span class="nt">&lt;categoria&gt;</span>periféricos<span class="nt">&lt;/categoria&gt;</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">        </span><span class="nt">&lt;categoria&gt;</span>oficina<span class="nt">&lt;/categoria&gt;</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">    </span><span class="nt">&lt;/categorias&gt;</span>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="nt">&lt;/producto&gt;</span>
+</code></pre></div>
+<p><strong>JSON vs. XML</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>JSON</th>
+<th>XML</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Legibilidad</td>
+<td>Alta, muy compacto</td>
+<td>Alta, pero más verboso</td>
+</tr>
+<tr>
+<td>Tamaño del fichero</td>
+<td>Menor</td>
+<td>Mayor (etiquetas de apertura/cierre)</td>
+</tr>
+<tr>
+<td>Metadatos (atributos, namespaces, esquemas)</td>
+<td>Limitado</td>
+<td>Muy completo</td>
+</tr>
+<tr>
+<td>Uso típico actual</td>
+<td>APIs REST, configuración</td>
+<td>Documentos empresariales, SOAP, sistemas heredados</td>
+</tr>
+<tr>
+<td>Soporte nativo en JavaScript</td>
+<td>Total</td>
+<td>Requiere parseo adicional</td>
+</tr>
+</tbody>
+</table>
+<p>Existen dos estrategias para trabajar con estos formatos:</p>
+<ul>
+<li><strong>Parser (DOM/SAX en XML)</strong>: se recorre el árbol del documento "a mano", nodo a nodo. Control total, más código.</li>
+<li><strong>Binding (mapeo automático)</strong>: una librería (JAXB para XML, Jackson para JSON) convierte automáticamente entre objetos Java (POJOs) y el documento. Mucho más productivo; es el enfoque habitual en código profesional actual.</li>
+</ul>
+<h3 id="81-xml-con-dom">8.1 XML con DOM</h3>
+<p>La tecnología <strong>DOM (Document Object Model)</strong> es una interfaz de programación que permite analizar y manipular dinámicamente el contenido, el estilo y la estructura de un documento. El documento se carga en memoria en forma de árbol de nodos; si el fichero XML es muy grande, esta tecnología es menos eficiente por el consumo de memoria. Las clases están en los paquetes <strong>javax.xml</strong> y <strong>org.w3c.dom</strong>.</p>
+<p><strong>Pasos en el uso de DOM</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">DocumentBuilderFactory</span><span class="w"> </span><span class="n">factoria</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DocumentBuilderFactory</span><span class="p">.</span><span class="na">newInstance</span><span class="p">();</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="n">DocumentBuilder</span><span class="w"> </span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">factoria</span><span class="p">.</span><span class="na">newDocumentBuilder</span><span class="p">();</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="n">Document</span><span class="w"> </span><span class="n">doc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">db</span><span class="p">.</span><span class="na">parse</span><span class="p">(</span><span class="s">"direcciones.xml"</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>Métodos habituales para recorrer un árbol DOM</strong></p>
+<ul>
+<li><code>documento.getDocumentElement()</code>: nodo raíz.</li>
+<li><code>elemento.hasAttributes()</code>, <code>elemento.getAttributes()</code>, <code>elemento.getAttribute("nombre")</code>.</li>
+<li><code>elemento.getChildNodes()</code>, <code>nodo.getNodeType()</code>.</li>
+<li><code>doc.getElementsByTagName("nombre")</code>.</li>
+<li><code>elemento.getParentNode()</code>, <code>eltoTexto.getTextContent()</code>, <code>eltoTexto.setNodeValue("texto")</code>.</li>
+</ul>
+<p><strong>Ejemplo: leer un XML de productos con DOM</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.w3c.dom.*</span><span class="p">;</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">javax.xml.parsers.*</span><span class="p">;</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.File</span><span class="p">;</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">LectorXmlDom</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">        </span><span class="n">DocumentBuilderFactory</span><span class="w"> </span><span class="n">factory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DocumentBuilderFactory</span><span class="p">.</span><span class="na">newInstance</span><span class="p">();</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">        </span><span class="n">DocumentBuilder</span><span class="w"> </span><span class="n">builder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">factory</span><span class="p">.</span><span class="na">newDocumentBuilder</span><span class="p">();</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">        </span><span class="n">Document</span><span class="w"> </span><span class="n">documento</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="na">parse</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="s">"productos.xml"</span><span class="p">));</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="w">        </span><span class="n">documento</span><span class="p">.</span><span class="na">getDocumentElement</span><span class="p">().</span><span class="na">normalize</span><span class="p">();</span>
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="w">        </span><span class="n">NodeList</span><span class="w"> </span><span class="n">listaProductos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">documento</span><span class="p">.</span><span class="na">getElementsByTagName</span><span class="p">(</span><span class="s">"producto"</span><span class="p">);</span>
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">listaProductos</span><span class="p">.</span><span class="na">getLength</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="w">            </span><span class="n">Element</span><span class="w"> </span><span class="n">producto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Element</span><span class="p">)</span><span class="w"> </span><span class="n">listaProductos</span><span class="p">.</span><span class="na">item</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a><span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">producto</span><span class="p">.</span><span class="na">getElementsByTagName</span><span class="p">(</span><span class="s">"nombre"</span><span class="p">).</span><span class="na">item</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="na">getTextContent</span><span class="p">();</span>
+<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a><span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">precio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">producto</span><span class="p">.</span><span class="na">getElementsByTagName</span><span class="p">(</span><span class="s">"precio"</span><span class="p">).</span><span class="na">item</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="na">getTextContent</span><span class="p">();</span>
+<a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Producto: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" - "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">precio</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" €"</span><span class="p">);</span>
+<a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Crear un fichero XML a partir de un DOM</strong>: crear una fuente (<code>new DOMSource(doc)</code>), un destino (<code>new StreamResult(new File("fichero.xml"))</code>), un transformador (<code>TransformerFactory.newInstance().newTransformer()</code>) y transformar (<code>t.transform(fuente, destino)</code>).</p>
+<h3 id="82-xml-con-jaxb">8.2 XML con JAXB</h3>
+<p><strong>JAXB</strong> (Java Architecture for XML Binding) es una tecnología de <em>binding</em> que, a diferencia de DOM, permite además validar un esquema asociado al documento XML. Trabaja sobre JavaBeans (clases con getters/setters y constructores) anotados con <code>@XmlRootElement</code>, <code>@XmlType</code>, <code>@XmlElement</code>, <code>@XmlElementWrapper</code> y <code>@XmlAttribute</code>.</p>
+<blockquote>
+<p><strong>Aviso importante</strong>: <code>javax.xml.bind</code> (JAXB) formaba parte del JDK hasta Java 8, pero <strong>se eliminó del JDK a partir de Java 11</strong> (pasó a ser un módulo opcional de Java EE, ya deprecado). En proyectos con Java 11 o superior es imprescindible añadir las dependencias correspondientes (por ejemplo, vía Maven: <code>jakarta.xml.bind-api</code> y una implementación como <code>jaxb-runtime</code>) para poder usarlo. En muchos proyectos actuales, JAXB se sustituye directamente por <strong>Jackson con su módulo XML</strong> (<code>jackson-dataformat-xml</code>), que permite usar el mismo modelo de anotaciones tanto para JSON como para XML.</p>
+</blockquote>
+<p><strong>Marshal (Java → XML)</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">JAXBContext</span><span class="w"> </span><span class="n">contexto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">JAXBContext</span><span class="p">.</span><span class="na">newInstance</span><span class="p">(</span><span class="n">Libreria</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="n">Marshaller</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">contexto</span><span class="p">.</span><span class="na">createMarshaller</span><span class="p">();</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="n">m</span><span class="p">.</span><span class="na">setProperty</span><span class="p">(</span><span class="n">Marshaller</span><span class="p">.</span><span class="na">JAXB_FORMATTED_OUTPUT</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="n">m</span><span class="p">.</span><span class="na">marshal</span><span class="p">(</span><span class="n">lib</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="s">"libreria.xml"</span><span class="p">));</span>
+</code></pre></div>
+<p><strong>Unmarshal (XML → Java)</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">JAXBContext</span><span class="w"> </span><span class="n">contexto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">JAXBContext</span><span class="p">.</span><span class="na">newInstance</span><span class="p">(</span><span class="n">Libreria</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="n">Unmarshaller</span><span class="w"> </span><span class="n">um</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">contexto</span><span class="p">.</span><span class="na">createUnmarshaller</span><span class="p">();</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="n">Libreria</span><span class="w"> </span><span class="n">lib</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Libreria</span><span class="p">)</span><span class="w"> </span><span class="n">um</span><span class="p">.</span><span class="na">unmarshal</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="s">"libreria.xml"</span><span class="p">));</span>
+</code></pre></div>
+<h3 id="83-json-con-jackson">8.3 JSON con Jackson</h3>
+<p><strong>Jackson</strong> es la librería de <em>binding</em> JSON más usada en el ecosistema Java. Su clase central es <code>ObjectMapper</code>, que convierte automáticamente entre POJOs y JSON.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">com.fasterxml.jackson.databind.ObjectMapper</span><span class="p">;</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">com.fasterxml.jackson.databind.SerializationFeature</span><span class="p">;</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.File</span><span class="p">;</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">GestorJsonProductos</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">guardarJson</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Producto</span><span class="o">&gt;</span><span class="w"> </span><span class="n">productos</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">ruta</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="w">        </span><span class="n">ObjectMapper</span><span class="w"> </span><span class="n">mapper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ObjectMapper</span><span class="p">();</span>
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="w">        </span><span class="n">mapper</span><span class="p">.</span><span class="na">enable</span><span class="p">(</span><span class="n">SerializationFeature</span><span class="p">.</span><span class="na">INDENT_OUTPUT</span><span class="p">);</span><span class="w"> </span><span class="c1">// JSON legible</span>
+<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="w">        </span><span class="n">mapper</span><span class="p">.</span><span class="na">writeValue</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="n">ruta</span><span class="p">),</span><span class="w"> </span><span class="n">productos</span><span class="p">);</span>
+<a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a>
+<a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Producto</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">leerJson</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">ruta</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a><span class="w">        </span><span class="n">ObjectMapper</span><span class="w"> </span><span class="n">mapper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ObjectMapper</span><span class="p">();</span>
+<a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">mapper</span><span class="p">.</span><span class="na">readValue</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="n">ruta</span><span class="p">),</span><span class="w"> </span><span class="n">mapper</span><span class="p">.</span><span class="na">getTypeFactory</span><span class="p">()</span>
+<a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a><span class="w">                </span><span class="p">.</span><span class="na">constructCollectionType</span><span class="p">(</span><span class="n">List</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="n">Producto</span><span class="p">.</span><span class="na">class</span><span class="p">));</span>
+<a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a><span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Nota</strong>: para que Jackson funcione sin fricción con una clase como <code>Producto</code>, esta necesita un constructor vacío o los getters/setters estándar (o anotarse con <code>@JsonCreator</code>/<code>@JsonProperty</code>).</p>
+</blockquote>
+<p><strong>Conversión entre formatos (JSON → XML)</strong>: gracias al <em>binding</em>, convertir de un formato a otro se reduce a leer con un mapper y escribir con otro, sin tocar la lógica de negocio:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">ObjectMapper</span><span class="w"> </span><span class="n">jsonMapper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ObjectMapper</span><span class="p">();</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="n">List</span><span class="o">&lt;</span><span class="n">Producto</span><span class="o">&gt;</span><span class="w"> </span><span class="n">productos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jsonMapper</span><span class="p">.</span><span class="na">readValue</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="s">"productos.json"</span><span class="p">),</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">        </span><span class="n">jsonMapper</span><span class="p">.</span><span class="na">getTypeFactory</span><span class="p">().</span><span class="na">constructCollectionType</span><span class="p">(</span><span class="n">List</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="n">Producto</span><span class="p">.</span><span class="na">class</span><span class="p">));</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="n">XmlMapper</span><span class="w"> </span><span class="n">xmlMapper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">XmlMapper</span><span class="p">();</span>
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="n">xmlMapper</span><span class="p">.</span><span class="na">enable</span><span class="p">(</span><span class="n">SerializationFeature</span><span class="p">.</span><span class="na">INDENT_OUTPUT</span><span class="p">);</span>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="n">xmlMapper</span><span class="p">.</span><span class="na">writeValue</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="s">"productos_convertido.xml"</span><span class="p">),</span><span class="w"> </span><span class="n">productos</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>Errores comunes con XML/JSON</strong></p>
+<ol>
+<li>No cerrar el flujo subyacente cuando se trabaja con parsers de bajo nivel sobre un <code>InputStream</code>.</li>
+<li>Asumir que el documento siempre tendrá una estructura válida: un JSON o XML mal formado lanza excepciones de parseo (<code>JsonParseException</code>, <code>SAXException</code>) que hay que prever.</li>
+<li>Confundir claves opcionales con obligatorias al mapear a POJOs: si un campo no existe y el atributo Java es un tipo primitivo (<code>int</code>) en vez de su clase envolvente (<code>Integer</code>), el mapeo puede fallar o dar valores por defecto engañosos.</li>
+<li>Olvidar la codificación del fichero al leer/escribir XML (la cabecera <code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;</code> debe coincidir con la codificación real del fichero).</li>
+</ol>
+<h3 id="84-ejercicios">8.4 Ejercicios</h3>
+<p><strong>Ejercicio 20</strong>: Muestra en consola el contenido de <code>direcciones.xml</code> recorriendo el árbol DOM de forma recursiva, sin conocer previamente su estructura.</p>
+<p><strong>Ejercicio 21</strong>: Crea un documento XML a partir de los datos del fichero <code>agenda.bin</code> del Ejercicio 18.</p>
+<p><strong>Ejercicio 22</strong>: A partir del XML del ejercicio anterior, ofrece un menú para añadir cita, mostrar citas activas, mostrar citas de un día y borrar (desactivar) una cita, actualizando el fichero en cada modificación.</p>
+<p><strong>Ejercicio 23</strong>: Gestiona un fichero XML de libros (isbn, título, número de ejemplares): añadir, mostrar, modificar y borrar por isbn.</p>
+<p><strong>Ejercicio 24</strong>: Con JAXB, crea un fichero XML de una librería (nombre, lugar, CP y lista de libros con autor, nombre, editorial e isbn).</p>
+<p><strong>Ejercicio 25</strong>: Con JAXB, muestra por consola el contenido del XML de la librería del ejercicio anterior con un formato legible.</p>
+<p><strong>Ejercicio 26</strong>: Con JAXB, gestiona los jugadores de un club de fútbol (club: nombre, dirección, número RFEF, lista de jugadores; jugador: NIF, nombre, posición, dorsal). Permite ver datos del club, ver jugadores, añadir (sin NIF duplicados), modificar y borrar por NIF.</p>
+<p><strong>Ejercicio 27 (nuevo)</strong>: Amplía el catálogo de productos (ejercicios 15/16) para que el programa ofrezca un menú: cargar catálogo desde JSON, cargar desde XML, guardar en JSON, guardar en XML, mostrar catálogo por pantalla. El objetivo es comprobar que, gracias al <em>binding</em>, la lógica interna (la lista de objetos <code>Producto</code>) es independiente del formato externo.</p>
+<p><strong>Ejercicio 28 (nuevo, proyecto integrador)</strong>: Desarrolla una aplicación de consola que gestione un catálogo de productos (<code>nombre</code>, <code>precio</code>, <code>stock</code>, <code>categoría</code>):</p>
+<ol>
+<li>Menú: alta de producto, listar catálogo, buscar por nombre, guardar catálogo, cargar catálogo, salir.</li>
+<li>El catálogo se mantiene en memoria como <code>List&lt;Producto&gt;</code> mientras se ejecuta el programa.</li>
+<li>Al guardar, se puede elegir formato: JSON, XML o serialización nativa Java (<code>.ser</code>).</li>
+<li>Al cargar, el programa detecta el formato según la extensión y reconstruye la lista de objetos.</li>
+<li>Cada alta, baja o modificación se añade como línea a un fichero <code>operaciones.log</code> (acceso secuencial, flujo de caracteres, modo <em>append</em>).</li>
+<li>Toda operación de E/S debe usar <code>try-with-resources</code> y mostrar mensajes de error comprensibles.</li>
+<li><strong>(Ampliación opcional)</strong>: añade un fichero de acceso aleatorio <code>indice.dat</code> que guarde, para cada producto, su nombre y el offset de su registro completo en un fichero de registros de longitud fija, para poder recuperar un producto por su nombre sin leer todo el fichero.</li>
+</ol>
+<h2 id="9-glosario">9 Glosario</h2>
+<ul>
+<li><strong>Buffer</strong>: zona de memoria intermedia que agrupa varias operaciones de E/S en una sola llamada al sistema operativo, mejorando el rendimiento.</li>
+<li><strong>Charset (codificación)</strong>: conjunto de reglas que asocia caracteres a secuencias de bytes (UTF-8, ISO-8859-1...).</li>
+<li><strong>Binding</strong>: mapeo automático entre un documento (JSON/XML) y objetos del lenguaje de programación, sin parseo manual.</li>
+<li><strong>Deserializar</strong>: reconstruir un objeto en memoria a partir de su representación en bytes.</li>
+<li><strong>Flujo (stream)</strong>: canal por el que fluyen datos, byte a byte o carácter a carácter, entre el programa y un origen/destino.</li>
+<li><strong>Offset (desplazamiento)</strong>: posición, en bytes, dentro de un fichero, a partir de la cual se realiza una operación de lectura/escritura.</li>
+<li><strong>Parser</strong>: componente que analiza sintácticamente un documento (XML/JSON) y permite recorrer su estructura.</li>
+<li><strong>Serializar</strong>: convertir el estado de un objeto en una secuencia de bytes para poder almacenarlo o transmitirlo.</li>
+<li><strong>try-with-resources</strong>: construcción de Java que garantiza el cierre automático de los recursos (<code>AutoCloseable</code>) usados en un bloque <code>try</code>.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "toc.integrate", "content.code.copy"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+    
+  </body>
+</html>

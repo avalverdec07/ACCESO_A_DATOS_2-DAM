@@ -1,0 +1,835 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://avalverdec07.github.io/ACCESO_A_DATOS_2-DAM/Tema_6_Creacion_de_Componentes_de_AD/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
+    
+    
+      
+        <title>Tema 6: Creación de Componentes de Acceso a Datos - Acceso a Datos 2º DAM</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tema-6-creacion-de-componentes-de-acceso-a-datos" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="Acceso a Datos 2º DAM" class="md-header__button md-logo" aria-label="Acceso a Datos 2º DAM" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Acceso a Datos 2º DAM
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tema 6: Creación de Componentes de Acceso a Datos
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/avalverdec07/ACCESO_A_DATOS_2-DAM" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    avalverdec07/ACCESO_A_DATOS_2-DAM
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Acceso a Datos 2º DAM" class="md-nav__button md-logo" aria-label="Acceso a Datos 2º DAM" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Acceso a Datos 2º DAM
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/avalverdec07/ACCESO_A_DATOS_2-DAM" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    avalverdec07/ACCESO_A_DATOS_2-DAM
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidades Didácticas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unidades Didácticas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tema_1_Gestion_de_Ficheros_y_Directorios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD1 - Gestión de Ficheros
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tema_2_Acceso_BD_Relacionales_Conectores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD2 - Conectores BD (JDBC)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tema_3_Herramientas_ORM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD3 - Herramientas ORM (Hibernate)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tema_4_BD_OR_y_OO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD4 - Bases de Datos objeto-relacionales y orientadas a objetos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tema5_Bases_de_Datos_Documentales_Nativas.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD5 - Bases de Datos Documentales Nativas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tema6_Creacion_de_Componentes_de_AD.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD6 - Creación de Componentes_de_AD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="tema-6-creacion-de-componentes-de-acceso-a-datos">Tema 6: Creación de Componentes de Acceso a Datos</h1>
+<p><em>Acceso a Datos — IES Augustóbriga</em></p>
+<blockquote>
+<p><strong>Nota de actualización</strong>: se ha actualizado la terminología Java EE → <strong>Jakarta EE</strong> (y el paquete <code>javax.*</code> → <code>jakarta.*</code> según la versión de Tomcat), se han puesto al día las versiones de JDK y Tomcat citadas, se ha simplificado la instalación de las herramientas de Eclipse, y se ha añadido una nota sobre las alternativas actuales a JSP y sobre la diferencia entre el JavaBean clásico y los <em>beans</em> de Spring. Todos los ejercicios originales se mantienen íntegros.</p>
+</blockquote>
+<h2 id="indice">Índice</h2>
+<ol>
+<li><a href="#1-qué-es-un-componente">¿Qué es un componente?</a></li>
+<li><a href="#2-tecnologías-de-desarrollo-de-componentes">Tecnologías de desarrollo de componentes</a></li>
+<li><a href="#3-javabeans">JavaBeans</a></li>
+<li><a href="#31-características">Características</a></li>
+<li><a href="#32-reglas">Reglas</a></li>
+<li><a href="#33-propiedades">Propiedades</a></li>
+<li><a href="#34-eventos">Eventos</a></li>
+<li><a href="#4-empaquetado-de-componentes">Empaquetado de componentes</a></li>
+<li><a href="#5-desarrollo-con-jakarta-ee-antes-java-ee">Desarrollo con Jakarta EE</a></li>
+<li><a href="#6-glosario">Glosario</a></li>
+</ol>
+<hr />
+<h2 id="1-que-es-un-componente">1. ¿Qué es un componente?</h2>
+<p><strong>Definición (Szyperski, 1998)</strong>: "Un componente es una unidad de composición de aplicaciones software, que posee un conjunto de interfaces y un conjunto de requisitos, y que ha de poder ser desarrollado, adquirido, incorporado al sistema y compuesto con otros componentes de forma independiente, en tiempo y espacio".</p>
+<p>El objetivo del desarrollo de componentes es construir aplicaciones mediante el ensamblado de módulos software reutilizables, diseñados previamente con independencia de las aplicaciones en las que van a ser utilizados.</p>
+<p>Las características de un componente son:</p>
+<ul>
+<li><strong>Aislamiento</strong>: un componente puede instalarse de forma independiente en una plataforma.</li>
+<li><strong>Componibilidad</strong>: un componente puede estar compuesto por otros para formar aplicaciones.</li>
+<li><strong>Opacidad</strong>: un componente se maneja siempre de forma opaca, sin que los diseñadores de las aplicaciones que lo usan, ni el entorno, tengan que acceder a sus detalles internos para hacer uso de él.</li>
+</ul>
+<p>Las principales ventajas del desarrollo basado en componentes son:</p>
+<ul>
+<li>Mejora de la productividad, gracias a la reutilización de software.</li>
+<li>Disminución de la complejidad del software.</li>
+<li>Mejora de los tiempos de acceso al mercado.</li>
+<li>Incremento de la calidad del software.</li>
+<li>Mejora del mantenimiento, al ser más fácil detectar y subsanar errores.</li>
+</ul>
+<h2 id="2-tecnologias-de-desarrollo-de-componentes">2. Tecnologías de desarrollo de componentes</h2>
+<p>Las tecnologías de desarrollo de componentes incluyen:</p>
+<ul>
+<li><strong>Modelo de componentes</strong>: define un marco conceptual para el desarrollo de componentes y de aplicaciones generadas por ensamblado; define con exactitud qué se entiende por componente, cómo se especifica el componente y sus interfaces, y los modos de interacción entre componentes.</li>
+<li><strong>Plataforma de componentes</strong>: entorno de soporte para la ejecución de aplicaciones basadas en componentes. Se apoya en un modelo de componentes concreto e incluye servicios de soporte: gestión del ciclo de vida, persistencia, comunicación entre componentes, etc.</li>
+</ul>
+<p>Inicialmente se diseñaron para ser utilizados y manipulados por herramientas visuales. En este tema se tratan orientados al acceso a datos, usando el mismo componente para acceder a una BD desde distintas aplicaciones.</p>
+<p>Ejemplos de tecnologías de componentes:</p>
+<ul>
+<li><strong>Microsoft</strong>: COM, COM+, .NET (plataforma Windows).</li>
+<li><strong>Sun Microsystems / Oracle</strong>: JavaBeans, EJB (multiplataforma, pero solo en Java).</li>
+</ul>
+<blockquote>
+<p><strong>Nota de actualización</strong>: EJB (Enterprise JavaBeans), en su forma clásica y pesada (EJB 1.x/2.x), es hoy una tecnología que se encuentra en muy pocos proyectos nuevos; aunque EJB 3.x la simplificó notablemente, en la práctica actual la inmensa mayoría de aplicaciones empresariales Java usan <strong>Spring / Spring Boot</strong> en su lugar, por ser más ligero y flexible. Se mantiene la referencia a EJB por completitud histórica y porque sigue usándose en sistemas heredados.</p>
+</blockquote>
+<h2 id="3-javabeans">3. JavaBeans</h2>
+<p>Un JavaBean es un componente de software reutilizable, escrito en Java. Ejemplos de JavaBeans:</p>
+<ul>
+<li>Librerías gráficas AWT.</li>
+<li>Librería SWT de Eclipse.</li>
+</ul>
+<blockquote>
+<p><strong>Nota de actualización</strong>: este modelo clásico de JavaBeans (con introspección, propiedades ligadas y restringidas mediante <code>PropertyChangeSupport</code>) nació pensado para <strong>herramientas visuales de construcción de interfaces gráficas de escritorio</strong> (por ejemplo, el antiguo editor visual de NetBeans). Hoy en día sigue siendo una API válida y presente en el JDK, pero su uso real está prácticamente limitado a ese contexto histórico de GUI de escritorio. <strong>No debe confundirse con los <em>beans</em> de Spring</strong>: en el ecosistema Spring, un "bean" es simplemente un objeto gestionado por el contenedor de inyección de dependencias (con anotaciones como <code>@Component</code>, <code>@Service</code>, <code>@Repository</code>), un concepto relacionado en el nombre pero mucho más simple, que no exige implementar el mecanismo de eventos <code>PropertyChangeSupport</code>/<code>PropertyChangeListener</code> descrito en este apartado. En el desarrollo backend/de acceso a datos actual, cuando se habla de "beans" normalmente se refiere a este segundo significado.</p>
+</blockquote>
+<h3 id="31-caracteristicas">3.1 Características</h3>
+<ul>
+<li><strong>Introspección</strong>: deben proporcionar información sobre sus características (propiedades, métodos y eventos).</li>
+<li><strong>Personalización</strong>: el programador puede alterar la apariencia y la conducta del bean.</li>
+<li><strong>Manejo de eventos</strong>: debe poder comunicarse con otros beans utilizando eventos.</li>
+<li><strong>Propiedades</strong>: permiten cambiar los valores del bean para personalizarlo (<em>customization</em>).</li>
+<li><strong>Persistencia</strong>: se puede guardar el estado de un bean personalizado, cambiando los valores de sus propiedades, para restaurarlo en cualquier momento.</li>
+</ul>
+<h3 id="32-reglas">3.2 Reglas</h3>
+<ul>
+<li>Debe tener al menos un constructor sin argumentos.</li>
+<li>Debe tener persistencia, es decir, implementar la interfaz <code>Serializable</code>.</li>
+<li>Las propiedades deben ser accesibles mediante métodos <code>get</code> y <code>set</code>.</li>
+<li>Los nombres de los métodos deben seguir ciertas reglas de nombrado, para conseguir la introspección.</li>
+</ul>
+<h3 id="33-propiedades">3.3 Propiedades</h3>
+<p>Son los atributos que determinan el estado del bean. Se accede a ellas mediante getters y setters. Hay varios tipos:</p>
+<ul>
+<li><strong>Simples</strong>: representan un único valor.</li>
+<li><code>private int edad</code> / <code>public int getEdad()</code> / <code>public void setEdad(int valor)</code></li>
+<li><code>private boolean hombre</code> / <code>public boolean isHombre()</code> / <code>public void setHombre(boolean valor)</code></li>
+<li><strong>Indexadas</strong>: representan un array de valores al que se accede mediante un índice. Deben tener getter/setter para el array completo y para valores individuales del array.</li>
+<li><strong>Ligadas o compartidas</strong>: asociadas a eventos. Cuando la propiedad cambia, se notifica a todos los objetos interesados, permitiéndoles reaccionar. El componente necesita una lista de receptores de la propiedad para avisarles del cambio; se añaden con los métodos de la interfaz <code>PropertyChangeSupport</code>. Para que un bean receptor pueda actuar cuando se modifica la propiedad, debe implementar la interfaz <code>PropertyChangeListener</code>.</li>
+<li><strong>Restringidas</strong>: similares a las ligadas, pero los objetos receptores del evento pueden vetarlo si no se ajusta a determinadas características.</li>
+</ul>
+<h3 id="34-eventos">3.4 Eventos</h3>
+<p>Permiten la comunicación entre beans: un bean lanza el evento y otro(s) lo escuchan y responden.</p>
+<p>El bean que lanza el evento debe declarar una propiedad ligada, de tipo <code>PropertyChangeSupport</code>, e implementar dos métodos: uno para añadir receptores del evento y otro para eliminarlos.</p>
+<ul>
+<li><code>addReceptor(PropertyChangeListener listener)</code>: llama al método <code>addPropertyChangeListener(listener)</code> de la propiedad ligada.</li>
+<li><code>borrarReceptor(PropertyChangeListener listener)</code>: llama al método <code>removePropertyChangeListener(listener)</code> de la propiedad ligada.</li>
+</ul>
+<p>El evento se lanza en el momento adecuado con el método <code>firePropertyChange()</code>, al que se le pasan tres parámetros:</p>
+<ul>
+<li>Nombre de la propiedad: <code>String</code>.</li>
+<li>Valor antiguo: <code>Object</code> (para tipos básicos hay que usar <code>Integer</code>, <code>Float</code>, etc.).</li>
+<li>Valor nuevo: <code>Object</code>.</li>
+</ul>
+<p>La aplicación añade objetos receptores del evento con <code>addReceptor(objetoReceptor)</code>.</p>
+<p>Los beans receptores del evento deben implementar <code>PropertyChangeListener</code> y sobrescribir el método <code>propertyChange()</code> para definir qué acciones realizar cuando se produzca el evento.</p>
+<h2 id="4-empaquetado-de-componentes">4. Empaquetado de componentes</h2>
+<p>Una vez desarrollado el JavaBean, debe empaquetarse para su distribución y utilización por las aplicaciones.</p>
+<p>La forma habitual es crear un <code>.jar</code> (<em>File → Export</em>), que debe contener un fichero <code>MANIFEST.MF</code> que describa el contenido, además de las clases y recursos que lo forman.</p>
+<p><strong>Ejercicio 1</strong>: Ejecuta en MySQL el script <code>tienda.sql</code>.</p>
+<ul>
+<li>Crea un proyecto llamado <code>tienda</code> y configura el acceso a la BD con Hibernate.</li>
+<li>Implementa un método <code>mostrar</code> en cada clase. En <code>Productos</code> no es necesario mostrar los pedidos ni las ventas de un producto.</li>
+<li>Realiza las modificaciones necesarias para que, al registrar una venta de un producto, se cree automáticamente un pedido si el stock del producto es inferior al stock mínimo.</li>
+<li>La clase <code>Producto</code> debe generar un evento cuando, al actualizar el stock, se dé la situación de que el stock actual está por debajo del mínimo.</li>
+<li>Cuando se realiza una venta se debe:</li>
+<li>Comprobar si hay stock.</li>
+<li>Registrar la venta.</li>
+<li>Añadir la venta como receptor del evento.</li>
+<li>Actualizar el stock.</li>
+<li>Cuando se produzca el evento, la venta debe generar automáticamente un pedido. La cantidad de ese pedido será siempre de 10 unidades.</li>
+<li>Crea un modelo que implemente los siguientes métodos:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">crearPedido</span><span class="p">(</span><span class="n">Pedidos</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">crearProducto</span><span class="p">(</span><span class="n">Productos</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="cm">/**</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="cm"> * @param v Ventas</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="cm"> * @return 1 si va bien, 0 si no hay stock, -1 error al crear la venta</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="cm"> */</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">crearVenta</span><span class="p">(</span><span class="n">Ventas</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="kd">public</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Productos</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">obtenerProductos</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="kd">public</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Pedidos</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">obtenerPedidos</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="kd">public</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Ventas</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">obtenerVentas</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="kd">public</span><span class="w"> </span><span class="n">Productos</span><span class="w"> </span><span class="nf">obtenerProducto</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">codigo</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>Crea una librería con el proyecto <code>tienda</code>.</li>
+</ul>
+<p><strong>Ejercicio 2</strong>: Crea un programa en Java que, utilizando el componente creado en el Ejercicio 1, permita:</p>
+<ul>
+<li>Crear productos.</li>
+<li>Listar productos.</li>
+<li>Crear pedidos.</li>
+<li>Listar pedidos.</li>
+<li>Crear ventas.</li>
+<li>Listar ventas.</li>
+</ul>
+<h2 id="5-desarrollo-con-jakarta-ee-antes-java-ee">5. Desarrollo con Jakarta EE <em>(antes "Java EE")</em></h2>
+<blockquote>
+<p><strong>Nota de actualización</strong>: en 2018 Oracle transfirió la plataforma Java EE a la Eclipse Foundation, que la renombró <strong>Jakarta EE</strong> por motivos de marca registrada propiedad de Oracle. Desde Jakarta EE 9 (2020), todos los paquetes pasaron de <code>javax.*</code> a <code>jakarta.*</code>. Esto afecta directamente a los Servlets de este apartado: <strong>Tomcat 9 y anteriores usan <code>javax.servlet.*</code></strong>, mientras que <strong>Tomcat 10 y posteriores usan <code>jakarta.servlet.*</code></strong>. Al montar el entorno hay que elegir una combinación coherente de versión de Tomcat y paquete de Servlet.</p>
+</blockquote>
+<p>Jakarta EE (Java Empresarial) es una plataforma de programación para desarrollar y ejecutar aplicaciones software en el lenguaje Java.</p>
+<p>Como servidor de las aplicaciones vamos a usar <strong>Apache Tomcat</strong>: servidor de aplicaciones web y contenedor de servlets y páginas JSP.</p>
+<blockquote>
+<p>Se ha actualizado la recomendación de instalación: en lugar de usar el Tomcat empaquetado dentro de XAMPP (como en el material original), es más habitual hoy <strong>descargar Tomcat directamente desde <code>tomcat.apache.org</code></strong> e instalarlo de forma independiente. Para la versión del servidor: Tomcat 9 (<code>javax.servlet</code>) es una opción estable y muy documentada para un entorno de aprendizaje; Tomcat 10/11 (<code>jakarta.servlet</code>) es la línea activa y recomendada para proyectos nuevos. Evita versiones antiguas como Tomcat 7 (captura original), sin soporte desde 2021.</p>
+<p>Como alternativa moderna que evita por completo la configuración manual de un servidor externo, se puede usar <strong>Spring Boot</strong> con su servidor Tomcat embebido (dependencia <code>spring-boot-starter-web</code>): se ejecuta la aplicación como un <code>.jar</code> autónomo, sin necesidad de desplegarla en un Tomcat instalado aparte.</p>
+</blockquote>
+<h3 id="anadir-herramientas-de-desarrollo-jakarta-ee-en-eclipse">Añadir herramientas de desarrollo Jakarta EE en Eclipse</h3>
+<p>La forma más sencilla hoy es descargar directamente el paquete <strong>"Eclipse IDE for Enterprise Java and Web Developers"</strong> desde el Eclipse Installer, que ya incluye las herramientas necesarias preinstaladas.</p>
+<p>Si se parte de una instalación base de Eclipse y se quiere añadir el soporte manualmente:</p>
+<ol>
+<li><em>Help → Install New Software</em>.</li>
+<li>Seleccionar el sitio de actualización correspondiente a la versión de Eclipse instalada (el repositorio de ejemplo del material original, <code>2019-09</code>, está desactualizado).</li>
+<li>Instalar <strong>"Web, XML, Java EE and OSGi Enterprise Development"</strong>.</li>
+</ol>
+<h3 id="integracion-de-eclipse-con-tomcat">Integración de Eclipse con Tomcat</h3>
+<p>Para poder probar las aplicaciones desde Eclipse:</p>
+<ul>
+<li>Crear la variable de entorno del sistema <code>JAVA_HOME</code> apuntando al JDK instalado (se recomienda una versión LTS actual, por ejemplo JDK 17 o 21, en vez del JDK 12 —versión de ciclo corto y sin soporte desde hace años— citado en el material original).</li>
+<li>En Eclipse, panel <em>Server</em>: <code>Window → Show View → Other → Server</code>.</li>
+<li>Agregar servidor:</li>
+</ul>
+<p><img alt="Seleccionar tipo de servidor" src="../out/Tema_6_imagenes/img-eclipse-select-server-type.png" /></p>
+<p><img alt="Configurar el servidor Tomcat" src="../out/Tema_6_imagenes/img-eclipse-new-server-tomcat.png" /></p>
+<h3 id="servlet">Servlet</h3>
+<p>Son programas Java que se ejecutan en un servidor. Pueden generar una respuesta HTML, llamar a otros servlets, usar cookies y sesiones, y enlazar entre un cliente y una BD.</p>
+<p>La diferencia con las páginas JSP (código Java embebido en HTML) es que el servlet es solo código Java que puede generar una respuesta HTML.</p>
+<p>La mayoría de las tareas pueden hacerse con JSP. Los servlets se usan cuando hay que programar mucho código Java. Suelen trabajar de forma conjunta: en el patrón MVC, los servlets hacen de controlador y los JSP de vista.</p>
+<p>Un servlet es una clase Java sin <code>main()</code> que recibe peticiones e invoca métodos:</p>
+<ul>
+<li><code>init()</code></li>
+<li><code>service()</code></li>
+<li><code>destroy()</code></li>
+</ul>
+<p>Ciclo de vida de un servlet:</p>
+<ol>
+<li>El cliente solicita una petición a un servidor web a través de una URL. El servidor recibe la petición.</li>
+<li>Si es la primera vez, el servidor carga el servlet y llama al método <code>init()</code> para iniciarlo. No es obligatorio definirlo; suele usarse para configuraciones iniciales.</li>
+<li>Se llama al método <code>service()</code> para procesar las peticiones de los clientes web. Es obligatorio definirlo.</li>
+<li>Se llama al método <code>destroy()</code> para eliminar el servlet y liberar recursos. Es opcional implementarlo.</li>
+</ol>
+<p>Un servlet hereda de la clase <code>HttpServlet</code>. Los métodos <code>doGet</code>/<code>doPost</code> se activan con las peticiones al servlet (<code>doGet(HttpServletRequest, HttpServletResponse)</code>); hay que sobrescribirlos, establecer el formato de la respuesta y generar su contenido (<code>HttpServletResponse.getWriter()</code>; en <code>doPost()</code> hay que especificar <code>response.setContentType("text/html")</code>).</p>
+<h3 id="paso-de-parametros-de-un-servlet-a-un-jsp">Paso de parámetros de un Servlet a un JSP</h3>
+<p>Interfaz <code>RequestDispatcher</code>, método <code>forward()</code>. Se puede usar con el objeto <code>Request</code>.</p>
+<h3 id="paginas-jsp">Páginas JSP</h3>
+<p>Permiten generar HTML dinámico. Son páginas HTML con código Java incrustado.</p>
+<ul>
+<li><code>&lt;%= ... %&gt;</code>: una línea de código, cualquier expresión Java.</li>
+<li><code>&lt;% código %&gt;</code>: varias líneas separadas por <code>;</code>, cualquier expresión Java.</li>
+<li><code>&lt;%! ... %&gt;</code>: varias líneas, solo declaraciones de métodos y variables.</li>
+</ul>
+<blockquote>
+<p><strong>Nota de actualización</strong>: JSP sigue funcionando en Jakarta EE, pero su uso en proyectos nuevos ha decaído considerablemente. Las alternativas actuales más comunes son <strong>Thymeleaf</strong> (motor de plantillas del lado del servidor, integrado de forma nativa en Spring Boot) cuando se quiere renderizar HTML en el propio servidor, o directamente <strong>separar backend y frontend</strong>: el servidor expone una API REST y un framework de frontend (React, Angular, Vue) se encarga de la interfaz. Se mantiene JSP en este tema por su valor para entender los fundamentos de generación de HTML dinámico en Java, pero conviene saber que ya no es la opción por defecto en un proyecto nuevo.</p>
+</blockquote>
+<h2 id="6-glosario">6. Glosario</h2>
+<table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Componente</td>
+<td>Unidad de composición software reutilizable, con interfaz definida y desarrollo independiente</td>
+</tr>
+<tr>
+<td>JavaBean</td>
+<td>Componente software reutilizable en Java que sigue unas reglas de introspección/persistencia</td>
+</tr>
+<tr>
+<td>EJB</td>
+<td>Enterprise JavaBeans: modelo de componentes de la vieja Java EE para lógica de negocio distribuida</td>
+</tr>
+<tr>
+<td>Jakarta EE</td>
+<td>Nombre actual de la plataforma Java EE desde su cesión a la Eclipse Foundation (2018)</td>
+</tr>
+<tr>
+<td>Servlet</td>
+<td>Clase Java que procesa peticiones HTTP en un servidor y genera una respuesta</td>
+</tr>
+<tr>
+<td>JSP</td>
+<td>JavaServer Pages: páginas HTML con código Java incrustado, para generar HTML dinámico</td>
+</tr>
+<tr>
+<td>MVC</td>
+<td>Modelo-Vista-Controlador: patrón de arquitectura, donde el servlet actúa de controlador y el JSP de vista</td>
+</tr>
+<tr>
+<td><code>PropertyChangeSupport</code>/<code>Listener</code></td>
+<td>Mecanismo de eventos de JavaBeans para propiedades ligadas/restringidas</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>IES Augustóbriga — Acceso a Datos</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "toc.integrate", "content.code.copy"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+    
+  </body>
+</html>
