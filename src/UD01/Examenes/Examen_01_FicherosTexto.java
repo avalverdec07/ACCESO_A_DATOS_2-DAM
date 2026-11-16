@@ -168,5 +168,4 @@ public class Examen_01_FicherosTexto {
                 System.err.println("Error al listar el directorio " + directorio + ": " + e.getMessage());
             }
         }
-    }
 }
