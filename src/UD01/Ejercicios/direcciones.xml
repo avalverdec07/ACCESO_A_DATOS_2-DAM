@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<agenda>
+    <contacto id="1" tipo="personal">
+        <nombre>Juan Pérez</nombre>
+        <direccion>
+            <calle>Calle Falsa</calle>
+            <numero>123</numero>
+            <ciudad>Badajoz</ciudad>
+            <cp>06001</cp>
+        </direccion>
+        <telefonos>
+            <telefono tipo="movil">600123456</telefono>
+            <telefono tipo="fijo">924123456</telefono>
+        </telefonos>
+    </contacto>
+    <contacto id="2" tipo="trabajo">
+        <nombre>María Gómez</nombre>
+        <direccion>
+            <calle>Avenida de Elvas</calle>
+            <numero>S/N</numero>
+            <ciudad>Badajoz</ciudad>
+            <cp>06006</cp>
+        </direccion>
+    </contacto>
+</agenda>
