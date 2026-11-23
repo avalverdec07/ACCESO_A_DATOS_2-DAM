@@ -19,9 +19,15 @@ import java.util.Scanner;
             this.sueldo = sueldo;
         }
 
-        public String getNombre() { return nombre; }
-        public double getSueldo() { return sueldo; }
-        public void setSueldo(double sueldo) { this.sueldo = sueldo; }
+        public String getNombre() {
+            return nombre;
+        }
+        public double getSueldo() {
+            return sueldo;
+        }
+        public void setSueldo(double sueldo) {
+            this.sueldo = sueldo;
+        }
 
         @Override
         public String toString() {
